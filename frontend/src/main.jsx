@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import NotFoundPage from './pages/NotFoundPage.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import AuthPage from './pages/AuthPage.jsx'
 import BudgetPage from './pages/BudgetPage.jsx'
 import LearningPage from './pages/LearningPage.jsx'
 import NewsPage from './pages/NewsPage.jsx'
@@ -13,6 +14,10 @@ const routes = createBrowserRouter([
     path: '/',
     element: <App />,
     errorElement: <NotFoundPage />
+  },
+  {
+    path: '/login',
+    element: <AuthPage />,
   },
   {
     path: '/budget',
