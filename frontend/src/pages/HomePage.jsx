@@ -1,24 +1,19 @@
-import { Link } from 'react-router-dom';
+import React from 'react';
+import Header from '../components/Header';
+import PictureSlider from '../home-page-components/PictureSlider';
+import FeatureCards from '../home-page-components/FeatureCards';
 
 const HomePage = () => {
   return (
     <div className="home-page">
-      <h1>Home Page</h1>
-      <Link
-        to={'/budget'}
-      >
-        Budget
-      </Link>
-      <Link
-        to={'/learning'}
-      >
-        Learning
-      </Link>
-      <Link
-        to={'/news'}
-      >
-        News
-      </Link>
+      <Header />
+      <main>
+        <PictureSlider />
+        <section className="features-section">
+          <h2>What We Offer</h2>
+          <FeatureCards />
+        </section>
+      </main>
     </div>
   );
 };
