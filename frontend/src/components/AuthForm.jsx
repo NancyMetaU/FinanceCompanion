@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const auth = getAuth();
 
 const AuthForm = () => {
+    const navigate = useNavigate();
     const [isLogin, setIsLogin] = useState(true);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -13,11 +15,10 @@ const AuthForm = () => {
         try {
             if (isLogin) {
                 await signInWithEmailAndPassword(auth, email, password);
-                alert("Logged in!");
             } else {
                 await createUserWithEmailAndPassword(auth, email, password);
-                alert("Account created!");
             }
+            navigate("/");
         } catch (err) {
             alert(err.message);
         }
