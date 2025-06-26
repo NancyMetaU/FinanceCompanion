@@ -8,11 +8,17 @@ import AuthPage from './pages/AuthPage.jsx'
 import BudgetPage from './pages/BudgetPage.jsx'
 import LearningPage from './pages/LearningPage.jsx'
 import NewsPage from './pages/NewsPage.jsx'
+import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const routes = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: (
+      <ProtectedRoute>
+        <App />
+      </ProtectedRoute>
+    ),
     errorElement: <NotFoundPage />
   },
   {
@@ -21,20 +27,34 @@ const routes = createBrowserRouter([
   },
   {
     path: '/budget',
-    element: <BudgetPage />,
+    element: (
+      <ProtectedRoute>
+        <BudgetPage />
+      </ProtectedRoute>
+    ),
   },
   {
     path: '/learning',
-    element: <LearningPage />,
+    element: (
+      <ProtectedRoute>
+        <LearningPage />
+      </ProtectedRoute>
+    ),
   },
   {
     path: '/news',
-    element: <NewsPage />,
+    element: (
+      <ProtectedRoute>
+        <NewsPage />
+      </ProtectedRoute>
+    ),
   }
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={routes} />
+    <AuthProvider>
+      <RouterProvider router={routes} />
+    </AuthProvider>
   </StrictMode>,
 )
