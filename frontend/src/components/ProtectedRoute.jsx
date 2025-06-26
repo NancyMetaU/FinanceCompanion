@@ -1,10 +1,10 @@
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-// TODO: Add a loading state handling
-
 const ProtectedRoute = ({ children }) => {
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
+  // TODO: Create a reusable loading component
+  if (loading) return <p>Loading...</p>;
   return user ? children : <Navigate to="/login" />;
 };
 
