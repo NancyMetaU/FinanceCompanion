@@ -1,6 +1,5 @@
 import Loading from "./Loading";
 import { useState } from "react";
-
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -38,16 +37,16 @@ const AuthForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="auth-form">
       {loading && <Loading message="Logging in..." />}
       {error && <ErrorMessage message={error} />}
-      <h1>{isLogin ? "Login" : "Sign Up"}</h1>
       <input
         type="email"
         placeholder="Email"
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
+        className="auth-input"
       />
       <input
         type="password"
@@ -55,9 +54,16 @@ const AuthForm = () => {
         required
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        className="auth-input"
       />
-      <button type="submit">{isLogin ? "Login" : "Sign Up"}</button>
-      <button type="button" onClick={() => setIsLogin(!isLogin)}>
+      <button type="submit" className="auth-submit-btn">
+        {isLogin ? "Login" : "Sign Up"}
+      </button>
+      <button
+        type="button"
+        onClick={() => setIsLogin(!isLogin)}
+        className="auth-change-btn"
+      >
         {isLogin ? "Don't have an Account?" : "Already Have an Account?"}
       </button>
     </form>
