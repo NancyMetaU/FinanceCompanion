@@ -1,13 +1,14 @@
 const express = require("express");
 const { plaidClient } = require("./plaidClient");
+const verifyFirebaseToken = require("./authMiddleware");
 
 const router = express.Router();
 
-router.post("/create_link_token", async (req, res) => {
+router.post("/create_link_token", verifyFirebaseToken, async (req, res) => {
   try {
     const response = await plaidClient.linkTokenCreate({
       user: {
-        client_user_id: "mock-user-id",
+        client_user_id: req.uid,
       },
       client_name: "Personal Finance Companion",
       products: ["transactions"],
