@@ -1,5 +1,5 @@
-import { Configuration, PlaidApi, PlaidEnvironments } from 'plaid';
-import dotenv from 'dotenv';
+const { Configuration, PlaidApi, PlaidEnvironments } = require("plaid");
+const dotenv = require("dotenv");
 
 dotenv.config();
 
@@ -7,10 +7,12 @@ const config = new Configuration({
   basePath: PlaidEnvironments[process.env.PLAID_ENV],
   baseOptions: {
     headers: {
-      'PLAID-CLIENT-ID': process.env.PLAID_CLIENT_ID,
-      'PLAID-SECRET': process.env.PLAID_SECRET,
+      "PLAID-CLIENT-ID": process.env.PLAID_CLIENT_ID,
+      "PLAID-SECRET": process.env.PLAID_SECRET,
     },
   },
 });
 
-export const plaidClient = new PlaidApi(config);
+const plaidClient = new PlaidApi(config);
+
+module.exports = { plaidClient };
