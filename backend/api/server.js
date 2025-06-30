@@ -1,20 +1,22 @@
-const express = require('express');
-const cors = require('cors');
-const helmet = require('helmet');
+const express = require("express");
+const cors = require("cors");
+const helmet = require("helmet");
+const plaidRoutes = require("./plaidRoutes");
 
 const server = express();
 server.use(helmet());
 server.use(express.json());
 server.use(cors());
+server.use("/api", plaidRoutes);
 
-server.use('*', (req, res, next) => {
-    next({ status: 404, message: 'Not found' });
+server.use("*", (req, res, next) => {
+  next({ status: 404, message: "Not found" });
 });
 
 server.use((err, req, res, next) => {
-    const {message, status} = err;
-    console.error('Error: ', message);
-    res.status(status).json({ message });
+  const { message, status } = err;
+  console.error("Error: ", message);
+  res.status(status).json({ message });
 });
 
 module.exports = server;
