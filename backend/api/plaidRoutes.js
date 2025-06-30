@@ -23,4 +23,26 @@ router.post("/create_link_token", verifyFirebaseToken, async (req, res) => {
   }
 });
 
+router.post("/exchange_public_token", verifyFirebaseToken, async (req, res) => {
+  const { public_token } = req.body;
+
+  if (!public_token) {
+    return res.status(400).json({ error: "Missing public_token" });
+  }
+
+  try {
+    const response = await plaidClient.itemPublicTokenExchange({
+      public_token,
+    });
+
+    const access_token = response.data.access_token;
+    const item_id = response.data.item_id;
+
+    res.json({ access_token, item_id });
+  } catch (err) {
+    console.error("Token exchange failed:", err.response?.data || err.message);
+    res.status(500).json({ error: "Token exchange failed" });
+  }
+});
+
 module.exports = router;
