@@ -34,4 +34,20 @@ model Transaction {
   transactionType String
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
+
+  bankAccount     BankAccount? @relation(fields: [accountId], references: [accountId])
+}
+
+model BankAccount {
+  id          String   @id @default(cuid())
+  userId      String
+  accountId   String   @unique
+  name        String
+  type        String
+  subtype     String
+  balance     Float
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  transactions Transaction[]
 }
