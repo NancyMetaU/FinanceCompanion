@@ -29,8 +29,20 @@ const PlaidLinkButton = () => {
     fetchLinkToken();
   }, []);
 
-  const onSuccess = (public_token, metadata) => {
-    // TO DO - call backend to exchange public_token for access_token
+  const onSuccess = async (public_token, metadata) => {
+    const user = getAuth().currentUser;
+    const idToken = await user.getIdToken();
+
+    const res = await fetch(`${BACKEND_URL}/api/exchange_public_token`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${idToken}`,
+      },
+      body: JSON.stringify({ public_token }),
+    });
+
+    const data = await res.json();
   };
 
   const { open, ready } = usePlaidLink({
