@@ -1,7 +1,7 @@
 const express = require("express");
 const { plaidClient } = require("../config/plaidClient");
 const verifyFirebaseToken = require("../config/auth");
-const { saveBankConnection } = require("../services/bankConnectionService");
+const { savePlaidConnection } = require("../services/plaidConnectionService");
 
 const router = express.Router();
 
@@ -39,7 +39,7 @@ router.post("/exchange_public_token", verifyFirebaseToken, async (req, res) => {
     const access_token = response.data.access_token;
     const item_id = response.data.item_id;
 
-    await saveBankConnection({
+    await savePlaidConnection({
       userId: req.uid,
       accessToken: access_token,
       itemId: item_id,
