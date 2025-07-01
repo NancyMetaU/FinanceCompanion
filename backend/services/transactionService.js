@@ -2,7 +2,7 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 const { plaidClient } = require("../config/plaidClient");
 
-exports.syncTransactions = async (userId) => {
+const syncTransactions = async (userId) => {
   const bankConnection = await prisma.bankConnection.findFirst({
     where: { userId },
   });
@@ -43,9 +43,14 @@ exports.syncTransactions = async (userId) => {
   return { message: "Transactions synced successfully" };
 };
 
-exports.getUserTransactions = async (userId) => {
+const getUserTransactions = async (userId) => {
   return prisma.transaction.findMany({
     where: { userId },
     orderBy: { date: "desc" },
   });
+};
+
+module.exports = {
+  syncTransactions,
+  getUserTransactions,
 };

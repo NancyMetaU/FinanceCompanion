@@ -1,10 +1,11 @@
 const express = require("express");
-const router = express.Router();
 const verifyFirebaseToken = require("../config/auth");
 const {
   syncTransactions,
   getUserTransactions,
 } = require("../services/transactionService");
+
+const router = express.Router();
 
 router.post("/sync", verifyFirebaseToken, async (req, res) => {
   const userId = req.uid;
