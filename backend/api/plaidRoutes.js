@@ -1,6 +1,7 @@
 const express = require("express");
 const { plaidClient } = require("./plaidClient");
 const verifyFirebaseToken = require("./authMiddleware");
+const { saveBankConnection } = require("./bankConnectionModel");
 
 const router = express.Router();
 
@@ -38,7 +39,13 @@ router.post("/exchange_public_token", verifyFirebaseToken, async (req, res) => {
     const access_token = response.data.access_token;
     const item_id = response.data.item_id;
 
-    res.json({ access_token, item_id });
+    await saveBankConnection({
+      userId: req.uid,
+      accessToken: access_token,
+      itemId: item_id,
+    });
+
+    res.status(200).json({ message: "Bank account linked successfully!" });
   } catch (err) {
     console.error("Token exchange failed:", err.response?.data || err.message);
     res.status(500).json({ error: "Token exchange failed" });
