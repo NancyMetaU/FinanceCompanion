@@ -54,4 +54,20 @@ router.post("/sync", verifyFirebaseToken, async (req, res) => {
   }
 });
 
+router.get("/", verifyFirebaseToken, async (req, res) => {
+  const userId = req.uid;
+
+  try {
+    const transactions = await prisma.transaction.findMany({
+      where: { userId },
+      orderBy: { date: "desc" },
+    });
+
+    res.json(transactions);
+  } catch (err) {
+    console.error("Fetch error:", err);
+    res.status(500).json({ error: "Failed to fetch transactions" });
+  }
+});
+
 module.exports = router;
