@@ -13,7 +13,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model BankConnection {
+model PlaidConnection {
   id            String   @id @default(cuid())
   userId        String
   accessToken   String
