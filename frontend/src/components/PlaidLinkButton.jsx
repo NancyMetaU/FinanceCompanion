@@ -14,7 +14,7 @@ const PlaidLinkButton = () => {
 
       const idToken = await user.getIdToken();
 
-      const res = await fetch(`${BACKEND_URL}/api/create_link_token`, {
+      const res = await fetch(`${BACKEND_URL}/api/plaid/create_link_token`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -33,7 +33,7 @@ const PlaidLinkButton = () => {
     const user = getAuth().currentUser;
     const idToken = await user.getIdToken();
 
-    const res = await fetch(`${BACKEND_URL}/api/exchange_public_token`, {
+    const res = await fetch(`${BACKEND_URL}/api/plaid/exchange_public_token`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

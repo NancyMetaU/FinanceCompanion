@@ -1,7 +1,7 @@
 const express = require("express");
-const { plaidClient } = require("./plaidClient");
-const verifyFirebaseToken = require("./authMiddleware");
-const { saveBankConnection } = require("./bankConnectionModel");
+const { plaidClient } = require("../config/plaidClient");
+const verifyFirebaseToken = require("../config/auth");
+const { saveBankConnection } = require("../services/bankConnectionService");
 
 const router = express.Router();
 
