@@ -2,12 +2,12 @@ const express = require("express");
 const router = express.Router();
 const { PrismaClient } = require("@prisma/client");
 const { plaidClient } = require("./plaidClient");
-const { verifyFirebaseToken } = require("./middleware/auth");
+const verifyFirebaseToken = require("./authMiddleware");
 
 const prisma = new PrismaClient();
 
 router.post("/sync", verifyFirebaseToken, async (req, res) => {
-  const userId = req.user.uid;
+  const userId = req.uid;
 
   try {
     const bankConnection = await prisma.bankConnection.findFirst({
@@ -51,22 +51,6 @@ router.post("/sync", verifyFirebaseToken, async (req, res) => {
   } catch (err) {
     console.error("Sync error:", err);
     res.status(500).json({ error: "Failed to sync transactions" });
-  }
-});
-
-router.get("/", verifyFirebaseToken, async (req, res) => {
-  const userId = req.user.uid;
-
-  try {
-    const transactions = await prisma.transaction.findMany({
-      where: { userId },
-      orderBy: { date: "desc" },
-    });
-
-    res.json(transactions);
-  } catch (err) {
-    console.error("Fetch error:", err);
-    res.status(500).json({ error: "Failed to fetch transactions" });
   }
 });
 
