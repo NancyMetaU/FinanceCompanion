@@ -3,11 +3,11 @@ const prisma = new PrismaClient();
 const { plaidClient } = require("../config/plaidClient");
 
 const syncTransactions = async (userId) => {
-  const plaidConnection = await prisma.plaidConnection.findFirst({
+  const bankConnection = await prisma.bankConnection.findFirst({
     where: { userId },
   });
 
-  if (!plaidConnection) {
+  if (!bankConnection) {
     throw new Error("Bank account not linked.");
   }
 
@@ -17,7 +17,7 @@ const syncTransactions = async (userId) => {
     .split("T")[0];
 
   const response = await plaidClient.transactionsGet({
-    access_token: plaidConnection.accessToken,
+    access_token: bankConnection.accessToken,
     start_date: thirtyDaysAgo,
     end_date: today,
   });

@@ -1,13 +1,13 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
-const savePlaidConnection = async ({
+const saveBankConnection = async ({
   userId,
   accessToken,
   itemId,
   institution = "Unknown",
 }) => {
-  return await prisma.plaidConnection.create({
+  return await prisma.bankConnection.create({
     data: {
       userId,
       accessToken,
@@ -17,4 +17,4 @@ const savePlaidConnection = async ({
   });
 };
 
-module.exports = { savePlaidConnection };
+module.exports = { saveBankConnection };
