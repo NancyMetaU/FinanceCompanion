@@ -7,7 +7,7 @@ const {
 
 const router = express.Router();
 
-router.get("/sync", verifyFirebaseToken, async (req, res) => {
+router.post("/sync", verifyFirebaseToken, async (req, res) => {
   const userId = req.uid;
 
   try {
