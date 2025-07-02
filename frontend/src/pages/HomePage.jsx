@@ -1,7 +1,7 @@
-import React from 'react';
-import Header from '../components/Header';
-import PictureSlider from '../home-page-components/PictureSlider';
-import FeatureCards from '../home-page-components/FeatureCards';
+import React from "react";
+import Header from "../components/Header";
+import PictureSlider from "../home-page-components/PictureSlider";
+import FeatureCards from "../home-page-components/FeatureCards";
 
 const HomePage = () => {
   return (
