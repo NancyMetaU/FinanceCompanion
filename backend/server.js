@@ -4,6 +4,7 @@ const helmet = require("helmet");
 const plaidTokenRoutes = require("./routes/plaidTokenRoutes");
 const transactionRoutes = require("./routes/transactionRoutes");
 const bankAccountRoutes = require("./routes/bankAccountRoutes");
+const newsRoutes = require("./routes/newsRoutes");
 
 const server = express();
 server.use(helmet());
@@ -12,6 +13,7 @@ server.use(cors());
 server.use("/api/plaid", plaidTokenRoutes);
 server.use("/api/transactions", transactionRoutes);
 server.use("/api/accounts", bankAccountRoutes);
+server.use("/api/news", newsRoutes);
 
 server.use("*", (req, res, next) => {
   next({ status: 404, message: "Not found" });
