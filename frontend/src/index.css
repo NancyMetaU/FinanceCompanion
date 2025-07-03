@@ -44,6 +44,10 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+@theme {
+  --color-royal: #00009a;
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
