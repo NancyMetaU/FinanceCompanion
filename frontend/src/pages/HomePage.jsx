@@ -1,19 +1,21 @@
 import React from "react";
-import Header from "../components/Header";
-import PictureSlider from "../home-page-components/PictureSlider";
+import Footer from "../shared-components/Footer";
+import Header from "../shared-components/Header";
 import FeatureCards from "../home-page-components/FeatureCards";
+import PictureSlider from "../home-page-components/PictureSlider";
 
 const HomePage = () => {
   return (
-    <div className="home-page">
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <main>
+      <main className="flex-grow">
         <PictureSlider />
-        <section className="features-section">
-          <h2>What We Offer</h2>
+        <section className="mt-12 px-6">
+          <h2 className="text-4xl mb-4 text-center text-slate-800">Explore</h2>
           <FeatureCards />
         </section>
       </main>
+      <Footer />
     </div>
   );
 };
