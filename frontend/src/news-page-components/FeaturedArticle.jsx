@@ -17,7 +17,7 @@ const FeaturedArticle = ({ article }) => {
           href={article.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-roya font-semibold hover:underline"
+          className="text-royal font-semibold hover:underline"
         >
           Read More →
         </a>
