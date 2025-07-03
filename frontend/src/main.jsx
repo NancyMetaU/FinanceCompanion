@@ -8,7 +8,7 @@ import BudgetPage from "./pages/BudgetPage.jsx";
 import LearningPage from "./pages/LearningPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 import { AuthProvider } from "./context/AuthContext";
-import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./context/ProtectedRoute";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 

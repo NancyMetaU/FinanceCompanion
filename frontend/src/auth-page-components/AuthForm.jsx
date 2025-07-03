@@ -1,11 +1,11 @@
-import Loading from "./Loading";
+import Loading from "../shared-components/Loading";
 import { useState } from "react";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import ErrorMessage from "./ErrorMessage";
+import ErrorMessage from "../shared-components/ErrorMessage";
 import { useNavigate } from "react-router-dom";
 
 const auth = getAuth();

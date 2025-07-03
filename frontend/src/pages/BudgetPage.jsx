@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import PlaidLinkButton from "../components/PlaidLinkButton";
+import PlaidLinkButton from "../../budget-page-components/PlaidLinkButton";
 
 const BudgetPage = () => {
   return (
