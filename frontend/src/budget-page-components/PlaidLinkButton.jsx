@@ -34,7 +34,7 @@ const PlaidLinkButton = () => {
     const idToken = await user.getIdToken();
 
     try {
-      await fetch(`${BACKEND_URL}/api/plaid/exchange_public_token`, {
+      await fetch(`${BACKEND_URL}/api/plaid/link_bank`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,24 +42,8 @@ const PlaidLinkButton = () => {
         },
         body: JSON.stringify({ public_token }),
       });
-
-      await fetch(`${BACKEND_URL}/api/accounts/sync`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${idToken}`,
-        },
-      });
-
-      await fetch(`${BACKEND_URL}/api/transactions/sync`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${idToken}`,
-        },
-      });
     } catch (error) {
-      console.error("Error syncing data:", error);
+      console.error("Error linking bank:", error);
     }
   };
 
