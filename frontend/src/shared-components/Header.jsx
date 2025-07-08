@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SignOutButton from "./SignOutButton";
 import logo from "/src/assets/finance-companion-logo.png";
 
 const Header = () => {
@@ -16,9 +17,7 @@ const Header = () => {
           </h1>
         </Link>
       </div>
-      <button className="text-sm font-medium text-royal border border-royal px-4 py-1.5 rounded-md hover:bg-royal hover:text-white transition mr-4 cursor-pointer">
-        Sign Out
-      </button>
+      <SignOutButton />
     </header>
   );
 };
