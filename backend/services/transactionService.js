@@ -33,7 +33,7 @@ const syncTransactions = async (userId) => {
           name: txn.name,
           amount: txn.amount,
           date: new Date(txn.date),
-          category: txn.category?.[0] || null,
+          category: txn.personal_finance_category.primary || null,
           transactionType: txn.amount >= 0 ? "debit" : "credit",
         },
       })
