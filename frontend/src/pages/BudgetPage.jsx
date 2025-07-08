@@ -17,49 +17,55 @@ const BudgetPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      setError("");
+  const hasBankLinked = accounts.length > 0;
 
-      try {
-        const user = getAuth().currentUser;
-        if (!user) throw new Error("User not authenticated");
+  const fetchData = async () => {
+    setLoading(true);
+    setError("");
 
-        const idToken = await user.getIdToken();
+    try {
+      const user = getAuth().currentUser;
+      if (!user) throw new Error("User not authenticated");
 
-        const [accRes, txRes] = await Promise.all([
-          fetch(`${BACKEND_URL}/api/accounts/`, {
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${idToken}`,
-            },
-          }),
-          fetch(`${BACKEND_URL}/api/transactions/`, {
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${idToken}`,
-            },
-          }),
-        ]);
+      const idToken = await user.getIdToken();
 
-        if (!accRes.ok || !txRes.ok) {
-          throw new Error("Failed to fetch account or transaction data");
-        }
+      const [accRes, txRes] = await Promise.all([
+        fetch(`${BACKEND_URL}/api/accounts/`, {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${idToken}`,
+          },
+        }),
+        fetch(`${BACKEND_URL}/api/transactions/`, {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${idToken}`,
+          },
+        }),
+      ]);
 
-        const accountsData = await accRes.json();
-        const transactionsData = await txRes.json();
-
-        setAccounts(accountsData);
-        setTransactions(transactionsData);
-      } catch (err) {
-        console.error(err);
-        setError(err.message || "Data fetching failed");
-      } finally {
-        setLoading(false);
+      if (!accRes.ok || !txRes.ok) {
+        throw new Error("Failed to fetch account or transaction data");
       }
-    };
 
+      const accountsData = await accRes.json();
+      const transactionsData = await txRes.json();
+
+      setAccounts(accountsData);
+      setTransactions(transactionsData);
+    } catch (err) {
+      console.error(err);
+      setError(err.message || "Data fetching failed");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleBankLinked = () => {
+    fetchData();
+  };
+
+  useEffect(() => {
     fetchData();
   }, []);
 
@@ -71,23 +77,24 @@ const BudgetPage = () => {
         <Sidebar />
 
         <main className="flex-1 p-6">
-          <h1 className="text-3xl font-bold mb-6">My Budget Dashboard</h1>
+          <div className="flex justify-between items-center mt-5 mb-10">
+            <h1 className="text-3xl font-bold">My Budget Dashboard</h1>
+            {!hasBankLinked && (
+              <PlaidLinkButton onBankLinked={handleBankLinked} />
+            )}
+          </div>
 
           {loading && <Loading message="Fetching your financial data..." />}
           {error && <ErrorMessage message={error} />}
 
           {!loading && !error && (
             <>
-              <div className="mb-10">
-                <PlaidLinkButton />
-              </div>
-
-              <div className="grid gap-8 lg:grid-cols-2">
+              <div className="grid gap-8 lg:grid-cols-2 mb-10">
                 <BankAccountList accounts={accounts} />
                 <TransactionList transactions={transactions} />
               </div>
 
-              <div className="mt-10">
+              <div className="flex justify-center">
                 <CreateBudgetButton />
               </div>
             </>

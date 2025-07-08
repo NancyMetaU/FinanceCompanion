@@ -16,7 +16,7 @@ const Header = () => {
           </h1>
         </Link>
       </div>
-      <button className="text-sm font-medium text-[#00009A] border border-[#00009A] px-4 py-1.5 rounded-md hover:bg-[#00009A] hover:text-white transition mr-4">
+      <button className="text-sm font-medium text-royal border border-royal px-4 py-1.5 rounded-md hover:bg-royal hover:text-white transition mr-4 cursor-pointer">
         Sign Out
       </button>
     </header>
