@@ -2,8 +2,24 @@ const express = require("express");
 const { plaidClient } = require("../config/plaidClient");
 const verifyFirebaseToken = require("../config/auth");
 const { savePlaidConnection } = require("../services/plaidConnectionService");
+const { syncTransactions } = require("../services/transactionService");
+const { syncBankAccounts } = require("../services/bankAccountService");
 
 const router = express.Router();
+
+const syncBankData = async (userId) => {
+  try {
+    await syncBankAccounts(userId);
+  } catch (err) {
+    console.error("Failed to sync bank accounts:", err);
+  }
+
+  try {
+    await syncTransactions(userId);
+  } catch (err) {
+    console.error("Failed to sync transactions:", err);
+  }
+};
 
 router.post("/create_link_token", verifyFirebaseToken, async (req, res) => {
   try {
@@ -24,7 +40,7 @@ router.post("/create_link_token", verifyFirebaseToken, async (req, res) => {
   }
 });
 
-router.post("/exchange_public_token", verifyFirebaseToken, async (req, res) => {
+router.post("/link_bank", verifyFirebaseToken, async (req, res) => {
   const { public_token } = req.body;
 
   if (!public_token) {
@@ -35,9 +51,7 @@ router.post("/exchange_public_token", verifyFirebaseToken, async (req, res) => {
     const response = await plaidClient.itemPublicTokenExchange({
       public_token,
     });
-
-    const access_token = response.data.access_token;
-    const item_id = response.data.item_id;
+    const { access_token, item_id } = response.data;
 
     await savePlaidConnection({
       userId: req.uid,
@@ -45,10 +59,12 @@ router.post("/exchange_public_token", verifyFirebaseToken, async (req, res) => {
       itemId: item_id,
     });
 
-    res.status(200).json({ message: "Bank account linked successfully!" });
+    await syncBankData(req.uid);
+
+    res.status(200).json({ message: "Bank linked successfully!" });
   } catch (err) {
-    console.error("Token exchange failed:", err.response?.data || err.message);
-    res.status(500).json({ error: "Token exchange failed" });
+    console.error("Bank linking failed:", err.response?.data || err.message);
+    res.status(500).json({ error: "Failed to link bank account" });
   }
 });
 
