@@ -5,7 +5,7 @@ const BankAccountList = ({ accounts }) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Connected Accounts</CardTitle>
+        <CardTitle className="text-xl">Connected Accounts</CardTitle>
       </CardHeader>
       <CardContent>
         {accounts.length === 0 ? (

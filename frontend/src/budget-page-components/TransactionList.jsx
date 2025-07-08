@@ -5,7 +5,7 @@ const TransactionList = ({ transactions }) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Recent Transactions</CardTitle>
+        <CardTitle className="text-xl">Recent Transactions</CardTitle>
       </CardHeader>
       <CardContent>
         {transactions.length === 0 ? (
@@ -13,7 +13,7 @@ const TransactionList = ({ transactions }) => {
             No transactions found.
           </p>
         ) : (
-          transactions.slice(0, 5).map((tx) => (
+          transactions.slice(0, 12).map((tx) => (
             <div key={tx.id} className="mb-4">
               <p className="font-medium">{tx.name}</p>
               <p className="text-sm text-muted-foreground">
