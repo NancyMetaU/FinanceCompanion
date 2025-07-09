@@ -4,7 +4,6 @@ const { calculateBudget } = require("../services/budgetService");
 
 const router = express.Router();
 
-// Calculate budget based on user's financial data
 router.get("/calculate", verifyFirebaseToken, async (req, res) => {
   const userId = req.uid;
 
