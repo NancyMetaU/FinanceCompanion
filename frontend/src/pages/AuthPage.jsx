@@ -6,7 +6,7 @@ const AuthPage = () => {
       <section className="w-full max-w-md">
         <article className="bg-white rounded-2xl shadow-xl p-8 border border-blue-100">
           <header className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-blue-900 mb-2">Welcome</h1>
+            <h1 className="text-3xl font-bold text-royal mb-2">Welcome</h1>
             <p className="text-blue-700 text-lg font-medium">
               To Your Finance Companion
             </p>
