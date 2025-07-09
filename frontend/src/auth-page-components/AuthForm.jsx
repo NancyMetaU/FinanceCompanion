@@ -9,6 +9,7 @@ import ErrorMessage from "../shared-components/ErrorMessage";
 import { useNavigate } from "react-router-dom";
 
 const auth = getAuth();
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 const AuthForm = () => {
   const navigate = useNavigate();
@@ -26,8 +27,17 @@ const AuthForm = () => {
       if (isLogin) {
         await signInWithEmailAndPassword(auth, email, password);
       } else {
-        await createUserWithEmailAndPassword(auth, email, password);
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const idToken = await userCredential.user.getIdToken();
+
+        await fetch(`${BACKEND_URL}/api/user/init`, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${idToken}`,
+          },
+        });
       }
+
       navigate("/");
     } catch (err) {
       setError(err.message);
