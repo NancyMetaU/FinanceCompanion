@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAuth } from "firebase/auth";
 import Header from "../shared-components/Header";
+import Footer from "../shared-components/Footer";
 import Sidebar from "../shared-components/Sidebar";
 import PlaidLinkButton from "../budget-page-components/PlaidLinkButton";
 import BankAccountList from "../budget-page-components/BankAccountList";
@@ -77,30 +78,31 @@ const BudgetPage = () => {
         <Sidebar />
 
         <main className="flex-1 p-6">
-          <div className="flex justify-between items-center mt-5 mb-10">
+          <section className="flex justify-between items-center mt-5 mb-10">
             <h1 className="text-3xl font-bold">My Budget Dashboard</h1>
             {!hasBankLinked && (
               <PlaidLinkButton onBankLinked={handleBankLinked} />
             )}
-          </div>
+          </section>
 
           {loading && <Loading message="Fetching your financial data..." />}
           {error && <ErrorMessage message={error} />}
 
           {!loading && !error && (
             <>
-              <div className="grid gap-8 lg:grid-cols-2 mb-10">
+              <section className="grid gap-8 lg:grid-cols-2 mb-10">
                 <BankAccountList accounts={accounts} />
                 <TransactionList transactions={transactions} />
-              </div>
+              </section>
 
-              <div className="flex justify-center">
+              <section className="flex justify-center">
                 <CreateBudgetButton />
-              </div>
+              </section>
             </>
           )}
         </main>
       </div>
+      <Footer />
     </div>
   );
 };
