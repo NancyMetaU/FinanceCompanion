@@ -10,6 +10,18 @@ const createUser = async (id, email) => {
   });
 };
 
+const updateUserPreferences = async (id, preferences) => {
+  return await prisma.user.update({
+    where: { id },
+    data: {
+      monthlyIncome: preferences.monthlyIncome,
+      savingsPriority: preferences.savingsPriority,
+      debtPriority: preferences.debtPriority,
+      spendingFocus: preferences.spendingFocus,
+    },
+  });
+};
+
 module.exports = {
   createUser,
 };
