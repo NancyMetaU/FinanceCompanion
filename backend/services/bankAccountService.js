@@ -49,7 +49,47 @@ const getUserAccounts = async (userId) => {
   });
 };
 
+const getTotalDebt = async (userId) => {
+  const debtAccounts = await prisma.bankAccount.findMany({
+    where: {
+      userId,
+      OR: [
+        { type: "credit" },
+        { type: "loan" },
+        {
+          subtype: {
+            in: [
+              "credit card",
+              "paypal",
+              "mortgage",
+              "student",
+              "auto",
+              "business",
+              "commercial",
+              "construction",
+            ],
+          },
+        },
+      ],
+    },
+  });
+
+  const totalDebt = debtAccounts.reduce((sum, acc) => sum + acc.balance, 0);
+
+  return {
+    totalDebt: totalDebt,
+    accountCount: debtAccounts.length,
+    breakdown: debtAccounts.map((acc) => ({
+      name: acc.name,
+      type: acc.type,
+      subtype: acc.subtype,
+      balance: acc.balance,
+    })),
+  };
+};
+
 module.exports = {
   syncBankAccounts,
   getUserAccounts,
+  getTotalDebt,
 };
