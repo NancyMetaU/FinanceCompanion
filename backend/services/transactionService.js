@@ -2,6 +2,41 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 const { plaidClient } = require("../config/plaidClient");
 
+const calculateDaysDifference = (date1, date2) => {
+  const msPerDay = 1000 * 60 * 60 * 24;
+  const time1 = new Date(date1).getTime();
+  const time2 = new Date(date2).getTime();
+  return Math.round((time1 - time2) / msPerDay);
+};
+
+const isMonthlyRecurring = (transactions) => {
+  if (transactions.length < 3) return false;
+
+  const sortedTxns = [...transactions].sort(
+    (a, b) => new Date(a.date) - new Date(b.date)
+  );
+
+  for (let i = 1; i < sortedTxns.length; i++) {
+    const diff = calculateDaysDifference(
+      sortedTxns[i].date,
+      sortedTxns[i - 1].date
+    );
+    if (diff < 28 || diff > 32) return false;
+  }
+
+  return true;
+};
+
+const groupTransactionsByName = (transactions) => {
+  const grouped = {};
+  for (const txn of transactions) {
+    const nameKey = txn.name.toLowerCase().trim();
+    if (!grouped[nameKey]) grouped[nameKey] = [];
+    grouped[nameKey].push(txn);
+  }
+  return grouped;
+};
+
 const syncTransactions = async (userId) => {
   const plaidConnection = await prisma.plaidConnection.findFirst({
     where: { userId },
@@ -50,43 +85,6 @@ const getUserTransactions = async (userId) => {
   });
 };
 
-const groupTransactionsByName = (transactions) => {
-  const grouped = {};
-  for (const txn of transactions) {
-    const nameKey = txn.name.toLowerCase().trim();
-    if (!grouped[nameKey]) grouped[nameKey] = [];
-    grouped[nameKey].push(txn);
-  }
-  return grouped;
-};
-
-const calculateDaysDifference = (date1, date2) => {
-  const msPerDay = 1000 * 60 * 60 * 24;
-  const time1 = new Date(date1).getTime();
-  const time2 = new Date(date2).getTime();
-  return Math.round((time1 - time2) / msPerDay);
-};
-
-const isMonthlyRecurring = (transactions) => {
-  if (transactions.length < 3) return false;
-
-  const sortedTxns = [...transactions].sort(
-    (a, b) => new Date(a.date) - new Date(b.date)
-  );
-
-  for (let i = 1; i < sortedTxns.length; i++) {
-    const diff = calculateDaysDifference(
-      sortedTxns[i].date,
-      sortedTxns[i - 1].date
-    );
-    if (diff < 28 || diff > 32) {
-      return false;
-    }
-  }
-
-  return true;
-};
-
 const getRecurringMonthlyTransactions = async (userId) => {
   const transactions = await prisma.transaction.findMany({
     where: {
@@ -99,20 +97,17 @@ const getRecurringMonthlyTransactions = async (userId) => {
   });
 
   const groupedTransactions = groupTransactionsByName(transactions);
-  const recurring = [];
 
-  for (const [name, txns] of Object.entries(groupedTransactions)) {
-    if (isMonthlyRecurring(txns)) {
+  return Object.entries(groupedTransactions)
+    .filter(([_, txns]) => isMonthlyRecurring(txns))
+    .map(([name, txns]) => {
       const lastTxn = txns[txns.length - 1];
-      recurring.push({
+      return {
         name,
         amount: Math.abs(lastTxn.amount),
         category: lastTxn.category || null,
-      });
-    }
-  }
-
-  return recurring;
+      };
+    });
 };
 
 module.exports = {
