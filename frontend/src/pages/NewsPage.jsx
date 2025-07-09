@@ -15,7 +15,7 @@ const NewsPage = () => {
       <div className="flex flex-1">
         <Sidebar />
         <main className="flex-1 px-10 py-10">
-          <FeaturedArticle article={featured} />
+          <FeaturedArticle {...featured} />
           <ArticleGrid articles={rest} />
         </main>
       </div>
