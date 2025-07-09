@@ -24,4 +24,5 @@ const updateUserPreferences = async (id, preferences) => {
 
 module.exports = {
   createUser,
+  updateUserPreferences,
 };

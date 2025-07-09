@@ -1,6 +1,9 @@
 const express = require("express");
 const verifyFirebaseToken = require("../config/auth");
-const { createUser } = require("../services/userService");
+const {
+  createUser,
+  updateUserPreferences,
+} = require("../services/userService");
 
 const router = express.Router();
 
@@ -18,7 +21,8 @@ router.post("/init", verifyFirebaseToken, async (req, res) => {
 
 router.post("/preferences", verifyFirebaseToken, async (req, res) => {
   const userId = req.uid;
-  const { monthlyIncome, savingsPriority, debtPriority, spendingFocus } = req.body;
+  const { monthlyIncome, savingsPriority, debtPriority, spendingFocus } =
+    req.body;
 
   try {
     const updatedUser = await updateUserPreferences(userId, {
