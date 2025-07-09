@@ -37,35 +37,63 @@ const AuthForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="auth-form">
+    <form onSubmit={handleSubmit} className="space-y-6">
       {loading && <Loading message="Logging in..." />}
       {error && <ErrorMessage message={error} />}
-      <input
-        type="email"
-        placeholder="Email"
-        required
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="auth-input"
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        required
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        className="auth-input"
-      />
-      <button type="submit" className="auth-submit-btn">
-        {isLogin ? "Login" : "Sign Up"}
-      </button>
+
+      <div className="space-y-4">
+        <label
+          htmlFor="email"
+          className="block text-sm font-medium text-blue-900 mb-2"
+        >
+          Email Address
+        </label>
+        <input
+          id="email"
+          type="email"
+          placeholder="Enter your email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full px-4 py-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+
+        <label
+          htmlFor="password"
+          className="block text-sm font-medium text-blue-900 mb-2"
+        >
+          Password
+        </label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Enter your password"
+          required
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="w-full px-4 py-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+
       <button
-        type="button"
-        onClick={() => setIsLogin(!isLogin)}
-        className="auth-change-btn"
+        type="submit"
+        disabled={loading}
+        className="w-full bg-royal hover:bg-blue-800 text-white font-semibold py-3 px-4 rounded-lg hover:scale-[1.01] cursor-pointer"
       >
-        {isLogin ? "Don't have an Account?" : "Already Have an Account?"}
+        {loading ? "Please wait..." : isLogin ? "Sign In" : "Create Account"}
       </button>
+
+      <div className="text-center">
+        <button
+          type="button"
+          onClick={() => setIsLogin(!isLogin)}
+          className="text-royal hover:text-blue-800 font-medium underline-offset-4 hover:underline cursor-pointer"
+        >
+          {isLogin
+            ? "Don't have an account? Sign up"
+            : "Already have an account? Sign in"}
+        </button>
+      </div>
     </form>
   );
 };

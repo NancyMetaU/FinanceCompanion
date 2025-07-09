@@ -12,7 +12,7 @@ const Header = () => {
           className="flex items-center space-x-4 hover:opacity-80 transition-opacity"
         >
           <img src={logo} alt="Logo" className="h-20 w-20" />
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-royal via-blue-600 to-purple-600 bg-clip-text text-transparent tracking-wide">
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-royal to-blue-400 bg-clip-text text-transparent tracking-wide">
             Finance Companion
           </h1>
         </Link>
