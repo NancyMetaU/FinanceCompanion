@@ -12,6 +12,7 @@ async function verifyFirebaseToken(req, res, next) {
   try {
     const decodedToken = await admin.auth().verifyIdToken(idToken);
     req.uid = decodedToken.uid;
+    req.email = decodedToken.email;
     next();
   } catch (err) {
     console.error("Firebase token verification failed:", err);

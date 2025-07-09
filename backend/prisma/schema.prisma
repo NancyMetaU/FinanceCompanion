@@ -13,6 +13,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id              String   @id
+  email           String   @unique
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  monthlyIncome   Float?
+  savingsPriority String?
+  debtPriority    String?
+  spendingFocus   String?
+}
+
 model PlaidConnection {
   id            String   @id @default(cuid())
   userId        String
