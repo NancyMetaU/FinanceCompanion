@@ -1,4 +1,5 @@
 const { getUserPreferences } = require("./userService");
+const { getRecurringMonthlyTransactions } = require("./transactionService");
 
 /**
  * This budget logic is based on the 50/30/20 rule, but adjusts based on income.
@@ -54,6 +55,25 @@ const getDynamicBudgetSplit = (income) => {
   };
 };
 
+const adjustNeedsForRecurring = (income, needsPct, recurringTxns) => {
+  const recurringTotal = recurringTxns.reduce(
+    (sum, txn) => sum + txn.amount,
+    0
+  );
+  const originalNeeds = income * needsPct;
+  const needsRemaining = Math.max(0, originalNeeds - recurringTotal);
+  const overCommitted = recurringTotal > originalNeeds;
+
+  return {
+    original: originalNeeds,
+    recurring: recurringTotal,
+    allocated: needsRemaining,
+    warning: overCommitted
+      ? "Your recurring expenses exceed your needs budget."
+      : null,
+  };
+};
+
 const calculateBudget = async (userId) => {
   try {
     const preferences = await getUserPreferences(userId);
@@ -63,15 +83,20 @@ const calculateBudget = async (userId) => {
       throw new Error("Missing income in user preferences.");
     }
 
-    const base = getDynamicBudgetSplit(monthlyIncome);
+    const { needsPct, wantsPct, savingsPct } = getDynamicBudgetSplit(monthlyIncome);
+    const recurringTxns = await getRecurringMonthlyTransactions(userId);
+    const needs = adjustNeedsForRecurring(monthlyIncome, needsPct, recurringTxns);
+    const wants = { allocated: monthlyIncome * wantsPct };
+    const savings = { allocated: monthlyIncome * savingsPct };
 
     return {
       income: monthlyIncome,
       buckets: {
-        needs: { allocated: base.needsPct * monthlyIncome },
-        wants: { allocated: base.wantsPct * monthlyIncome },
-        savings: { allocated: base.savingsPct * monthlyIncome },
+        needs,
+        wants,
+        savings,
       },
+      warning: needs.warning || null,
     };
   } catch (error) {
     console.error("Budget calculation failed:", error);
@@ -82,4 +107,5 @@ const calculateBudget = async (userId) => {
 module.exports = {
   calculateBudget,
   getDynamicBudgetSplit,
+  adjustNeedsForRecurring,
 };
