@@ -22,7 +22,20 @@ const updateUserPreferences = async (id, preferences) => {
   });
 };
 
+const getUserPreferences = async (id) => {
+  return await prisma.user.findUnique({
+    where: { id },
+    select: {
+      monthlyIncome: true,
+      savingsPriority: true,
+      debtPriority: true,
+      spendingFocus: true,
+    },
+  });
+};
+
 module.exports = {
   createUser,
   updateUserPreferences,
+  getUserPreferences,
 };
