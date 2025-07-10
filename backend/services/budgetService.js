@@ -81,4 +81,5 @@ const calculateBudget = async (userId) => {
 
 module.exports = {
   calculateBudget,
+  getDynamicBudgetSplit,
 };
