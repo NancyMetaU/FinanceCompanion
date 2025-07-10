@@ -74,6 +74,14 @@ const adjustNeedsForRecurring = (income, needsPct, recurringTxns) => {
   };
 };
 
+const adjustBudgetForDebtPriority = (wantsPct, savingsPct, debtPriority) => {
+
+  return {
+    wantsPct: newWantsPct,
+    savingsPct: newSavingsPct,
+  };
+};
+
 const calculateBudget = async (userId) => {
   try {
     const preferences = await getUserPreferences(userId);
@@ -83,9 +91,14 @@ const calculateBudget = async (userId) => {
       throw new Error("Missing income in user preferences.");
     }
 
-    const { needsPct, wantsPct, savingsPct } = getDynamicBudgetSplit(monthlyIncome);
+    const { needsPct, wantsPct, savingsPct } =
+      getDynamicBudgetSplit(monthlyIncome);
     const recurringTxns = await getRecurringMonthlyTransactions(userId);
-    const needs = adjustNeedsForRecurring(monthlyIncome, needsPct, recurringTxns);
+    const needs = adjustNeedsForRecurring(
+      monthlyIncome,
+      needsPct,
+      recurringTxns
+    );
     const wants = { allocated: monthlyIncome * wantsPct };
     const savings = { allocated: monthlyIncome * savingsPct };
 
