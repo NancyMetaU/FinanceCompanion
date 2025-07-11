@@ -75,10 +75,55 @@ const adjustNeedsForRecurring = (income, needsPct, recurringTxns) => {
 };
 
 const adjustBudgetForDebtPriority = (wantsPct, savingsPct, debtPriority) => {
+  const adjustments = {
+    low: { wantsShift: 0, savingsBoost: 0, debtSplit: 0.1 },
+    medium: { wantsShift: -0.02, savingsBoost: 0.02, debtSplit: 0.35 },
+    high: { wantsShift: -0.07, savingsBoost: 0.07, debtSplit: 0.6 },
+  };
+
+  const { wantsShift, savingsBoost, debtSplit } = adjustments[debtPriority];
+
+  const newWantsPct = Math.max(0, wantsPct + wantsShift);
+  const newSavingsTotal = Math.min(1, savingsPct + savingsBoost);
+
+  const debtSavingsPct = newSavingsTotal * debtSplit;
+  const futureSavingsPct = newSavingsTotal - debtSavingsPct;
 
   return {
     wantsPct: newWantsPct,
-    savingsPct: newSavingsPct,
+    futureSavingsPct,
+    debtSavingsPct,
+  };
+};
+
+const buildBudgetBreakdown = (preferences, recurringTxns) => {
+  const { monthlyIncome, debtPriority } = preferences;
+
+  const { needsPct, wantsPct, savingsPct } =
+    getDynamicBudgetSplit(monthlyIncome);
+
+  const {
+    wantsPct: adjustedWantsPct,
+    futureSavingsPct,
+    debtSavingsPct,
+  } = adjustBudgetForDebtPriority(wantsPct, savingsPct, debtPriority);
+
+  const needs = adjustNeedsForRecurring(monthlyIncome, needsPct, recurringTxns);
+
+  const wants = {
+    allocated: monthlyIncome * adjustedWantsPct,
+  };
+
+  const savings = {
+    total: monthlyIncome * (futureSavingsPct + debtSavingsPct),
+    forFuture: monthlyIncome * futureSavingsPct,
+    forDebt: monthlyIncome * debtSavingsPct,
+  };
+
+  return {
+    income: monthlyIncome,
+    buckets: { needs, wants, savings },
+    warning: needs.warning || null,
   };
 };
 
@@ -91,26 +136,8 @@ const calculateBudget = async (userId) => {
       throw new Error("Missing income in user preferences.");
     }
 
-    const { needsPct, wantsPct, savingsPct } =
-      getDynamicBudgetSplit(monthlyIncome);
     const recurringTxns = await getRecurringMonthlyTransactions(userId);
-    const needs = adjustNeedsForRecurring(
-      monthlyIncome,
-      needsPct,
-      recurringTxns
-    );
-    const wants = { allocated: monthlyIncome * wantsPct };
-    const savings = { allocated: monthlyIncome * savingsPct };
-
-    return {
-      income: monthlyIncome,
-      buckets: {
-        needs,
-        wants,
-        savings,
-      },
-      warning: needs.warning || null,
-    };
+    return buildBudgetBreakdown(preferences, recurringTxns);
   } catch (error) {
     console.error("Budget calculation failed:", error);
     throw new Error(`Error calculating budget: ${error.message}`);
@@ -121,4 +148,6 @@ module.exports = {
   calculateBudget,
   getDynamicBudgetSplit,
   adjustNeedsForRecurring,
+  adjustBudgetForDebtPriority,
+  buildBudgetBreakdown,
 };
