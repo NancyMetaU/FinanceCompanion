@@ -78,6 +78,11 @@ const adjustBudgetForDebtPriority = (wantsPct, savingsPct, debtPriority) => {
   };
 };
 
+const adjustBudgetForSavingsPriority = (savingsPct, savingsPriority) => {
+  return;
+};
+
+
 const buildBudgetBreakdown = (preferences, recurringTxns) => {
   const { monthlyIncome, debtPriority } = preferences;
 
