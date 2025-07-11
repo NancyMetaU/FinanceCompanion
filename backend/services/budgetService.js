@@ -20,28 +20,16 @@ const getDynamicBudgetSplit = (income) => {
   }
 
   const incomeScale = income / (income + 10000);
-  const lowIncomeScale = 1 - incomeScale;
 
-  const baseNeeds = 0.55;
-  const minNeeds = 0.35;
-  const needsPct =
-    baseNeeds - (baseNeeds - minNeeds) * Math.pow(incomeScale, 1.2);
-
-  const baseWants = 0.25;
-  const maxWants = 0.35;
-  let wantsPct =
-    baseWants + (maxWants - baseWants) * Math.pow(incomeScale, 0.5);
-
-  const rawSavings = 1 - needsPct - wantsPct;
-  const boostSavings = 0.05 * Math.pow(lowIncomeScale, 2);
-  let savingsPct = rawSavings + boostSavings;
+  const needsPct = 0.55 - (0.55 - 0.35) * Math.pow(incomeScale, 1.2);
+  let wantsPct = 0.25 + (0.35 - 0.25) * Math.pow(incomeScale, 0.5);
+  let savingsPct =
+    1 - needsPct - wantsPct + 0.05 * Math.pow(1 - incomeScale, 2);
 
   let total = needsPct + wantsPct + savingsPct;
   if (total > 1) {
     let overflow = total - 1;
-    const minWantsFloor = 0.2;
-    const availableWantsTrim = Math.max(wantsPct - minWantsFloor, 0);
-    const wantsTrim = Math.min(overflow, availableWantsTrim);
+    const wantsTrim = Math.min(overflow, Math.max(wantsPct - 0.2, 0));
     wantsPct -= wantsTrim;
     overflow -= wantsTrim;
 
@@ -61,37 +49,31 @@ const adjustNeedsForRecurring = (income, needsPct, recurringTxns) => {
     0
   );
   const originalNeeds = income * needsPct;
-  const needsRemaining = Math.max(0, originalNeeds - recurringTotal);
-  const overCommitted = recurringTotal > originalNeeds;
 
   return {
     original: originalNeeds,
     recurring: recurringTotal,
-    allocated: needsRemaining,
-    warning: overCommitted
-      ? "Your recurring expenses exceed your needs budget."
-      : null,
+    allocated: Math.max(0, originalNeeds - recurringTotal),
+    warning:
+      recurringTotal > originalNeeds
+        ? "Your recurring expenses exceed your needs budget."
+        : null,
   };
 };
 
 const adjustBudgetForDebtPriority = (wantsPct, savingsPct, debtPriority) => {
-  const adjustments = {
-    low: { wantsShift: 0, savingsBoost: 0, debtSplit: 0.1 },
+  const { wantsShift, savingsBoost, debtSplit } = {
+    low: { wantsShift: 0, savingsBoost: 0, bdrbbhjtfejfgkcrhtbvbueiuedebtSplit: 0.1 },
     medium: { wantsShift: -0.02, savingsBoost: 0.02, debtSplit: 0.35 },
     high: { wantsShift: -0.07, savingsBoost: 0.07, debtSplit: 0.6 },
-  };
+  }[debtPriority];
 
-  const { wantsShift, savingsBoost, debtSplit } = adjustments[debtPriority];
-
-  const newWantsPct = Math.max(0, wantsPct + wantsShift);
   const newSavingsTotal = Math.min(1, savingsPct + savingsBoost);
-
   const debtSavingsPct = newSavingsTotal * debtSplit;
-  const futureSavingsPct = newSavingsTotal - debtSavingsPct;
 
   return {
-    wantsPct: newWantsPct,
-    futureSavingsPct,
+    wantsPct: Math.max(0, wantsPct + wantsShift),
+    futureSavingsPct: newSavingsTotal - debtSavingsPct,
     debtSavingsPct,
   };
 };
@@ -110,19 +92,19 @@ const buildBudgetBreakdown = (preferences, recurringTxns) => {
 
   const needs = adjustNeedsForRecurring(monthlyIncome, needsPct, recurringTxns);
 
-  const wants = {
-    allocated: monthlyIncome * adjustedWantsPct,
-  };
-
-  const savings = {
-    total: monthlyIncome * (futureSavingsPct + debtSavingsPct),
-    forFuture: monthlyIncome * futureSavingsPct,
-    forDebt: monthlyIncome * debtSavingsPct,
-  };
-
   return {
     income: monthlyIncome,
-    buckets: { needs, wants, savings },
+    buckets: {
+      needs,
+      wants: {
+        allocated: monthlyIncome * adjustedWantsPct,
+      },
+      savings: {
+        total: monthlyIncome * (futureSavingsPct + debtSavingsPct),
+        forFuture: monthlyIncome * futureSavingsPct,
+        forDebt: monthlyIncome * debtSavingsPct,
+      },
+    },
     warning: needs.warning || null,
   };
 };
@@ -130,14 +112,15 @@ const buildBudgetBreakdown = (preferences, recurringTxns) => {
 const calculateBudget = async (userId) => {
   try {
     const preferences = await getUserPreferences(userId);
-    const { monthlyIncome } = preferences;
 
-    if (!monthlyIncome) {
+    if (!preferences.monthlyIncome) {
       throw new Error("Missing income in user preferences.");
     }
 
-    const recurringTxns = await getRecurringMonthlyTransactions(userId);
-    return buildBudgetBreakdown(preferences, recurringTxns);
+    return buildBudgetBreakdown(
+      preferences,
+      await getRecurringMonthlyTransactions(userId)
+    );
   } catch (error) {
     console.error("Budget calculation failed:", error);
     throw new Error(`Error calculating budget: ${error.message}`);
