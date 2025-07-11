@@ -63,7 +63,7 @@ const adjustNeedsForRecurring = (income, needsPct, recurringTxns) => {
 
 const adjustBudgetForDebtPriority = (wantsPct, savingsPct, debtPriority) => {
   const { wantsShift, savingsBoost, debtSplit } = {
-    low: { wantsShift: 0, savingsBoost: 0, bdrbbhjtfejfgkcrhtbvbueiuedebtSplit: 0.1 },
+    low: { wantsShift: 0, savingsBoost: 0, debtSplit: 0.1 },
     medium: { wantsShift: -0.02, savingsBoost: 0.02, debtSplit: 0.35 },
     high: { wantsShift: -0.07, savingsBoost: 0.07, debtSplit: 0.6 },
   }[debtPriority];
