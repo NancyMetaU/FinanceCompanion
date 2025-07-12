@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { getAuth } from "firebase/auth";
 import PreferenceRadioGroup from "./PreferenceRadioGroup";
 import ErrorMessage from "../shared-components/ErrorMessage";
+import RankedMultiSelect from "./RankedMultiSelect";
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
@@ -28,7 +29,7 @@ const BudgetForm = ({ closeModal }) => {
     monthlyIncome: "",
     savingsPriority: "",
     debtPriority: "",
-    spendingFocus: "",
+    spendingFocus: [],
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -104,12 +105,12 @@ const BudgetForm = ({ closeModal }) => {
         onChange={handleInputChange}
         options={PRIORITY_OPTIONS}
       />
-      <PreferenceRadioGroup
+      <RankedMultiSelect
         name="spendingFocus"
-        label="Where do you like to treat yourself?"
+        options={SPENDING_FOCUS_OPTIONS}
         value={formData.spendingFocus}
         onChange={handleInputChange}
-        options={SPENDING_FOCUS_OPTIONS}
+        label="Top 3 categories you like to treat yourself in"
       />
 
       <div className="flex gap-3 mt-8">
