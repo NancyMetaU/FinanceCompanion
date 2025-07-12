@@ -22,7 +22,7 @@ model User {
   monthlyIncome   Float?
   savingsPriority String?
   debtPriority    String?
-  spendingFocus   String?
+  spendingFocus   String[] @default([])
 }
 
 model PlaidConnection {
