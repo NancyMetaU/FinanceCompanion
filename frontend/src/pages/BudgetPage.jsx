@@ -107,15 +107,17 @@ const BudgetPage = () => {
                 <BankAccountList accounts={accounts} />
                 <TransactionList transactions={transactions} />
               </section>
-
-              <section className="flex justify-center">
-                <CreateBudgetButton onBudgetGenerated={setBudget} />
-              </section>
               {budget && (
                 <section className="mt-10">
                   <BudgetBreakdown budget={budget} />
                 </section>
               )}
+              <section className="flex justify-center mt-10">
+                <CreateBudgetButton
+                  onBudgetGenerated={setBudget}
+                  hasBudget={!!budget}
+                />
+              </section>
             </>
           )}
         </main>
