@@ -1,5 +1,7 @@
+const { PrismaClient } = require("@prisma/client");
 const { getUserPreferences } = require("./userService");
 const { getRecurringMonthlyTransactions } = require("./transactionService");
+const prisma = new PrismaClient();
 
 /**
  * This budget logic is based on the 50/30/20 rule, but adjusts based on income.
@@ -177,18 +179,57 @@ const calculateBudget = async (userId) => {
       throw new Error("Missing income in user preferences.");
     }
 
-    return buildBudgetBreakdown(
+    const budgetData = buildBudgetBreakdown(
       preferences,
       await getRecurringMonthlyTransactions(userId)
     );
+
+    const savedBudget = await saveBudget(userId, budgetData);
+    return savedBudget;
   } catch (error) {
     console.error("Budget calculation failed:", error);
     throw new Error(`Error calculating budget: ${error.message}`);
   }
 };
 
+const saveBudget = async (userId, budgetData) => {
+  try {
+    const budget = await prisma.budget.upsert({
+      where: { userId },
+      update: {
+        income: budgetData.income,
+        budgetData: budgetData,
+        updatedAt: new Date(),
+      },
+      create: {
+        userId,
+        income: budgetData.income,
+        budgetData: budgetData,
+      },
+    });
+    return budget;
+  } catch (error) {
+    console.error("Error saving budget:", error);
+    throw new Error(`Failed to save budget: ${error.message}`);
+  }
+};
+
+const getBudget = async (userId) => {
+  try {
+    const budget = await prisma.budget.findUnique({
+      where: { userId },
+    });
+    return budget;
+  } catch (error) {
+    console.error("Error retrieving budget:", error);
+    throw new Error(`Failed to retrieve budget: ${error.message}`);
+  }
+};
+
 module.exports = {
   calculateBudget,
+  saveBudget,
+  getBudget,
   getDynamicBudgetSplit,
   calculateNeedsBreakdown,
   adjustBudgetForDebtPriority,
