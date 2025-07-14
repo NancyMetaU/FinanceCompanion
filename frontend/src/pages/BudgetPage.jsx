@@ -32,7 +32,7 @@ const BudgetPage = () => {
 
       const idToken = await user.getIdToken();
 
-      const [accRes, txRes] = await Promise.all([
+      const [accRes, txRes, budgetRes] = await Promise.all([
         fetch(`${BACKEND_URL}/api/accounts/`, {
           headers: {
             "Content-Type": "application/json",
@@ -40,6 +40,12 @@ const BudgetPage = () => {
           },
         }),
         fetch(`${BACKEND_URL}/api/transactions/`, {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${idToken}`,
+          },
+        }),
+        fetch(`${BACKEND_URL}/api/budget/`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${idToken}`,
@@ -56,6 +62,11 @@ const BudgetPage = () => {
 
       setAccounts(accountsData);
       setTransactions(transactionsData);
+
+      if (budgetRes.ok) {
+        const budgetData = await budgetRes.json();
+        setBudget(budgetData.budgetData);
+      }
     } catch (err) {
       console.error(err);
       setError(err.message || "Data fetching failed");

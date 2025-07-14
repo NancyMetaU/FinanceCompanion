@@ -64,25 +64,26 @@ const BudgetForm = ({ closeModal, onSubmit }) => {
       if (!prefsRes.ok) throw new Error("Failed to update preferences");
 
       const budgetRes = await fetch(`${BACKEND_URL}/api/budget/calculate`, {
-        method: "GET",
+        method: "POST",
         headers: {
+          "Content-Type": "application/json",
           Authorization: `Bearer ${idToken}`,
         },
       });
 
       if (!budgetRes.ok) throw new Error("Failed to generate budget");
 
-      const budgetData = await budgetRes.json();
+      const budgetResponse = await budgetRes.json();
 
-      const budgetWithPriorities = {
-        ...budgetData,
+      const flattenedBudget = {
+        ...budgetResponse.budgetData,
         priorities: {
           savings: formData.savingsPriority,
           debt: formData.debtPriority,
         },
       };
 
-      onSubmit(budgetWithPriorities);
+      onSubmit(flattenedBudget);
       closeModal();
     } catch (err) {
       setError(err.message);
