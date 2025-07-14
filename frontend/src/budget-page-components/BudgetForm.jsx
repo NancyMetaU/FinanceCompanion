@@ -24,7 +24,7 @@ const SPENDING_FOCUS_OPTIONS = [
   { value: "pets", label: "Pets" },
 ];
 
-const BudgetForm = ({ closeModal }) => {
+const BudgetForm = ({ closeModal, onSubmit }) => {
   const [formData, setFormData] = useState({
     monthlyIncome: "",
     savingsPriority: "",
@@ -47,7 +47,7 @@ const BudgetForm = ({ closeModal }) => {
       const user = getAuth().currentUser;
       const idToken = await user.getIdToken();
 
-      const res = await fetch(`${BACKEND_URL}/api/user/preferences`, {
+      const prefsRes = await fetch(`${BACKEND_URL}/api/user/preferences`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -60,7 +60,29 @@ const BudgetForm = ({ closeModal }) => {
           spendingFocus: formData.spendingFocus,
         }),
       });
-      if (!res.ok) throw new Error("Failed to update preferences");
+
+      if (!prefsRes.ok) throw new Error("Failed to update preferences");
+
+      const budgetRes = await fetch(`${BACKEND_URL}/api/budget/calculate`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${idToken}`,
+        },
+      });
+
+      if (!budgetRes.ok) throw new Error("Failed to generate budget");
+
+      const budgetData = await budgetRes.json();
+
+      const budgetWithPriorities = {
+        ...budgetData,
+        priorities: {
+          savings: formData.savingsPriority,
+          debt: formData.debtPriority,
+        },
+      };
+
+      onSubmit(budgetWithPriorities);
       closeModal();
     } catch (err) {
       setError(err.message);

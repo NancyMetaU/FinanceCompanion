@@ -7,6 +7,7 @@ import PlaidLinkButton from "../budget-page-components/PlaidLinkButton";
 import BankAccountList from "../budget-page-components/BankAccountList";
 import TransactionList from "../budget-page-components/TransactionList";
 import CreateBudgetButton from "../budget-page-components/CreateBudgetButton";
+import BudgetBreakdown from "../budget-page-components/BudgetBreakdown";
 import Loading from "../shared-components/Loading";
 import ErrorMessage from "../shared-components/ErrorMessage";
 
@@ -15,6 +16,7 @@ const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 const BudgetPage = () => {
   const [accounts, setAccounts] = useState([]);
   const [transactions, setTransactions] = useState([]);
+  const [budget, setBudget] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -96,8 +98,13 @@ const BudgetPage = () => {
               </section>
 
               <section className="flex justify-center">
-                <CreateBudgetButton />
+                <CreateBudgetButton onBudgetGenerated={setBudget} />
               </section>
+              {budget && (
+                <section className="mt-10">
+                  <BudgetBreakdown budget={budget} />
+                </section>
+              )}
             </>
           )}
         </main>
