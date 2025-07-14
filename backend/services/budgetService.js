@@ -21,7 +21,7 @@ const getDynamicBudgetSplit = (income) => {
 
   const incomeScale = income / (income + 10000);
 
-const needsPct = 0.55 - (0.55 - 0.35) * Math.pow(incomeScale, 1.2);
+  const needsPct = 0.55 - (0.55 - 0.35) * Math.pow(incomeScale, 1.2);
   let wantsPct = 0.25 + (0.35 - 0.25) * Math.pow(incomeScale, 0.5);
   let savingsPct = 1 - needsPct - wantsPct;
 
@@ -77,7 +77,11 @@ const adjustBudgetForDebtPriority = (wantsPct, savingsPct, debtPriority) => {
   };
 };
 
-const adjustBudgetForSavingsPriority = (futureSavingsPct,savingsPriority,income) => {
+const adjustBudgetForSavingsPriority = (
+  futureSavingsPct,
+  savingsPriority,
+  income
+) => {
   const incomeScale = income / (income + 8000);
 
   const savingsBoosts = {
@@ -89,8 +93,47 @@ const adjustBudgetForSavingsPriority = (futureSavingsPct,savingsPriority,income)
   return Math.min(1, futureSavingsPct + savingsBoosts[savingsPriority]);
 };
 
+const calculateWantsBreakdown = (totalWantsAmount, spendingFocus = []) => {
+  const assignableAmount = totalWantsAmount * 0.7;
+  const unassignedAmount = totalWantsAmount * 0.3;
+  const maxPerCategory = totalWantsAmount * 0.5;
+
+  if (!spendingFocus.length) {
+    return {
+      total: totalWantsAmount,
+      categories: {},
+      other: Math.round(unassignedAmount * 100) / 100,
+    };
+  }
+
+  const weights = spendingFocus.map((_, i) => Math.pow(0.6, i));
+  const weightSum = weights.reduce((sum, w) => sum + w, 0);
+
+  let remaining = assignableAmount;
+  const categories = {};
+  spendingFocus.forEach((category, i) => {
+    const pct = weights[i] / weightSum;
+    let allocation = assignableAmount * pct;
+
+    if (allocation > maxPerCategory) {
+      allocation = maxPerCategory;
+    }
+
+    allocation = Math.min(allocation, remaining);
+    categories[category] = Math.round(allocation * 100) / 100;
+    remaining -= allocation;
+  });
+
+  return {
+    total: totalWantsAmount,
+    categories,
+    other: Math.round((unassignedAmount + remaining) * 100) / 100,
+  };
+};
+
 const buildBudgetBreakdown = (preferences, recurringTxns) => {
-  const { monthlyIncome, debtPriority, savingsPriority } = preferences;
+  const { monthlyIncome, debtPriority, savingsPriority, spendingFocus } =
+    preferences;
 
   const { needsPct, wantsPct, savingsPct } =
     getDynamicBudgetSplit(monthlyIncome);
@@ -108,14 +151,14 @@ const buildBudgetBreakdown = (preferences, recurringTxns) => {
   );
 
   const needs = calculateNeedsBreakdown(monthlyIncome, needsPct, recurringTxns);
+  const totalWantsAmount = monthlyIncome * adjustedWantsPct;
+  const wants = calculateWantsBreakdown(totalWantsAmount, spendingFocus);
 
   return {
     income: monthlyIncome,
     buckets: {
       needs,
-      wants: {
-        allocated: monthlyIncome * adjustedWantsPct,
-      },
+      wants,
       savings: {
         total: monthlyIncome * (adjustedFutureSavings + debtSavingsPct),
         longTerm: monthlyIncome * adjustedFutureSavings,
@@ -149,6 +192,7 @@ module.exports = {
   getDynamicBudgetSplit,
   calculateNeedsBreakdown,
   adjustBudgetForDebtPriority,
+  calculateWantsBreakdown,
   buildBudgetBreakdown,
   adjustBudgetForSavingsPriority,
 };
