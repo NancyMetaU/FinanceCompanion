@@ -75,4 +75,22 @@ function calculateReadability(text) {
   return Math.max(0, Math.min(MAX_SCORE, Math.round(clarityScore)));
 }
 
-module.exports = { calculateReadability };
+function calculateDigestibilityScore(user, article) {
+  const text = `${article.title}. ${article.description} ${
+    article.snippet || ""
+  }`;
+  const score = calculateReadability(text);
+
+  const label =
+    score >= 80
+      ? "Highly Digestible"
+      : score >= 50
+      ? "Moderately Digestible"
+      : "Low Digestibility";
+
+  return { score, label };
+}
+module.exports = {
+  calculateReadability,
+  calculateDigestibilityScore,
+};
