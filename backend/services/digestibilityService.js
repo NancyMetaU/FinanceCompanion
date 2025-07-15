@@ -1,4 +1,5 @@
 const glossary = require("../utils/glossary");
+const { getUserArticleContext } = require("./articleContextService");
 
 const glossarySet = new Set(glossary.map((word) => word.toLowerCase()));
 
@@ -75,11 +76,31 @@ function calculateReadability(text) {
   return Math.max(0, Math.min(MAX_SCORE, Math.round(clarityScore)));
 }
 
-function calculateDigestibilityScore(user, article) {
+const getFamiliarityBoost = (userContext, tags) => {
+  const readTagCounts = userContext.readTags || {};
+  let boost = 0;
+
+  for (const tag of tags) {
+    const count = Math.min(readTagCounts[tag] || 0, 3);
+    boost += count * 5;
+  }
+
+  return Math.min(boost, 15);
+};
+
+const calculateDigestibilityScore = async (userId, article) => {
+  const userContext = await getUserArticleContext(userId);
+
   const text = `${article.title}. ${article.description} ${
     article.snippet || ""
   }`;
-  const score = calculateReadability(text);
+  const baseScore = calculateReadability(text);
+  const familiarityBoost = getFamiliarityBoost(userContext, article.tags || []);
+
+  const score = Math.max(
+    0,
+    Math.min(100, Math.round(baseScore + familiarityBoost))
+  );
 
   const label =
     score >= 80
@@ -89,8 +110,10 @@ function calculateDigestibilityScore(user, article) {
       : "Low Digestibility";
 
   return { score, label };
-}
+};
+
 module.exports = {
   calculateReadability,
   calculateDigestibilityScore,
+  getFamiliarityBoost,
 };
