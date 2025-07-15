@@ -7,6 +7,7 @@ const bankAccountRoutes = require("./routes/bankAccountRoutes");
 const newsRoutes = require("./routes/newsRoutes");
 const budgetRoutes = require("./routes/budgetRoutes");
 const userRoutes = require("./routes/userRoutes");
+const digestibilityRoutes = require("./routes/digestibilityRoutes");
 
 const server = express();
 server.use(helmet());
@@ -18,6 +19,7 @@ server.use("/api/accounts", bankAccountRoutes);
 server.use("/api/news", newsRoutes);
 server.use("/api/budget", budgetRoutes);
 server.use("/api/user", userRoutes);
+server.use("/api/digestibility", digestibilityRoutes);
 
 server.use("*", (req, res, next) => {
   next({ status: 404, message: "Not found" });
