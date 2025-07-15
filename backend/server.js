@@ -8,6 +8,7 @@ const newsRoutes = require("./routes/newsRoutes");
 const budgetRoutes = require("./routes/budgetRoutes");
 const userRoutes = require("./routes/userRoutes");
 const digestibilityRoutes = require("./routes/digestibilityRoutes");
+const articleContextRoutes = require("./routes/articleContextRoutes");
 
 const server = express();
 server.use(helmet());
@@ -20,6 +21,7 @@ server.use("/api/news", newsRoutes);
 server.use("/api/budget", budgetRoutes);
 server.use("/api/user", userRoutes);
 server.use("/api/digestibility", digestibilityRoutes);
+server.use("/api/articleContext", articleContextRoutes);
 
 server.use("*", (req, res, next) => {
   next({ status: 404, message: "Not found" });
