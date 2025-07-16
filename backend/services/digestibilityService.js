@@ -83,13 +83,13 @@ const getFamiliarityBoost = (userContext, industry) => {
   ).length;
 
   const count = Math.min(industryArticleCount, 3);
-  const boost = count * 5;
+  const boost = count * 3;
 
-  return Math.min(boost, 15);
+  return Math.min(boost, 9);
 };
 
 function getFeedbackBoost(userContext, industry) {
-  const feedback = userContext.feedback;
+  const feedback = userContext.feedback || {};
   const entries = Object.values(feedback)
     .filter((entry) => entry.industry === industry && entry.rating)
     .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
@@ -103,10 +103,11 @@ function getFeedbackBoost(userContext, industry) {
   }, 0);
   const avgRating = weightedSum / totalWeight;
 
-  const normalized = (avgRating - 1) / 4;
-  const scaledBoost = Math.pow(normalized, 0.7) * 10;
+  const centered = (avgRating - 3) / 2;
+  const scaled = Math.pow(Math.abs(centered), 0.7) * 10;
+  const signedBoost = centered > 0 ? scaled : -scaled;
 
-  return Math.min(Math.round(scaledBoost), 10);
+  return Math.round(signedBoost);
 }
 
 const calculateDigestibilityScore = async (userId, article) => {
