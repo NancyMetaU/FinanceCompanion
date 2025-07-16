@@ -83,9 +83,9 @@ const getFamiliarityBoost = (userContext, industry) => {
   ).length;
 
   const count = Math.min(industryArticleCount, 3);
-  const boost = count * 5;
+  const boost = count * 3;
 
-  return Math.min(boost, 15);
+  return Math.min(boost, 9);
 };
 
 function getFeedbackBoost(userContext, industry) {
