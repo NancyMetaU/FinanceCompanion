@@ -3,7 +3,7 @@ const verifyFirebaseToken = require("../config/auth");
 const {
   getUserArticleContext,
   updateReadArticles,
-  removeReadArticles,
+  removeReadArticle,
   createArticleFeedback,
   saveArticle,
   unsaveArticle,
@@ -11,27 +11,29 @@ const {
 
 const router = express.Router();
 
-router.get("/context", verifyFirebaseToken, async (req, res) => {
-  try {
-    const userId = req.uid;
-    const context = await getUserArticleContext(userId);
-    res.status(200).json(context);
-  } catch (err) {
-    console.error("Get article context error:", err);
-    res.status(500).json({ error: "Failed to retrieve article context" });
-  }
-});
-
 router.get("/read", verifyFirebaseToken, async (req, res) => {
   try {
     const userId = req.uid;
     const context = await getUserArticleContext(userId);
     res.status(200).json({
-      readArticles: context.readArticles || {},
+      readArticles: context.readArticles || [],
     });
   } catch (err) {
     console.error("Get read articles error:", err);
     res.status(500).json({ error: "Failed to retrieve read articles" });
+  }
+});
+
+router.get("/feedback", verifyFirebaseToken, async (req, res) => {
+  try {
+    const userId = req.uid;
+    const context = await getUserArticleContext(userId);
+    res.status(200).json({
+      feedback: context.feedback || {},
+    });
+  } catch (err) {
+    console.error("Get article feedback error:", err);
+    res.status(500).json({ error: "Failed to retrieve article feedback" });
   }
 });
 
@@ -51,18 +53,16 @@ router.get("/saved", verifyFirebaseToken, async (req, res) => {
 router.post("/read", verifyFirebaseToken, async (req, res) => {
   try {
     const userId = req.uid;
-    const { articleTypes } = req.body;
+    const { articleData } = req.body;
 
-    if (!articleTypes || !Array.isArray(articleTypes)) {
-      return res
-        .status(400)
-        .json({ error: "Missing or invalid articleTypes array" });
+    if (!articleData || !articleData.id) {
+      return res.status(400).json({ error: "Missing or invalid article data" });
     }
 
-    const updatedReadTypes = await updateReadArticles(userId, articleTypes);
+    const updatedReadArticles = await updateReadArticles(userId, articleData);
     res.status(200).json({
-      message: "Read articles updated successfully",
-      readArticles: updatedReadTypes,
+      message: "Read article added successfully",
+      readArticles: updatedReadArticles,
     });
   } catch (err) {
     console.error("Update read articles error:", err);
@@ -73,21 +73,17 @@ router.post("/read", verifyFirebaseToken, async (req, res) => {
 router.post("/feedback", verifyFirebaseToken, async (req, res) => {
   try {
     const userId = req.uid;
-    const { articleId, feedbackData } = req.body;
+    const { articleData } = req.body;
 
-    if (!articleId) {
-      return res.status(400).json({ error: "Missing articleId" });
+    if (!articleData || !articleData.id) {
+      return res.status(400).json({ error: "Missing or invalid article data" });
     }
 
-    if (!feedbackData) {
-      return res.status(400).json({ error: "Missing feedbackData" });
+    if (!articleData.rating) {
+      return res.status(400).json({ error: "Missing rating in article data" });
     }
 
-    const updatedFeedback = await createArticleFeedback(
-      userId,
-      articleId,
-      feedbackData
-    );
+    const updatedFeedback = await createArticleFeedback(userId, articleData);
     res.status(200).json({
       message: "Article feedback created successfully",
       feedback: updatedFeedback,
@@ -118,31 +114,23 @@ router.post("/save", verifyFirebaseToken, async (req, res) => {
   }
 });
 
-router.delete("/read", verifyFirebaseToken, async (req, res) => {
+router.delete("/read/:articleId", verifyFirebaseToken, async (req, res) => {
   try {
     const userId = req.uid;
-    const { articleTypes, removeCompletely = false } = req.body;
+    const { articleId } = req.params;
 
-    if (!articleTypes || !Array.isArray(articleTypes)) {
-      return res
-        .status(400)
-        .json({ error: "Missing or invalid articleTypes array" });
+    if (!articleId) {
+      return res.status(400).json({ error: "Missing articleId" });
     }
 
-    const updatedReadTypes = await removeReadArticles(
-      userId,
-      articleTypes,
-      removeCompletely
-    );
+    const updatedReadArticles = await removeReadArticle(userId, articleId);
     res.status(200).json({
-      message: removeCompletely
-        ? "Read articles removed completely"
-        : "Read articles decremented successfully",
-      readArticles: updatedReadTypes,
+      message: "Read article removed successfully",
+      readArticles: updatedReadArticles,
     });
   } catch (err) {
-    console.error("Remove read articles error:", err);
-    res.status(500).json({ error: "Failed to remove read articles" });
+    console.error("Remove read article error:", err);
+    res.status(500).json({ error: "Failed to remove read article" });
   }
 });
 

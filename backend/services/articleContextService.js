@@ -9,7 +9,7 @@ const getUserArticleContext = async (userId) => {
 
     return (
       context || {
-        readArticles: {},
+        readArticles: [],
         feedback: {},
         savedArticles: [],
       }
@@ -17,7 +17,7 @@ const getUserArticleContext = async (userId) => {
   } catch (error) {
     console.error("Error fetching user article context:", error);
     return {
-      readArticles: {},
+      readArticles: [],
       feedback: {},
       savedArticles: [],
     };
@@ -44,35 +44,39 @@ const createOrUpdateUserArticleContext = async (userId, contextData) => {
   }
 };
 
-const updateReadArticles = async (userId, articleTypes) => {
+const updateReadArticles = async (userId, articleData) => {
   try {
     const context = await getUserArticleContext(userId);
-    const currentReadTypes = context.readArticles || {};
+    const currentReadArticles = context.readArticles || [];
 
-    for (const type of articleTypes) {
-      currentReadTypes[type] = (currentReadTypes[type] || 0) + 1;
-    }
+    currentReadArticles.push({
+      articleId: articleData.id,
+      industry: articleData.industry || articleData.type || "",
+      readAt: new Date().toISOString(),
+    });
 
     await createOrUpdateUserArticleContext(userId, {
-      readArticles: currentReadTypes,
+      readArticles: currentReadArticles,
       feedback: context.feedback,
       savedArticles: context.savedArticles,
     });
 
-    return currentReadTypes;
+    return currentReadArticles;
   } catch (error) {
     console.error("Error updating read articles:", error);
     throw new Error(`Failed to update read articles: ${error.message}`);
   }
 };
 
-const createArticleFeedback = async (userId, articleId, feedbackData) => {
+const createArticleFeedback = async (userId, articleData) => {
   try {
     const context = await getUserArticleContext(userId);
     const currentFeedback = context.feedback || {};
 
-    currentFeedback[articleId] = {
-      ...feedbackData,
+    currentFeedback[articleData.id] = {
+      industry: articleData.industry || articleData.type || "",
+      rating: articleData.rating,
+      comment: articleData.comment || "",
       timestamp: new Date().toISOString(),
     };
 
@@ -111,35 +115,22 @@ const saveArticle = async (userId, articleId) => {
   }
 };
 
-const removeReadArticles = async (
-  userId,
-  articleTypes,
-  removeCompletely = false
-) => {
+const removeReadArticle = async (userId, articleId) => {
   try {
     const context = await getUserArticleContext(userId);
-    const currentReadTypes = context.readArticles || {};
+    const currentReadArticles = context.readArticles || [];
 
-    for (const type of articleTypes) {
-      if (currentReadTypes[type]) {
-        if (removeCompletely) {
-          delete currentReadTypes[type];
-        } else {
-          currentReadTypes[type] = Math.max(0, currentReadTypes[type] - 1);
-          if (currentReadTypes[type] === 0) {
-            delete currentReadTypes[type];
-          }
-        }
-      }
-    }
+    const updatedReadArticles = currentReadArticles.filter(
+      (article) => article.articleId !== articleId
+    );
 
     await createOrUpdateUserArticleContext(userId, {
-      readArticles: currentReadTypes,
+      readArticles: updatedReadArticles,
       feedback: context.feedback,
       savedArticles: context.savedArticles,
     });
 
-    return currentReadTypes;
+    return updatedReadArticles;
   } catch (error) {
     console.error("Error removing read articles:", error);
     throw new Error(`Failed to remove read articles: ${error.message}`);
@@ -174,6 +165,6 @@ module.exports = {
   updateReadArticles,
   createArticleFeedback,
   saveArticle,
-  removeReadArticles,
+  removeReadArticle,
   unsaveArticle,
 };
