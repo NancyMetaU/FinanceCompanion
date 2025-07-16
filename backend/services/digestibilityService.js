@@ -76,14 +76,14 @@ function calculateReadability(text) {
   return Math.max(0, Math.min(MAX_SCORE, Math.round(clarityScore)));
 }
 
-const getFamiliarityBoost = (userContext, types) => {
-  const readCounts = userContext.readArticles || {};
-  let boost = 0;
+const getFamiliarityBoost = (userContext, industry) => {
+  const readArticles = userContext.readArticles || [];
+  const industryArticleCount = readArticles.filter(
+    (article) => article.industry === industry
+  ).length;
 
-  for (const type of types) {
-    const count = Math.min(readCounts[type] || 0, 3);
-    boost += count * 5;
-  }
+  const count = Math.min(industryArticleCount, 3);
+  const boost = count * 5;
 
   return Math.min(boost, 15);
 };
@@ -116,7 +116,8 @@ const calculateDigestibilityScore = async (userId, article) => {
     article.snippet || ""
   }`;
   const baseScore = calculateReadability(text);
-  const familiarityBoost = getFamiliarityBoost(userContext, article.type || []);
+
+  const familiarityBoost = getFamiliarityBoost(userContext, article.industry);
   const feedbackBoost = getFeedbackBoost(userContext, article.industry);
   const score = Math.max(
     0,
