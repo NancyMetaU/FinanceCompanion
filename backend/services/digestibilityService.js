@@ -88,6 +88,27 @@ const getFamiliarityBoost = (userContext, types) => {
   return Math.min(boost, 15);
 };
 
+function getFeedbackBoost(userContext, industry) {
+  const feedback = userContext.feedback;
+  const entries = Object.values(feedback)
+    .filter((entry) => entry.industry === industry && entry.rating)
+    .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+  if (entries.length === 0) return 0;
+
+  const weights = entries.map((_, i) => 1 + i / entries.length);
+  const totalWeight = weights.reduce((a, b) => a + b, 0);
+  const weightedSum = entries.reduce((sum, entry, i) => {
+    return sum + entry.rating * weights[i];
+  }, 0);
+  const avgRating = weightedSum / totalWeight;
+
+  const normalized = (avgRating - 1) / 4;
+  const scaledBoost = Math.pow(normalized, 0.7) * 10;
+
+  return Math.min(Math.round(scaledBoost), 10);
+}
+
 const calculateDigestibilityScore = async (userId, article) => {
   const userContext = await getUserArticleContext(userId);
 
@@ -96,10 +117,10 @@ const calculateDigestibilityScore = async (userId, article) => {
   }`;
   const baseScore = calculateReadability(text);
   const familiarityBoost = getFamiliarityBoost(userContext, article.type || []);
-
+  const feedbackBoost = getFeedbackBoost(userContext, article.industry);
   const score = Math.max(
     0,
-    Math.min(100, Math.round(baseScore + familiarityBoost))
+    Math.min(100, Math.round(baseScore + familiarityBoost + feedbackBoost))
   );
 
   const label =
@@ -114,6 +135,7 @@ const calculateDigestibilityScore = async (userId, article) => {
 
 module.exports = {
   calculateReadability,
-  calculateDigestibilityScore,
   getFamiliarityBoost,
+  getFeedbackBoost,
+  calculateDigestibilityScore,
 };
