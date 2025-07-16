@@ -2,8 +2,8 @@ const express = require("express");
 const verifyFirebaseToken = require("../config/auth");
 const {
   getUserArticleContext,
-  updateReadTags,
-  removeReadTags,
+  updateReadArticles,
+  removeReadArticles,
   createArticleFeedback,
   saveArticle,
   unsaveArticle,
@@ -27,11 +27,11 @@ router.get("/read", verifyFirebaseToken, async (req, res) => {
     const userId = req.uid;
     const context = await getUserArticleContext(userId);
     res.status(200).json({
-      readTags: context.readTags || {},
+      readArticles: context.readArticles || {},
     });
   } catch (err) {
-    console.error("Get read tags error:", err);
-    res.status(500).json({ error: "Failed to retrieve read tags" });
+    console.error("Get read articles error:", err);
+    res.status(500).json({ error: "Failed to retrieve read articles" });
   }
 });
 
@@ -51,22 +51,22 @@ router.get("/saved", verifyFirebaseToken, async (req, res) => {
 router.post("/read", verifyFirebaseToken, async (req, res) => {
   try {
     const userId = req.uid;
-    const { articleTags } = req.body;
+    const { articleTypes } = req.body;
 
-    if (!articleTags || !Array.isArray(articleTags)) {
+    if (!articleTypes || !Array.isArray(articleTypes)) {
       return res
         .status(400)
-        .json({ error: "Missing or invalid articleTags array" });
+        .json({ error: "Missing or invalid articleTypes array" });
     }
 
-    const updatedReadTags = await updateReadTags(userId, articleTags);
+    const updatedReadTypes = await updateReadArticles(userId, articleTypes);
     res.status(200).json({
-      message: "Read tags updated successfully",
-      readTags: updatedReadTags,
+      message: "Read articles updated successfully",
+      readArticles: updatedReadTypes,
     });
   } catch (err) {
-    console.error("Update read tags error:", err);
-    res.status(500).json({ error: "Failed to update read tags" });
+    console.error("Update read articles error:", err);
+    res.status(500).json({ error: "Failed to update read articles" });
   }
 });
 
@@ -121,28 +121,28 @@ router.post("/save", verifyFirebaseToken, async (req, res) => {
 router.delete("/read", verifyFirebaseToken, async (req, res) => {
   try {
     const userId = req.uid;
-    const { articleTags, removeCompletely = false } = req.body;
+    const { articleTypes, removeCompletely = false } = req.body;
 
-    if (!articleTags || !Array.isArray(articleTags)) {
+    if (!articleTypes || !Array.isArray(articleTypes)) {
       return res
         .status(400)
-        .json({ error: "Missing or invalid articleTags array" });
+        .json({ error: "Missing or invalid articleTypes array" });
     }
 
-    const updatedReadTags = await removeReadTags(
+    const updatedReadTypes = await removeReadArticles(
       userId,
-      articleTags,
+      articleTypes,
       removeCompletely
     );
     res.status(200).json({
       message: removeCompletely
-        ? "Read tags removed completely"
-        : "Read tags decremented successfully",
-      readTags: updatedReadTags,
+        ? "Read articles removed completely"
+        : "Read articles decremented successfully",
+      readArticles: updatedReadTypes,
     });
   } catch (err) {
-    console.error("Remove read tags error:", err);
-    res.status(500).json({ error: "Failed to remove read tags" });
+    console.error("Remove read articles error:", err);
+    res.status(500).json({ error: "Failed to remove read articles" });
   }
 });
 

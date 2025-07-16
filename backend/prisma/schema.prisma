@@ -24,7 +24,7 @@ model User {
   debtPriority    String?
   spendingFocus   String[] @default([])
 
-  articleContext  UserArticleContext? 
+  articleContext  UserArticleContext?
 }
 
 model PlaidConnection {
@@ -80,7 +80,7 @@ model BankAccount {
 model UserArticleContext {
   id             String   @id @default(cuid())
   userId         String   @unique
-  readTags       Json?    @default("{}")
+  readArticles   Json?    @default("{}")
   feedback       Json?    @default("{}")
   savedArticles  String[] @default([])
   createdAt      DateTime @default(now())
