@@ -9,7 +9,7 @@ const getUserArticleContext = async (userId) => {
 
     return (
       context || {
-        readTags: {},
+        readArticles: {},
         feedback: {},
         savedArticles: [],
       }
@@ -17,7 +17,7 @@ const getUserArticleContext = async (userId) => {
   } catch (error) {
     console.error("Error fetching user article context:", error);
     return {
-      readTags: {},
+      readArticles: {},
       feedback: {},
       savedArticles: [],
     };
@@ -44,25 +44,25 @@ const createOrUpdateUserArticleContext = async (userId, contextData) => {
   }
 };
 
-const updateReadTags = async (userId, articleTags) => {
+const updateReadArticles = async (userId, articleTypes) => {
   try {
     const context = await getUserArticleContext(userId);
-    const currentReadTags = context.readTags || {};
+    const currentReadTypes = context.readArticles || {};
 
-    for (const tag of articleTags) {
-      currentReadTags[tag] = (currentReadTags[tag] || 0) + 1;
+    for (const type of articleTypes) {
+      currentReadTypes[type] = (currentReadTypes[type] || 0) + 1;
     }
 
     await createOrUpdateUserArticleContext(userId, {
-      readTags: currentReadTags,
+      readArticles: currentReadTypes,
       feedback: context.feedback,
       savedArticles: context.savedArticles,
     });
 
-    return currentReadTags;
+    return currentReadTypes;
   } catch (error) {
-    console.error("Error updating read tags:", error);
-    throw new Error(`Failed to update read tags: ${error.message}`);
+    console.error("Error updating read articles:", error);
+    throw new Error(`Failed to update read articles: ${error.message}`);
   }
 };
 
@@ -77,7 +77,7 @@ const createArticleFeedback = async (userId, articleId, feedbackData) => {
     };
 
     await createOrUpdateUserArticleContext(userId, {
-      readTags: context.readTags,
+      readArticles: context.readArticles,
       feedback: currentFeedback,
       savedArticles: context.savedArticles,
     });
@@ -98,7 +98,7 @@ const saveArticle = async (userId, articleId) => {
       currentSavedArticles.push(articleId);
 
       await createOrUpdateUserArticleContext(userId, {
-        readTags: context.readTags,
+        readArticles: context.readArticles,
         feedback: context.feedback,
         savedArticles: currentSavedArticles,
       });
@@ -111,38 +111,38 @@ const saveArticle = async (userId, articleId) => {
   }
 };
 
-const removeReadTags = async (
+const removeReadArticles = async (
   userId,
-  articleTags,
+  articleTypes,
   removeCompletely = false
 ) => {
   try {
     const context = await getUserArticleContext(userId);
-    const currentReadTags = context.readTags || {};
+    const currentReadTypes = context.readArticles || {};
 
-    for (const tag of articleTags) {
-      if (currentReadTags[tag]) {
+    for (const type of articleTypes) {
+      if (currentReadTypes[type]) {
         if (removeCompletely) {
-          delete currentReadTags[tag];
+          delete currentReadTypes[type];
         } else {
-          currentReadTags[tag] = Math.max(0, currentReadTags[tag] - 1);
-          if (currentReadTags[tag] === 0) {
-            delete currentReadTags[tag];
+          currentReadTypes[type] = Math.max(0, currentReadTypes[type] - 1);
+          if (currentReadTypes[type] === 0) {
+            delete currentReadTypes[type];
           }
         }
       }
     }
 
     await createOrUpdateUserArticleContext(userId, {
-      readTags: currentReadTags,
+      readArticles: currentReadTypes,
       feedback: context.feedback,
       savedArticles: context.savedArticles,
     });
 
-    return currentReadTags;
+    return currentReadTypes;
   } catch (error) {
-    console.error("Error removing read tags:", error);
-    throw new Error(`Failed to remove read tags: ${error.message}`);
+    console.error("Error removing read articles:", error);
+    throw new Error(`Failed to remove read articles: ${error.message}`);
   }
 };
 
@@ -156,7 +156,7 @@ const unsaveArticle = async (userId, articleId) => {
     );
 
     await createOrUpdateUserArticleContext(userId, {
-      readTags: context.readTags,
+      readArticles: context.readArticles,
       feedback: context.feedback,
       savedArticles: updatedSavedArticles,
     });
@@ -171,9 +171,9 @@ const unsaveArticle = async (userId, articleId) => {
 module.exports = {
   getUserArticleContext,
   createOrUpdateUserArticleContext,
-  updateReadTags,
+  updateReadArticles,
   createArticleFeedback,
   saveArticle,
-  removeReadTags,
+  removeReadArticles,
   unsaveArticle,
 };
