@@ -169,6 +169,38 @@ function getUniqueIndustryArticleBoost(userContext, article) {
   return 0;
 }
 
+function getSimilarityTimeSpentPenalty(userContext, article) {
+  const readArticles = userContext.readArticles || [];
+  const similar = article.similar || [];
+  if (!similar.length || !readArticles.length) return 0;
+
+  const toSeconds = (ms) => ms / 1000;
+
+  const allReadSeconds = readArticles
+    .map((a) => toSeconds(a.timeSpent))
+    .filter((t) => t > 0);
+
+  if (allReadSeconds.length < 2) return 0;
+
+  const overallAvg =
+    allReadSeconds.reduce((sum, val) => sum + val, 0) / allReadSeconds.length;
+
+  const similarReadSeconds = similar
+    .map((sim) =>
+      toSeconds(readArticles.find((a) => a.id === sim.uuid)?.timeSpent || 0)
+    )
+    .filter((t) => t > 0);
+
+  if (!similarReadSeconds.length) return 0;
+
+  const similarAvg =
+    similarReadSeconds.reduce((sum, val) => sum + val, 0) /
+    similarReadSeconds.length;
+  const ratio = similarAvg / overallAvg;
+
+  return ratio >= 1.4 ? Math.min(Math.round((ratio - 1) * 6), 10) : 0;
+}
+
 const calculateDigestibilityScore = async (userId, article) => {
   const userContext = await getUserArticleContext(userId);
 
@@ -181,7 +213,11 @@ const calculateDigestibilityScore = async (userId, article) => {
   const feedbackBoost = getFeedbackBoost(userContext, article.industry);
   const simFamiliarity = getSimilarityFamiliarityBoost(userContext, article);
   const simFeedback = getSimilarityFeedbackBoost(userContext, article);
-  const uniqueIndustryArticle = getUniqueIndustryArticleBoost(userContext,article);
+  const uniqueIndustryArticle = getUniqueIndustryArticleBoost(
+    userContext,
+    article
+  );
+  const timeSpentPenalty = getSimilarityTimeSpentPenalty(userContext, article);
 
   const score = Math.max(
     0,
@@ -193,7 +229,8 @@ const calculateDigestibilityScore = async (userId, article) => {
           feedbackBoost +
           simFamiliarity +
           simFeedback +
-          uniqueIndustryArticle
+          uniqueIndustryArticle -
+          timeSpentPenalty
       )
     )
   );
@@ -215,5 +252,6 @@ module.exports = {
   getSimilarityFamiliarityBoost,
   getSimilarityFeedbackBoost,
   getUniqueIndustryArticleBoost,
+  getSimilarityTimeSpentPenalty,
   calculateDigestibilityScore,
 };
