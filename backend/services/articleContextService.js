@@ -52,6 +52,7 @@ const updateReadArticles = async (userId, articleData) => {
     currentReadArticles.push({
       articleId: articleData.id,
       industry: articleData.industry || articleData.type || "",
+      timeSpent: articleData.timeSpent,
       readAt: new Date().toISOString(),
     });
 
