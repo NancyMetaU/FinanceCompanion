@@ -11,16 +11,16 @@ const features = [
     icon: <Wallet className="h-10 w-10 text-green-400" />,
   },
   {
+    title: "News digest without the noise.",
+    path: "/news",
+    desc: "Stay current with streamlined financial headlines, simplified summaries, and tagged topics that matter.",
+    icon: <Newspaper className="h-10 w-10 text-blue-400" />,
+  },
+  {
     title: "Learning modules for all.",
     path: "/learning",
     desc: "Learn core financial concepts through interactive, click-based modules designed for clarity and ease.",
     icon: <BookOpen className="h-10 w-10 text-yellow-500" />,
-  },
-  {
-    title: "News digest without the noise",
-    path: "/news",
-    desc: "Stay current with streamlined financial headlines, simplified summaries, and tagged topics that matter.",
-    icon: <Newspaper className="h-10 w-10 text-blue-400" />,
   },
 ];
 
