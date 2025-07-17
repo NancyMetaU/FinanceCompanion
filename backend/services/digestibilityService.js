@@ -83,10 +83,27 @@ const getFamiliarityBoost = (userContext, industry) => {
   ).length;
 
   const count = Math.min(industryArticleCount, 3);
-  const boost = count * 3;
-
-  return Math.min(boost, 9);
+  const boost = count * 2;
+  return Math.min(boost, 6);
 };
+
+function getSimilarityFamiliarityBoost(userContext, article) {
+  const similar = article.similar || [];
+  if (!similar.length) return 0;
+
+  const readArticles = userContext.readArticles || [];
+  let count = 0;
+
+  for (const sim of similar) {
+    const simId = sim.uuid;
+    const wasRead = readArticles.some((r) => r.id === simId);
+    if (wasRead) count += 1;
+  }
+
+  const weightPerRead = 4;
+  const cappedBoost = Math.min(count * weightPerRead, 12);
+  return cappedBoost;
+}
 
 function getFeedbackBoost(userContext, industry) {
   const feedback = userContext.feedback || {};
@@ -104,7 +121,7 @@ function getFeedbackBoost(userContext, industry) {
   const avgRating = weightedSum / totalWeight;
 
   const centered = (avgRating - 3) / 2;
-  const scaled = Math.pow(Math.abs(centered), 0.7) * 10;
+  const scaled = Math.pow(Math.abs(centered), 0.7) * 6;
   const signedBoost = centered > 0 ? scaled : -scaled;
 
   return Math.round(signedBoost);
