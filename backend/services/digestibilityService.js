@@ -146,7 +146,7 @@ function getSimilarityFeedbackBoost(userContext, article) {
   const avgRating = weightedSum / totalWeight;
 
   const centered = (avgRating - 3) / 2;
-  const scaled = Math.pow(Math.abs(centered), 0.7) * 10; 
+  const scaled = Math.pow(Math.abs(centered), 0.7) * 10;
   const signedBoost = centered > 0 ? scaled : -scaled;
 
   return Math.round(signedBoost);
@@ -162,9 +162,21 @@ const calculateDigestibilityScore = async (userId, article) => {
 
   const familiarityBoost = getFamiliarityBoost(userContext, article.industry);
   const feedbackBoost = getFeedbackBoost(userContext, article.industry);
+  const simFamiliarity = getSimilarityFamiliarityBoost(userContext, article);
+  const simFeedback = getSimilarityFeedbackBoost(userContext, article);
+
   const score = Math.max(
     0,
-    Math.min(100, Math.round(baseScore + familiarityBoost + feedbackBoost))
+    Math.min(
+      100,
+      Math.round(
+        baseScore +
+          familiarityBoost +
+          feedbackBoost +
+          simFamiliarity +
+          simFeedback
+      )
+    )
   );
 
   const label =
@@ -181,5 +193,7 @@ module.exports = {
   calculateReadability,
   getFamiliarityBoost,
   getFeedbackBoost,
+  getSimilarityFamiliarityBoost,
+  getSimilarityFeedbackBoost,
   calculateDigestibilityScore,
 };
