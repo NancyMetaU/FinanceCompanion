@@ -127,6 +127,31 @@ function getFeedbackBoost(userContext, industry) {
   return Math.round(signedBoost);
 }
 
+function getSimilarityFeedbackBoost(userContext, article) {
+  const feedback = userContext.feedback || {};
+  const similar = article.similar || [];
+  if (!similar.length) return 0;
+
+  const entries = similar
+    .map((sim) => feedback[sim.uuid])
+    .filter((entry) => entry && typeof entry.rating === "number");
+
+  if (entries.length === 0) return 0;
+
+  const weights = entries.map((_, i) => 1 + i / entries.length);
+  const totalWeight = weights.reduce((a, b) => a + b, 0);
+  const weightedSum = entries.reduce((sum, entry, i) => {
+    return sum + entry.rating * weights[i];
+  }, 0);
+  const avgRating = weightedSum / totalWeight;
+
+  const centered = (avgRating - 3) / 2;
+  const scaled = Math.pow(Math.abs(centered), 0.7) * 10; 
+  const signedBoost = centered > 0 ? scaled : -scaled;
+
+  return Math.round(signedBoost);
+}
+
 const calculateDigestibilityScore = async (userId, article) => {
   const userContext = await getUserArticleContext(userId);
 
