@@ -146,10 +146,27 @@ function getSimilarityFeedbackBoost(userContext, article) {
   const avgRating = weightedSum / totalWeight;
 
   const centered = (avgRating - 3) / 2;
-  const scaled = Math.pow(Math.abs(centered), 0.7) * 10; 
+  const scaled = Math.pow(Math.abs(centered), 0.7) * 10;
   const signedBoost = centered > 0 ? scaled : -scaled;
 
   return Math.round(signedBoost);
+}
+
+function getUniqueIndustryArticleBoost(userContext, article) {
+  const readArticles = userContext.readArticles || [];
+  const similarIds = new Set((article.similar || []).map((sim) => sim.uuid));
+
+  const hasSeenIndustry = readArticles.some(
+    (r) => r.industry === article.industry
+  );
+
+  const isSimilarToSeen = readArticles.some((r) => similarIds.has(r.id));
+
+  if (hasSeenIndustry && !isSimilarToSeen) {
+    return 3;
+  }
+
+  return 0;
 }
 
 const calculateDigestibilityScore = async (userId, article) => {
@@ -162,9 +179,23 @@ const calculateDigestibilityScore = async (userId, article) => {
 
   const familiarityBoost = getFamiliarityBoost(userContext, article.industry);
   const feedbackBoost = getFeedbackBoost(userContext, article.industry);
+  const simFamiliarity = getSimilarityFamiliarityBoost(userContext, article);
+  const simFeedback = getSimilarityFeedbackBoost(userContext, article);
+  const uniqueIndustryArticle = getUniqueIndustryArticleBoost(userContext,article);
+
   const score = Math.max(
     0,
-    Math.min(100, Math.round(baseScore + familiarityBoost + feedbackBoost))
+    Math.min(
+      100,
+      Math.round(
+        baseScore +
+          familiarityBoost +
+          feedbackBoost +
+          simFamiliarity +
+          simFeedback +
+          uniqueIndustryArticle
+      )
+    )
   );
 
   const label =
@@ -181,5 +212,8 @@ module.exports = {
   calculateReadability,
   getFamiliarityBoost,
   getFeedbackBoost,
+  getSimilarityFamiliarityBoost,
+  getSimilarityFeedbackBoost,
+  getUniqueIndustryArticleBoost,
   calculateDigestibilityScore,
 };
