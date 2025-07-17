@@ -180,7 +180,7 @@ function getSimilarityTimeSpentPenalty(userContext, article) {
     .map((a) => toSeconds(a.timeSpent))
     .filter((t) => t > 0);
 
-  if (allReadSeconds.length < 3) return 0;
+  if (allReadSeconds.length < 2) return 0;
 
   const overallAvg =
     allReadSeconds.reduce((sum, val) => sum + val, 0) / allReadSeconds.length;
@@ -193,7 +193,9 @@ function getSimilarityTimeSpentPenalty(userContext, article) {
 
   if (!similarReadSeconds.length) return 0;
 
-  const similarAvg = average(similarReadSeconds);
+  const similarAvg =
+    similarReadSeconds.reduce((sum, val) => sum + val, 0) /
+    similarReadSeconds.length;
   const ratio = similarAvg / overallAvg;
 
   return ratio >= 1.4 ? Math.min(Math.round((ratio - 1) * 6), 10) : 0;
