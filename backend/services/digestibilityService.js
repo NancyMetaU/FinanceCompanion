@@ -288,11 +288,17 @@ const calculateFlags = (inputs) => {
     .filter((c) => Math.abs(c.value) >= 3)
     .map((c) => {
       const max = maxValues[c.key] || 10;
-      const normalizedImpact = Math.abs(c.value / max);
+      let value = c.value;
+
+      if (c.key === "Readability Score") {
+        value = value - 100;
+      }
+
+      const normalizedImpact = Math.abs(value / max);
       return {
         label: labelMap[c.key] || c.key,
-        impact: c.value,
-        type: c.value > 0 ? "boost" : "penalty",
+        impact: value,
+        type: value > 0 ? "boost" : "penalty",
         normalized: Number(normalizedImpact.toFixed(2)),
       };
     })
