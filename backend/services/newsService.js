@@ -18,7 +18,8 @@ async function fetchNews() {
     });
     return response.data.data;
   } catch (err) {
-    console.error("Error fetching news from Marketaux:", err);x
+    console.error("Error fetching news from Marketaux:", err);
+    throw err;
   }
 }
 
