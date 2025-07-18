@@ -1,6 +1,6 @@
 import React from "react";
 
-const DigestibilityTag = ({ label, type, impact, normalized }) => {
+const DigestibilityTag = ({ label, type }) => {
   const getTagColor = () => {
     return type === "boost"
       ? "bg-blue-100 text-blue-800 border-blue-300"

@@ -59,8 +59,6 @@ const Article = ({
                     key={index}
                     label={flag.label}
                     type={flag.type}
-                    impact={flag.impact}
-                    normalized={flag.normalized}
                   />
                 ))}
               </div>
