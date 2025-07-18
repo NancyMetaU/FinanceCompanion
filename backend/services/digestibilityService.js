@@ -178,7 +178,7 @@ function getSimilarityTimeSpentPenalty(userContext, article) {
 
   const allReadSeconds = readArticles
     .map((a) => toSeconds(a.timeSpent))
-    .filter((t) => t > 0);
+    .filter((t) => t > 0 && t <= 120 * 60);
 
   if (allReadSeconds.length < 2) return 0;
 
@@ -189,7 +189,7 @@ function getSimilarityTimeSpentPenalty(userContext, article) {
     .map((sim) =>
       toSeconds(readArticles.find((a) => a.id === sim.uuid)?.timeSpent || 0)
     )
-    .filter((t) => t > 0);
+    .filter((t) => t > 0 && t <= 120 * 60);
 
   if (!similarReadSeconds.length) return 0;
 
