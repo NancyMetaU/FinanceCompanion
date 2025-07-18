@@ -201,39 +201,56 @@ function getSimilarityTimeSpentPenalty(userContext, article) {
   return ratio >= 1.4 ? Math.min(Math.round((ratio - 1) * 6), 10) : 0;
 }
 
-const calculateDigestibilityScore = async (userId, article) => {
-  const userContext = await getUserArticleContext(userId);
-
+const getAllScores = (userContext, article) => {
   const text = `${article.title}. ${article.description} ${
     article.snippet || ""
   }`;
-  const baseScore = calculateReadability(text);
 
-  const familiarityBoost = getFamiliarityBoost(userContext, article.industry);
-  const feedbackBoost = getFeedbackBoost(userContext, article.industry);
-  const simFamiliarity = getSimilarityFamiliarityBoost(userContext, article);
-  const simFeedback = getSimilarityFeedbackBoost(userContext, article);
-  const uniqueIndustryArticle = getUniqueIndustryArticleBoost(
-    userContext,
-    article
-  );
-  const timeSpentPenalty = getSimilarityTimeSpentPenalty(userContext, article);
+  return [
+    { key: "Readability Score", value: calculateReadability(text) },
+    {
+      key: "Familiarity Boost",
+      value: getFamiliarityBoost(userContext, article.industry),
+    },
+    {
+      key: "Feedback Boost",
+      value: getFeedbackBoost(userContext, article.industry),
+    },
+    {
+      key: "Similarity Familiarity Boost",
+      value: getSimilarityFamiliarityBoost(userContext, article),
+    },
+    {
+      key: "Similarity Feedback Boost",
+      value: getSimilarityFeedbackBoost(userContext, article),
+    },
+    {
+      key: "Unique Industry Article Boost",
+      value: getUniqueIndustryArticleBoost(userContext, article),
+    },
+    {
+      key: "Time Spent Penalty",
+      value: -getSimilarityTimeSpentPenalty(userContext, article),
+    },
+  ];
+};
 
-  const score = Math.max(
-    0,
-    Math.min(
-      100,
-      Math.round(
-        baseScore +
-          familiarityBoost +
-          feedbackBoost +
-          simFamiliarity +
-          simFeedback +
-          uniqueIndustryArticle -
-          timeSpentPenalty
-      )
-    )
-  );
+const calculateDigestibilityScore = async (userId, article) => {
+  const userContext = await getUserArticleContext(userId);
+  const contributors = getAllScores(userContext, article);
+
+  const labelMap = {
+    "Readability Score": "Complex text",
+    "Familiarity Boost": "Familiar topic",
+    "Feedback Boost": "Positive feedback",
+    "Similarity Familiarity Boost": "Similar reads",
+    "Similarity Feedback Boost": "Liked similar articles",
+    "Unique Industry Article Boost": "New in familiar topic",
+    "Time Spent Penalty": "Likely higher reading time",
+  };
+
+  const total = contributors.reduce((sum, c) => sum + c.value, 0);
+  const score = Math.max(0, Math.min(100, Math.round(total)));
 
   const label =
     score >= 80
@@ -242,7 +259,21 @@ const calculateDigestibilityScore = async (userId, article) => {
       ? "Moderately Digestible"
       : "Low Digestibility";
 
-  return { score, label };
+  const flags = contributors
+    .filter((c) => Math.abs(c.value) >= 3)
+    .map((c) => ({
+      label: labelMap[c.key] || c.key,
+      impact: c.value,
+      type: c.value > 0 ? "boost" : "penalty",
+    }));
+
+  return {
+    score,
+    label,
+    explanation: {
+      flags,
+    },
+  };
 };
 
 module.exports = {
@@ -253,5 +284,6 @@ module.exports = {
   getSimilarityFeedbackBoost,
   getUniqueIndustryArticleBoost,
   getSimilarityTimeSpentPenalty,
+  getAllScores,
   calculateDigestibilityScore,
 };
