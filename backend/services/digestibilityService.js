@@ -297,7 +297,7 @@ const calculateFlags = (inputs) => {
       };
     })
     .sort((a, b) => b.normalized - a.normalized)
-    .slice(0, 3);
+    .slice(0, 2);
 };
 
 const calculateDigestibilityScore = async (userId, article) => {
