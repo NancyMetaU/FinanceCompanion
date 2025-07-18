@@ -12,8 +12,7 @@ async function fetchNews() {
         language: "en",
         countries: "us",
         filter_entities: true,
-        page: 1,
-        limit: 10,
+        limit: 20,
         sort_by: "published_desc",
       },
     });
