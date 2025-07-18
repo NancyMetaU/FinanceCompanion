@@ -12,15 +12,13 @@ async function fetchNews() {
         language: "en",
         countries: "us",
         filter_entities: true,
-        page: 1,
-        limit: 10,
+        limit: 20,
         sort_by: "published_desc",
       },
     });
     return response.data.data;
   } catch (err) {
-    console.error("Error fetching news from Marketaux:", err);
-    throw err;
+    console.error("Error fetching news from Marketaux:", err);x
   }
 }
 
