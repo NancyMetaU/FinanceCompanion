@@ -261,10 +261,7 @@ const getAllScores = (userContext, article) => {
   ];
 };
 
-const calculateDigestibilityScore = async (userId, article) => {
-  const userContext = await getUserArticleContext(userId);
-  const contributors = getAllScores(userContext, article);
-
+const calculateFlags = (inputs) => {
   const labelMap = {
     "Readability Score": "Complex",
     "Familiarity Boost": "Familiar",
@@ -276,7 +273,38 @@ const calculateDigestibilityScore = async (userId, article) => {
     "Similarity Time Spent Penalty": "Similar time-intensive",
   };
 
-  const total = contributors.reduce((sum, c) => sum + c.value, 0);
+  const maxValues = {
+    "Readability Score": 100,
+    "Familiarity Boost": 6,
+    "Feedback Boost": 6,
+    "Similarity Familiarity Boost": 12,
+    "Similarity Feedback Boost": 10,
+    "Unique Industry Article Boost": 3,
+    "Time Spent Penalty": 10,
+    "Similarity Time Spent Penalty": 8,
+  };
+
+  return inputs
+    .filter((c) => Math.abs(c.value) >= 3)
+    .map((c) => {
+      const max = maxValues[c.key] || 10;
+      const normalizedImpact = Math.abs(c.value / max);
+      return {
+        label: labelMap[c.key] || c.key,
+        impact: c.value,
+        type: c.value > 0 ? "boost" : "penalty",
+        normalized: Number(normalizedImpact.toFixed(2)),
+      };
+    })
+    .sort((a, b) => b.normalized - a.normalized)
+    .slice(0, 3);
+};
+
+const calculateDigestibilityScore = async (userId, article) => {
+  const userContext = await getUserArticleContext(userId);
+  const inputs = getAllScores(userContext, article);
+
+  const total = inputs.reduce((sum, c) => sum + c.value, 0);
   const score = Math.max(0, Math.min(100, Math.round(total)));
 
   const label =
@@ -286,13 +314,7 @@ const calculateDigestibilityScore = async (userId, article) => {
       ? "Moderately Digestible"
       : "Low Digestibility";
 
-  const flags = contributors
-    .filter((c) => Math.abs(c.value) >= 3)
-    .map((c) => ({
-      label: labelMap[c.key] || c.key,
-      impact: c.value,
-      type: c.value > 0 ? "boost" : "penalty",
-    }));
+  const flags = calculateFlags(inputs);
 
   return {
     score,
@@ -313,5 +335,6 @@ module.exports = {
   getOwnTimePenalty,
   getSimilarityTimeSpentPenalty,
   getAllScores,
+  calculateFlags,
   calculateDigestibilityScore,
 };
