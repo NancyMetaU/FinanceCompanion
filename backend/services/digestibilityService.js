@@ -285,7 +285,6 @@ const calculateFlags = (inputs) => {
   };
 
   return inputs
-    .filter((c) => Math.abs(c.value) >= 3)
     .map((c) => {
       const max = maxValues[c.key] || 10;
       let value = c.value;
