@@ -284,6 +284,6 @@ module.exports = {
   getSimilarityFeedbackBoost,
   getUniqueIndustryArticleBoost,
   getSimilarityTimeSpentPenalty,
-  getScoreContributors,
+  getAllScores,
   calculateDigestibilityScore,
 };
