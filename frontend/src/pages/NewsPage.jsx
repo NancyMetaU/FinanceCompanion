@@ -6,11 +6,13 @@ import ErrorMessage from "../shared-components/ErrorMessage";
 import Loading from "../shared-components/Loading";
 import ArticleGrid from "../news-page-components/ArticleGrid";
 import fallbackNewsData from "../mock/newsData.json";
+import { getAuth } from "firebase/auth";
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 const NewsPage = () => {
   const [articles, setArticles] = useState([]);
+  const [digestibilityScores, setDigestibilityScores] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -18,7 +20,7 @@ const NewsPage = () => {
     const getNews = async () => {
       try {
         setIsLoading(true);
-        // const response = await fetch(`${BACKEND_URL}/api/news/`); // Later this line will be uncommented to fetch real news data
+        // const response = await fetch(`${BACKEND_URL}/api/news/`);
 
         if (!response.ok) {
           throw new Error(`Error ${response.status}: Failed to fetch news`);
@@ -38,6 +40,64 @@ const NewsPage = () => {
     getNews();
   }, []);
 
+  useEffect(() => {
+    const fetchDigestibilityScores = async () => {
+      if (!articles.length) return;
+
+      try {
+        const user = getAuth().currentUser;
+        if (!user) throw new Error("User not authenticated");
+        const idToken = await user.getIdToken();
+
+        const scorePromises = articles.map(async (article) => {
+          try {
+            const response = await fetch(
+              `${BACKEND_URL}/api/digestibility/score`,
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${idToken}`,
+                },
+                body: JSON.stringify({ article }),
+              }
+            );
+
+            if (!response.ok) {
+              throw new Error(
+                `Error ${response.status}: Failed to fetch digestibility score`
+              );
+            }
+
+            const scoreData = await response.json();
+            return { articleId: article.uuid, scoreData };
+          } catch (err) {
+            console.error(
+              `Error fetching digestibility score for article ${article.uuid}:`,
+              err
+            );
+            return { articleId: article.uuid, scoreData: null };
+          }
+        });
+
+        const results = await Promise.all(scorePromises);
+
+        const newScores = {};
+        results.forEach(({ articleId, scoreData }) => {
+          if (scoreData) {
+            newScores[articleId] = scoreData;
+          }
+        });
+
+        setDigestibilityScores(newScores);
+      } catch (err) {
+        console.error("Error fetching digestibility scores:", err);
+      }
+    };
+
+    fetchDigestibilityScores();
+  }, [articles]);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -49,7 +109,12 @@ const NewsPage = () => {
           {isLoading ? (
             <Loading message="Loading news articles..." />
           ) : (
-            <ArticleGrid articles={articles} />
+            <ArticleGrid
+              articles={articles.map((article) => ({
+                ...article,
+                digestibility: digestibilityScores[article.uuid] || null,
+              }))}
+            />
           )}
         </main>
       </div>
