@@ -169,6 +169,28 @@ function getUniqueIndustryArticleBoost(userContext, article) {
   return 0;
 }
 
+function getOwnTimePenalty(userContext, article) {
+  const read = userContext.readArticles.find((a) => a.id === article.id);
+  if (!read) return 0;
+
+  const readSeconds = read.timeSpent / 1000;
+
+  const allReadSeconds = userContext.readArticles
+    .map((a) => a.timeSpent / 1000)
+    .filter((t) => t > 0 && t < 120 * 60);
+
+  if (allReadSeconds.length < 2) return 0;
+
+  const avg =
+    allReadSeconds.reduce((sum, t) => sum + t, 0) / allReadSeconds.length;
+
+  const ratio = readSeconds / avg;
+
+  if (ratio < 1.5) return 0;
+
+  return Math.min(Math.round((ratio - 1.5) * 6), 10);
+}
+
 function getSimilarityTimeSpentPenalty(userContext, article) {
   const readArticles = userContext.readArticles || [];
   const similar = article.similar || [];
@@ -198,7 +220,7 @@ function getSimilarityTimeSpentPenalty(userContext, article) {
     similarReadSeconds.length;
   const ratio = similarAvg / overallAvg;
 
-  return ratio >= 1.4 ? Math.min(Math.round((ratio - 1) * 6), 10) : 0;
+  return ratio >= 1.5 ? Math.min(Math.round((ratio - 1) * 4), 8) : 0;
 }
 
 const getAllScores = (userContext, article) => {
@@ -230,6 +252,10 @@ const getAllScores = (userContext, article) => {
     },
     {
       key: "Time Spent Penalty",
+      value: -getOwnTimePenalty(userContext, article),
+    },
+    {
+      key: "Similarity Time Spent Penalty",
       value: -getSimilarityTimeSpentPenalty(userContext, article),
     },
   ];
@@ -240,13 +266,14 @@ const calculateDigestibilityScore = async (userId, article) => {
   const contributors = getAllScores(userContext, article);
 
   const labelMap = {
-    "Readability Score": "Complex text",
-    "Familiarity Boost": "Familiar topic",
-    "Feedback Boost": "Positive feedback",
-    "Similarity Familiarity Boost": "Similar reads",
-    "Similarity Feedback Boost": "Liked similar articles",
-    "Unique Industry Article Boost": "New in familiar topic",
-    "Time Spent Penalty": "Likely higher reading time",
+    "Readability Score": "Complex",
+    "Familiarity Boost": "Familiar",
+    "Feedback Boost": "Well-rated",
+    "Similarity Familiarity Boost": "Read similar",
+    "Similarity Feedback Boost": "Liked similar",
+    "Unique Industry Article Boost": "Fresh topic",
+    "Time Spent Penalty": "Time-intensive",
+    "Similarity Time Spent Penalty": "Similar time-intensive",
   };
 
   const total = contributors.reduce((sum, c) => sum + c.value, 0);
@@ -283,6 +310,7 @@ module.exports = {
   getSimilarityFamiliarityBoost,
   getSimilarityFeedbackBoost,
   getUniqueIndustryArticleBoost,
+  getOwnTimePenalty,
   getSimilarityTimeSpentPenalty,
   getAllScores,
   calculateDigestibilityScore,
