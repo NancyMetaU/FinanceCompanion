@@ -4,12 +4,27 @@ const { DIGESTIBILITY_LABELS } = require("../constants/digestibility.js");
 
 const glossarySet = new Set(glossary.map((word) => word.toLowerCase()));
 
+/**
+ * Parses a block of text into individual sentences and words.
+ * Uses regex to split on punctuation for sentence boundaries and to match word-like patterns.
+ * Filters out empty strings, supporting edge cases where punctuation might trail without actual content.
+ * @param {string} text - Raw text
+ * @returns {Object} Structured components (sentences and words)
+ */
 function parseText(text) {
   const sentences = text.split(/[.!?]/).filter((s) => s.trim().length > 0);
   const words = Array.from(text.matchAll(/\w+/g)).map((match) => match[0]);
   return { sentences, words };
 }
 
+/**
+ * Computes key text metrics used for readability: total word count, total sentence count,
+ * average sentence length, and average word length. Handles edge cases like empty input
+ * by depending on valid parsing from `parseText`.
+ * @param {Array<string>} sentences - Array of sentence strings
+ * @param {Array<string>} words - Array of individual words
+ * @returns {Object} Text metrics with normalized statistical values
+ */
 function calculateTextMetrics(sentences, words) {
   const totalWords = words.length;
   const totalSentences = sentences.length;
@@ -23,6 +38,13 @@ function calculateTextMetrics(sentences, words) {
   };
 }
 
+/**
+ * Calculates the ratio of jargon words based on a predefined glossary.
+ * Uses normalization (lowercase, punctuation stripping) to ensure accurate matching.
+ * Edge case handled: avoids double-penalizing partial matches or capitalized terms.
+ * @param {Array<string>} words - Array of words
+ * @returns {number} Normalized ratio of domain-specific terminology (0.0-1.0)
+ */
 function calculateJargonRatio(words) {
   const cleanWord = (word) => word.toLowerCase().replace(/[.,!?]/g, "");
   const jargonCount = words.filter((word) =>
@@ -31,6 +53,13 @@ function calculateJargonRatio(words) {
   return jargonCount / words.length;
 }
 
+/**
+ * Measures variance in sentence length (word count per sentence) to find irregular structure.
+ * Penalizes writing with high inconsistency. Uses standard variance calculation.
+ * @param {Array<string>} sentences - Array of sentence strings
+ * @param {number} avgSentenceLength - Mean sentence length as baseline reference
+ * @returns {number} Statistical variance of sentence lengths
+ */
 function calculateSentenceVariance(sentences, avgSentenceLength) {
   const sentenceLengths = sentences.map(
     (sentence) => sentence.split(/\s+/).filter(Boolean).length
@@ -45,6 +74,13 @@ function calculateSentenceVariance(sentences, avgSentenceLength) {
   return variance;
 }
 
+/**
+ * Core function to compute the readability score based on weighted metrics:
+ * avg sentence length, word length, jargon ratio, and sentence variance.
+ * Uses constraints: base score = 100, min = 10, max = 100, and gracefully fails on very short text.
+ * @param {string} text - Raw text
+ * @returns {number} Normalized readability score (10-100) with higher values indicating a more easy read
+ */
 function calculateReadability(text) {
   SCORING_WEIGHTS = {
     SENTENCE_LENGTH: 1.0,
@@ -77,6 +113,12 @@ function calculateReadability(text) {
   return Math.max(10, Math.min(MAX_SCORE, Math.round(clarityScore)));
 }
 
+/**
+ * Boosts score based on user exposure to the article's industry.
+ * Caps impact at 3 familiar articles, with reduced returns after 3 reads.
+ * @param {string} industry - Industry classification identifier
+ * @returns {number} Scaled familiarity impact (0-6)
+ */
 const getFamiliarityBoost = (userContext, industry) => {
   const readArticles = userContext.readArticles || [];
   const industryArticleCount = readArticles.filter(
@@ -88,8 +130,15 @@ const getFamiliarityBoost = (userContext, industry) => {
   return Math.min(boost, 6);
 };
 
-function getSimilarityFamiliarityBoost(userContext, article) {
-  const similar = article.similar || [];
+/**
+ * Adds boost if the user has read articles similar to the one given.
+ * Caps max impact to 12. Uses article UUIDs to identify similarity.
+ * Avoids overcounting duplicate similarities.
+ * @param {Object} userContext - User interaction history and feedback
+ * @param {Object} similar - Similarity relationships of an article
+ * @returns {number} Similarity-derived familiarity impact (0-12)
+ */
+function getSimilarityFamiliarityBoost(userContext, similar) {
   if (!similar.length) return 0;
 
   const readArticles = userContext.readArticles || [];
@@ -106,6 +155,16 @@ function getSimilarityFamiliarityBoost(userContext, article) {
   return cappedBoost;
 }
 
+/**
+ * Calculates a personalized boost (or penalty) based on the user's past
+ * feedback for articles in the same industry. More recent ratings are
+ * weighted more heavily. Ratings are normalized around 3 (neutral), and
+ * then scaled non-linearly to allow both positive and negative influence
+ * on the final score, preventing small changes from causing large swings.
+ * @param {Object} userContext - User interaction history and feedback
+ * @param {string} industry - Industry classification identifier
+ * @returns {number} Signed feedback impact (-6 to +6)
+ */
 function getFeedbackBoost(userContext, industry) {
   const feedback = userContext.feedback || {};
   const entries = Object.values(feedback)
@@ -128,9 +187,15 @@ function getFeedbackBoost(userContext, industry) {
   return Math.round(signedBoost);
 }
 
-function getSimilarityFeedbackBoost(userContext, article) {
+/**
+ * Similar to getFeedbackBoost, but applied to similar articles only.
+ * Uses the same weighted average and scaling method, with higher weight (×10) for similarity.
+ * @param {Object} userContext - User interaction history and feedback
+ * @param {Object} similar - Similarity relationships of an article
+ * @returns {number} Propagated preference impact (-10 to +10)
+ */
+function getSimilarityFeedbackBoost(userContext, similar) {
   const feedback = userContext.feedback || {};
-  const similar = article.similar || [];
   if (!similar.length) return 0;
 
   const entries = similar
@@ -153,6 +218,13 @@ function getSimilarityFeedbackBoost(userContext, article) {
   return Math.round(signedBoost);
 }
 
+/**
+ * Rewards exploration: if a user has read content from the same industry
+ * but not anything similar, gives a "freshness" boost.
+ * @param {Object} userContext - User interaction history and feedback
+ * @param {Object} article - Article metadata
+ * @returns {number} Unique impact (0 or 3)
+ */
 function getUniqueIndustryArticleBoost(userContext, article) {
   const readArticles = userContext.readArticles || [];
   const similarIds = new Set((article.similar || []).map((sim) => sim.uuid));
@@ -170,8 +242,16 @@ function getUniqueIndustryArticleBoost(userContext, article) {
   return 0;
 }
 
-function getOwnTimePenalty(userContext, article) {
-  const read = userContext.readArticles.find((a) => a.id === article.id);
+/**
+ * Penalizes if a user spent abnormally long time reading this article,
+ * using a ratio-based method comparing individual time vs user's average.
+ * Ignores values above 2 hours as outliers.
+ * @param {Object} userContext - User interaction history and feedback
+ * @param {Object} id - Article's UUID
+ * @returns {number} Difficult read penalty impact (0-10)
+ */
+function getOwnTimePenalty(userContext, id) {
+  const read = userContext.readArticles.find((a) => a.id === id);
   if (!read) return 0;
 
   const readSeconds = read.timeSpent / 1000;
@@ -192,9 +272,15 @@ function getOwnTimePenalty(userContext, article) {
   return Math.min(Math.round((ratio - 1.5) * 6), 10);
 }
 
-function getSimilarityTimeSpentPenalty(userContext, article) {
+/**
+ * Penalizes if user typically spends excessive time on similar articles,
+ * indicating potential difficult topic. Caps at 8 points and avoids small sample bias.
+ * @param {Object} userContext - User interaction history and feedback
+ * @param {Object} similar - Similarity relationships of an article
+ * @returns {number} Difficult read penalty impact (0-8)
+ */
+function getSimilarityTimeSpentPenalty(userContext, similar) {
   const readArticles = userContext.readArticles || [];
-  const similar = article.similar || [];
   if (!similar.length || !readArticles.length) return 0;
 
   const toSeconds = (ms) => ms / 1000;
@@ -224,6 +310,13 @@ function getSimilarityTimeSpentPenalty(userContext, article) {
   return ratio >= 1.5 ? Math.min(Math.round((ratio - 1) * 4), 8) : 0;
 }
 
+/**
+ * Computes all the component scores for a given article and user.
+ * These scores are the basis for final digestibility and flag explanation.
+ * @param {Object} userContext -  User interaction history and feedback
+ * @param {Object} article - Article metadata with full content and relationship data
+ * @returns {Array<Object>} Normalized digestibility factors with metadata
+ */
 const getAllScores = (userContext, article) => {
   const text = `${article.title}. ${article.description} ${
     article.snippet || ""
@@ -241,11 +334,11 @@ const getAllScores = (userContext, article) => {
     },
     {
       key: "Similarity Familiarity Boost",
-      value: getSimilarityFamiliarityBoost(userContext, article),
+      value: getSimilarityFamiliarityBoost(userContext, article.similar),
     },
     {
       key: "Similarity Feedback Boost",
-      value: getSimilarityFeedbackBoost(userContext, article),
+      value: getSimilarityFeedbackBoost(userContext, article.similar),
     },
     {
       key: "Unique Industry Article Boost",
@@ -253,15 +346,21 @@ const getAllScores = (userContext, article) => {
     },
     {
       key: "Time Spent Penalty",
-      value: -getOwnTimePenalty(userContext, article),
+      value: -getOwnTimePenalty(userContext, article.id),
     },
     {
       key: "Similarity Time Spent Penalty",
-      value: -getSimilarityTimeSpentPenalty(userContext, article),
+      value: -getSimilarityTimeSpentPenalty(userContext, article.similar),
     },
   ];
 };
 
+/**
+ * Translates score components into human-friendly flags.
+ * Normalizes and ranks based on relative impact to help users understand why something was or was not digestible.
+ * @param {Array<Object>} inputs - Digestibility factors with normalized values
+ * @returns {Array<Object>} Prioritized digestibility indicators with impact classification
+ */
 const calculateFlags = (inputs) => {
   const labelMap = {
     "Readability Score": "Complex",
@@ -307,6 +406,13 @@ const calculateFlags = (inputs) => {
     .slice(0, 2);
 };
 
+/**
+ * Main function that combines all digestibility factors into a final score.
+ * Applies upper/lower bounds, assigns a label (Low, Moderate, High), and displays top explanatory flags.
+ * @param {string} userId - Unique identifier for user context lookup
+ * @param {Object} article - Article metadata
+ * @returns {Promise<Object>} Comprehensive digestibility assessment with score, classification and explanatory factors
+ */
 const calculateDigestibilityScore = async (userId, article) => {
   const userContext = await getUserArticleContext(userId);
   const inputs = getAllScores(userContext, article);
