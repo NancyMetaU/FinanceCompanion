@@ -47,22 +47,29 @@ const createOrUpdateUserArticleContext = async (userId, contextData) => {
 const updateReadArticles = async (userId, articleData) => {
   try {
     const context = await getUserArticleContext(userId);
-    const currentReadArticles = context.readArticles || [];
+    const currentReadArticles = context.readArticles ?? [];
 
-    currentReadArticles.push({
+    const newArticle = {
       articleId: articleData.id,
       industry: articleData.industry || articleData.type || "",
       timeSpent: articleData.timeSpent,
       readAt: new Date().toISOString(),
-    });
+    };
+
+    const updatedReadArticles = currentReadArticles.some(
+      (a) => a.articleId === articleData.id
+    )
+      ? currentReadArticles.map((a) =>
+          a.articleId === articleData.id ? newArticle : a
+        )
+      : [...currentReadArticles, newArticle];
 
     await createOrUpdateUserArticleContext(userId, {
-      readArticles: currentReadArticles,
-      feedback: context.feedback,
-      savedArticles: context.savedArticles,
+      ...context,
+      readArticles: updatedReadArticles,
     });
 
-    return currentReadArticles;
+    return updatedReadArticles;
   } catch (error) {
     console.error("Error updating read articles:", error);
     throw new Error(`Failed to update read articles: ${error.message}`);

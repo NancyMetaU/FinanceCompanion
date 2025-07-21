@@ -17,7 +17,7 @@ const ArticleGrid = ({ articles }) => {
       <ul className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 list-none p-0">
         {validArticles.map((article) => (
           <li key={article.uuid}>
-            <Article {...article} />
+            <Article article={article} />
           </li>
         ))}
       </ul>
