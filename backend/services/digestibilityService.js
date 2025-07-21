@@ -1,5 +1,6 @@
 const glossary = require("../utils/glossary");
 const { getUserArticleContext } = require("./articleContextService");
+const { DIGESTIBILITY_LABELS } = require("../constants/digestibility.js");
 
 const glossarySet = new Set(glossary.map((word) => word.toLowerCase()));
 
@@ -228,8 +229,6 @@ const getAllScores = (userContext, article) => {
     article.snippet || ""
   }`;
 
-  console.log("Digestibility text input:", text, "Length:", text.length);
-
   return [
     { key: "Readability Score", value: calculateReadability(text) },
     {
@@ -317,10 +316,10 @@ const calculateDigestibilityScore = async (userId, article) => {
 
   const label =
     score >= 80
-      ? "Highly Digestible"
+      ? DIGESTIBILITY_LABELS.HIGH
       : score >= 50
-      ? "Moderately Digestible"
-      : "Low Digestibility";
+      ? DIGESTIBILITY_LABELS.MODERATE
+      : DIGESTIBILITY_LABELS.LOW;
 
   const flags = calculateFlags(inputs);
 
