@@ -15,28 +15,45 @@ const Article = ({ article }) => {
 
       const idToken = await user.getIdToken();
 
-      const articleData = {
-        id: article.uuid,
-        industry: article.entities[0].industry,
-      };
+      if (!isRead) {
+        const articleData = {
+          id: article.uuid,
+          industry: article.entities[0]?.industry,
+        };
 
-      const response = await fetch(`${BACKEND_URL}/api/articleContext/read`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${idToken}`,
-        },
-        body: JSON.stringify({ articleData }),
-      });
+        const response = await fetch(`${BACKEND_URL}/api/articleContext/read`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${idToken}`,
+          },
+          body: JSON.stringify({ articleData }),
+        });
 
-      if (!response.ok) {
-        throw new Error(`Server responded with status: ${response.status}`);
+        if (!response.ok) {
+          throw new Error(`Server responded with status: ${response.status}`);
+        }
+
+        setIsRead(true);
+      } else {
+        const response = await fetch(
+          `${BACKEND_URL}/api/articleContext/read/${article.uuid}`,
+          {
+            method: "DELETE",
+            headers: {
+              Authorization: `Bearer ${idToken}`,
+            },
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error(`Server responded with status: ${response.status}`);
+        }
+
+        setIsRead(false);
       }
-
-      const data = await response.json();
-      setIsRead(!isRead);
     } catch (error) {
-      console.error("Error marking article as read:", error);
+      console.error("Error toggling read status:", error);
     }
   };
 
