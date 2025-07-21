@@ -6,7 +6,7 @@ const glossarySet = new Set(glossary.map((word) => word.toLowerCase()));
 
 function parseText(text) {
   const sentences = text.split(/[.!?]/).filter((s) => s.trim().length > 0);
-  const words = text.split(/\s+/).filter(Boolean);
+  const words = Array.from(text.matchAll(/\w+/g)).map((match) => match[0]);
   return { sentences, words };
 }
 
