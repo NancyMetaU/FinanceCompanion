@@ -20,17 +20,15 @@ const NewsPage = () => {
     const getNews = async () => {
       try {
         setIsLoading(true);
-        // const response = await fetch(`${BACKEND_URL}/api/news/`);
+        const response = await fetch(`${BACKEND_URL}/api/news/`);
+        if (!response.ok) throw new Error(`Error ${response.status}`);
 
-        if (!response.ok) {
-          throw new Error(`Error ${response.status}: Failed to fetch news`);
-        }
-
-        const data = await response.json();
-        setArticles(data);
+        const apiArticles = await response.json();
+        setArticles([...apiArticles, ...fallbackNewsData]);
       } catch (err) {
         console.error("Error fetching news:", err);
         setError(err.message || "Failed to load news articles");
+
         setArticles(fallbackNewsData);
       } finally {
         setIsLoading(false);
