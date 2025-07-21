@@ -301,6 +301,7 @@ const calculateFlags = (inputs) => {
         normalized: Number(normalizedImpact.toFixed(2)),
       };
     })
+    .filter((f) => f.impact !== 0)
     .sort((a, b) => b.normalized - a.normalized)
     .slice(0, 2);
 };
