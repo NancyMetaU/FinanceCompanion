@@ -45,11 +45,11 @@ function calculateSentenceVariance(sentences, avgSentenceLength) {
 }
 
 function calculateReadability(text) {
-  const SCORING_WEIGHTS = {
-    SENTENCE_LENGTH: 1.5,
-    WORD_LENGTH: 5,
-    JARGON_PENALTY: 100,
-    VARIANCE_PENALTY: 0.5,
+  SCORING_WEIGHTS = {
+    SENTENCE_LENGTH: 1.0,
+    WORD_LENGTH: 3.0,
+    JARGON_PENALTY: 60,
+    VARIANCE_PENALTY: 0.2,
   };
 
   const MIN_TEXT_LENGTH = 10;
@@ -73,7 +73,7 @@ function calculateReadability(text) {
     jargonRatio * SCORING_WEIGHTS.JARGON_PENALTY -
     variance * SCORING_WEIGHTS.VARIANCE_PENALTY;
 
-  return Math.max(0, Math.min(MAX_SCORE, Math.round(clarityScore)));
+  return Math.max(10, Math.min(MAX_SCORE, Math.round(clarityScore)));
 }
 
 const getFamiliarityBoost = (userContext, industry) => {
@@ -228,6 +228,8 @@ const getAllScores = (userContext, article) => {
     article.snippet || ""
   }`;
 
+  console.log("Digestibility text input:", text, "Length:", text.length);
+
   return [
     { key: "Readability Score", value: calculateReadability(text) },
     {
@@ -301,6 +303,7 @@ const calculateFlags = (inputs) => {
         normalized: Number(normalizedImpact.toFixed(2)),
       };
     })
+    .filter((f) => f.impact !== 0)
     .sort((a, b) => b.normalized - a.normalized)
     .slice(0, 2);
 };
