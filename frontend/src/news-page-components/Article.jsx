@@ -18,9 +18,7 @@ const Article = ({ article }) => {
       if (!isRead) {
         const articleData = {
           id: article.uuid,
-          industry:
-            article.entities[0]?.industry || article.entities[0]?.type || "",
-          timeSpent: 0,
+          industry: article.entities[0]?.industry,
         };
 
         const response = await fetch(`${BACKEND_URL}/api/articleContext/read`, {
