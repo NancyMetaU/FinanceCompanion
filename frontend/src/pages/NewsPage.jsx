@@ -20,15 +20,24 @@ const NewsPage = () => {
     const getNews = async () => {
       try {
         setIsLoading(true);
+
+        const cached = sessionStorage.getItem("newsArticles");
+        if (cached) {
+          setArticles(JSON.parse(cached));
+          return;
+        }
+
         const response = await fetch(`${BACKEND_URL}/api/news/`);
         if (!response.ok) throw new Error(`Error ${response.status}`);
 
         const apiArticles = await response.json();
-        setArticles([...apiArticles, ...fallbackNewsData]);
+        const merged = [...apiArticles, ...fallbackNewsData];
+
+        sessionStorage.setItem("newsArticles", JSON.stringify(merged));
+        setArticles(merged);
       } catch (err) {
         console.error("Error fetching news:", err);
         setError(err.message || "Failed to load news articles");
-
         setArticles(fallbackNewsData);
       } finally {
         setIsLoading(false);
