@@ -254,10 +254,10 @@ function getOwnTimePenalty(userContext, id) {
   const read = userContext.readArticles.find((a) => a.articleId === id);
   if (!read) return 0;
 
-  const readSeconds = read.timeSpent / 1000;
+  const readSeconds = read.timeSpent;
 
   const allReadSeconds = userContext.readArticles
-    .map((a) => a.timeSpent / 1000)
+    .map((a) => a.timeSpent)
     .filter((t) => t > 0 && t < 120 * 60);
 
   if (allReadSeconds.length < 2) return 0;
