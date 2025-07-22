@@ -13,6 +13,8 @@ const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 const NewsPage = () => {
   const [articles, setArticles] = useState([]);
   const [digestibilityScores, setDigestibilityScores] = useState({});
+  const [digestibilityRefreshTrigger, setDigestibilityRefreshTrigger] =
+    useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -103,7 +105,7 @@ const NewsPage = () => {
     };
 
     fetchDigestibilityScores();
-  }, [articles]);
+  }, [articles, digestibilityRefreshTrigger]);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -121,6 +123,9 @@ const NewsPage = () => {
                 ...article,
                 digestibility: digestibilityScores[article.uuid] || null,
               }))}
+              onDigestibilityChange={() =>
+                setDigestibilityRefreshTrigger((prev) => prev + 1)
+              }
             />
           )}
         </main>
