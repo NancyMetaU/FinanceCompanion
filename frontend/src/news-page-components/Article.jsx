@@ -9,8 +9,6 @@ const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 const Article = ({ article }) => {
   const [isRead, setIsRead] = useState(false);
   const [isFeedbackModalOpen, setIsFeedbackModalOpen] = useState(false);
-  const [articleWindowRef, setArticleWindowRef] = useState(null);
-  const [articleOpenTime, setArticleOpenTime] = useState(null);
 
   const getCurrentUserToken = async () => {
     const user = getAuth().currentUser;
@@ -74,8 +72,6 @@ const Article = ({ article }) => {
 
     if (newWindow) {
       const openedAt = Date.now();
-      setArticleWindowRef(newWindow);
-      setArticleOpenTime(openedAt);
 
       const intervalId = setInterval(() => {
         if (newWindow.closed) {
