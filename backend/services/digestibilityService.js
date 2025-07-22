@@ -146,7 +146,7 @@ function getSimilarityFamiliarityBoost(userContext, similar) {
 
   for (const sim of similar) {
     const simId = sim.uuid;
-    const wasRead = readArticles.some((r) => r.id === simId);
+    const wasRead = readArticles.some((r) => r.articleId === simId);
     if (wasRead) count += 1;
   }
 
@@ -233,7 +233,7 @@ function getUniqueIndustryArticleBoost(userContext, article) {
     (r) => r.industry === article.industry
   );
 
-  const isSimilarToSeen = readArticles.some((r) => similarIds.has(r.id));
+  const isSimilarToSeen = readArticles.some((r) => similarIds.has(r.articleId));
 
   if (hasSeenIndustry && !isSimilarToSeen) {
     return 3;
@@ -251,7 +251,7 @@ function getUniqueIndustryArticleBoost(userContext, article) {
  * @returns {number} Difficult read penalty impact (0-10)
  */
 function getOwnTimePenalty(userContext, id) {
-  const read = userContext.readArticles.find((a) => a.id === id);
+  const read = userContext.readArticles.find((a) => a.articleId === id);
   if (!read) return 0;
 
   const readSeconds = read.timeSpent / 1000;
@@ -296,7 +296,9 @@ function getSimilarityTimeSpentPenalty(userContext, similar) {
 
   const similarReadSeconds = similar
     .map((sim) =>
-      toSeconds(readArticles.find((a) => a.id === sim.uuid)?.timeSpent || 0)
+      toSeconds(
+        readArticles.find((a) => a.articleId === sim.uuid)?.timeSpent || 0
+      )
     )
     .filter((t) => t > 0 && t <= 120 * 60);
 
@@ -346,7 +348,7 @@ const getAllScores = (userContext, article) => {
     },
     {
       key: "Time Spent Penalty",
-      value: -getOwnTimePenalty(userContext, article.id),
+      value: -getOwnTimePenalty(userContext, article.uuid),
     },
     {
       key: "Similarity Time Spent Penalty",

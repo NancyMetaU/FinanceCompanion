@@ -84,7 +84,6 @@ const createArticleFeedback = async (userId, articleData) => {
     currentFeedback[articleData.id] = {
       industry: articleData.industry || articleData.type || "",
       rating: articleData.rating,
-      comment: articleData.comment || "",
       timestamp: new Date().toISOString(),
     };
 

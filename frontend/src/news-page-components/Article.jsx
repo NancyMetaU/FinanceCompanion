@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import { getAuth } from "firebase/auth";
 import DigestibilityLabel from "./DigestibilityLabel";
 import DigestibilityTag from "./DigestibilityTag";
+import FeedbackModal from "./FeedbackModal";
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 const Article = ({ article }) => {
   const [isRead, setIsRead] = useState(false);
+  const [isFeedbackModalOpen, setIsFeedbackModalOpen] = useState(false);
 
   const handleMarkAsRead = async () => {
     try {
@@ -71,27 +73,49 @@ const Article = ({ article }) => {
             <p className="text-gray-400">No image available</p>
           </div>
         )}
-        <button
-          className={
-            "absolute top-2 right-2 w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm cursor-pointer"
-          }
-          onClick={handleMarkAsRead}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill={isRead ? "currentColor" : "none"}
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className={isRead ? "text-royal" : "text-gray-700"}
+        <div className="absolute top-2 right-2 flex flex-col gap-2">
+          <button
+            className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm cursor-pointer"
+            onClick={handleMarkAsRead}
           >
-            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-          </svg>
-        </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill={isRead ? "currentColor" : "none"}
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className={isRead ? "text-royal" : "text-gray-700"}
+            >
+              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </button>
+
+          <button
+            onClick={() => setIsFeedbackModalOpen(true)}
+            className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm cursor-pointer text-gray-600 hover:text-royal"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path
+                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8
+              8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+              ></path>
+            </svg>
+          </button>
+        </div>
       </div>
       <div className="flex flex-col flex-grow p-4">
         <div className="flex justify-between items-start mb-2">
@@ -111,13 +135,15 @@ const Article = ({ article }) => {
           {article.snippet || article.description || "No description available"}
         </p>
         <div className="flex justify-between items-end mt-auto">
-          <a
-            href={article.url}
-            target="_blank"
-            className="text-royal font-semibold hover:underline inline-flex items-center"
-          >
-            Read More <span className="ml-1">→</span>
-          </a>
+          <div className="flex items-center gap-2">
+            <a
+              href={article.url}
+              target="_blank"
+              className="text-royal font-semibold hover:underline inline-flex items-center"
+            >
+              Read More <span className="ml-1">→</span>
+            </a>
+          </div>
 
           {article.digestibility?.explanation?.flags &&
             article.digestibility.explanation.flags.length > 0 && (
@@ -133,6 +159,12 @@ const Article = ({ article }) => {
             )}
         </div>
       </div>
+
+      <FeedbackModal
+        isOpen={isFeedbackModalOpen}
+        onClose={() => setIsFeedbackModalOpen(false)}
+        article={article}
+      />
     </article>
   );
 };
