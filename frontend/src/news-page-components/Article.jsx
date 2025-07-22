@@ -73,14 +73,17 @@ const Article = ({ article }) => {
     const newWindow = window.open(article.url, "_blank");
 
     if (newWindow) {
+      const openedAt = Date.now();
       setArticleWindowRef(newWindow);
-      setArticleOpenTime(Date.now());
+      setArticleOpenTime(openedAt);
 
       const intervalId = setInterval(() => {
         if (newWindow.closed) {
           clearInterval(intervalId);
-          const timeSpentMs = Date.now() - articleOpenTime;
-          const timeSpentSeconds = Math.round(timeSpentMs / 1000);
+
+          const timeSpentMs = Date.now() - openedAt;
+          const timeSpentSeconds = Math.floor(timeSpentMs / 1000);
+
           markAsRead(timeSpentSeconds);
         }
       }, 500);
