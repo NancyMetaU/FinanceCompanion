@@ -254,10 +254,10 @@ function getOwnTimePenalty(userContext, id) {
   const read = userContext.readArticles.find((a) => a.articleId === id);
   if (!read) return 0;
 
-  const readSeconds = read.timeSpent / 1000;
+  const readSeconds = read.timeSpent;
 
   const allReadSeconds = userContext.readArticles
-    .map((a) => a.timeSpent / 1000)
+    .map((a) => a.timeSpent)
     .filter((t) => t > 0 && t < 120 * 60);
 
   if (allReadSeconds.length < 2) return 0;
@@ -283,10 +283,8 @@ function getSimilarityTimeSpentPenalty(userContext, similar) {
   const readArticles = userContext.readArticles || [];
   if (!similar.length || !readArticles.length) return 0;
 
-  const toSeconds = (ms) => ms / 1000;
-
   const allReadSeconds = readArticles
-    .map((a) => toSeconds(a.timeSpent))
+    .map((a) => a.timeSpent)
     .filter((t) => t > 0 && t <= 120 * 60);
 
   if (allReadSeconds.length < 2) return 0;
@@ -295,10 +293,9 @@ function getSimilarityTimeSpentPenalty(userContext, similar) {
     allReadSeconds.reduce((sum, val) => sum + val, 0) / allReadSeconds.length;
 
   const similarReadSeconds = similar
-    .map((sim) =>
-      toSeconds(
+    .map(
+      (sim) =>
         readArticles.find((a) => a.articleId === sim.uuid)?.timeSpent || 0
-      )
     )
     .filter((t) => t > 0 && t <= 120 * 60);
 
@@ -307,6 +304,7 @@ function getSimilarityTimeSpentPenalty(userContext, similar) {
   const similarAvg =
     similarReadSeconds.reduce((sum, val) => sum + val, 0) /
     similarReadSeconds.length;
+
   const ratio = similarAvg / overallAvg;
 
   return ratio >= 1.5 ? Math.min(Math.round((ratio - 1) * 4), 8) : 0;
