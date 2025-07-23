@@ -230,7 +230,7 @@ function getUniqueIndustryArticleBoost(userContext, article) {
   const similarIds = new Set((article.similar || []).map((sim) => sim.uuid));
 
   const hasSeenIndustry = readArticles.some(
-    (r) => r.industry === article.industry
+    (r) => r.industry === article.entities[0].industry
   );
 
   const isSimilarToSeen = readArticles.some((r) => similarIds.has(r.articleId));
@@ -322,15 +322,17 @@ const getAllScores = (userContext, article) => {
     article.snippet || ""
   }`;
 
+  industry = article.entities[0].industry;
+
   return [
     { key: "Readability Score", value: calculateReadability(text) },
     {
       key: "Familiarity Boost",
-      value: getFamiliarityBoost(userContext, article.industry),
+      value: getFamiliarityBoost(userContext, industry),
     },
     {
       key: "Feedback Boost",
-      value: getFeedbackBoost(userContext, article.industry),
+      value: getFeedbackBoost(userContext, industry),
     },
     {
       key: "Similarity Familiarity Boost",
@@ -365,9 +367,15 @@ const calculateFlags = (inputs) => {
   const labelMap = {
     "Readability Score": "Complex",
     "Familiarity Boost": "Familiar",
-    "Feedback Boost": "Well-rated",
+    "Feedback Boost": {
+      positive: "Well-rated",
+      negative: "Poorly-rated",
+    },
     "Similarity Familiarity Boost": "Read similar",
-    "Similarity Feedback Boost": "Liked similar",
+    "Similarity Feedback Boost": {
+      positive: "Liked similar",
+      negative: "Disliked similar",
+    },
     "Unique Industry Article Boost": "Fresh topic",
     "Time Spent Penalty": "Time-intensive",
     "Similarity Time Spent Penalty": "Similar time-intensive",
@@ -395,7 +403,12 @@ const calculateFlags = (inputs) => {
 
       const normalizedImpact = Math.abs(value / max);
       return {
-        label: labelMap[c.key] || c.key,
+        label:
+          typeof labelMap[c.key] === "object"
+            ? value > 0
+              ? labelMap[c.key].positive
+              : labelMap[c.key].negative
+            : labelMap[c.key] || c.key,
         impact: value,
         type: value > 0 ? "boost" : "penalty",
         normalized: Number(normalizedImpact.toFixed(2)),

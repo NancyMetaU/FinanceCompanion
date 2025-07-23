@@ -6,7 +6,7 @@ import FeedbackModal from "./FeedbackModal";
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
-const Article = ({ article }) => {
+const Article = ({ article, onDigestibilityChange }) => {
   const [isRead, setIsRead] = useState(false);
   const [isFeedbackModalOpen, setIsFeedbackModalOpen] = useState(false);
 
@@ -16,7 +16,7 @@ const Article = ({ article }) => {
     return await user.getIdToken();
   };
 
-  const markAsRead = async (timeSpentSeconds = null) => {
+  const markAsRead = async (timeSpentSeconds = 0) => {
     try {
       const idToken = await getCurrentUserToken();
       const articleData = {
@@ -37,6 +37,7 @@ const Article = ({ article }) => {
       if (!response.ok)
         throw new Error(`Server responded with status: ${response.status}`);
       setIsRead(true);
+      if (onDigestibilityChange) onDigestibilityChange();
     } catch (error) {
       console.error("Error marking article as read:", error);
     }
@@ -58,6 +59,7 @@ const Article = ({ article }) => {
       if (!response.ok)
         throw new Error(`Server responded with status: ${response.status}`);
       setIsRead(false);
+      if (onDigestibilityChange) onDigestibilityChange();
     } catch (error) {
       console.error("Error unmarking article as read:", error);
     }
@@ -81,6 +83,7 @@ const Article = ({ article }) => {
           const timeSpentSeconds = Math.floor(timeSpentMs / 1000);
 
           markAsRead(timeSpentSeconds);
+          if (onDigestibilityChange) onDigestibilityChange();
         }
       }, 500);
     } else {
@@ -196,6 +199,7 @@ const Article = ({ article }) => {
         isOpen={isFeedbackModalOpen}
         onClose={() => setIsFeedbackModalOpen(false)}
         article={article}
+        onDigestibilityChange={onDigestibilityChange}
       />
     </article>
   );

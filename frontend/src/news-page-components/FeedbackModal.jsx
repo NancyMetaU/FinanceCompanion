@@ -13,7 +13,7 @@ import Loading from "../shared-components/Loading";
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
-const FeedbackModal = ({ isOpen, onClose, article }) => {
+const FeedbackModal = ({ isOpen, onClose, article, onDigestibilityChange }) => {
   const [rating, setRating] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -56,6 +56,7 @@ const FeedbackModal = ({ isOpen, onClose, article }) => {
       }
 
       setSuccess(true);
+      if (onDigestibilityChange) onDigestibilityChange();
     } catch (error) {
       console.error("Error submitting feedback:", error);
       setError(error.message);

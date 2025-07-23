@@ -1,7 +1,7 @@
 import React from "react";
 import Article from "./Article";
 
-const ArticleGrid = ({ articles }) => {
+const ArticleGrid = ({ articles, onDigestibilityChange }) => {
   const validArticles = articles?.filter((article) => article.uuid) || [];
 
   if (validArticles.length === 0) {
@@ -17,7 +17,10 @@ const ArticleGrid = ({ articles }) => {
       <ul className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 list-none p-0">
         {validArticles.map((article) => (
           <li key={article.uuid}>
-            <Article article={article} />
+            <Article
+              article={article}
+              onDigestibilityChange={onDigestibilityChange}
+            />
           </li>
         ))}
       </ul>
