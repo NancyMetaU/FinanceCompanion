@@ -150,7 +150,7 @@ function getSimilarityFamiliarityBoost(userContext, similar) {
     if (wasRead) count += 1;
   }
 
-  const weightPerRead = 4;
+  const weightPerRead = 6;
   const cappedBoost = Math.min(count * weightPerRead, 12);
   return cappedBoost;
 }
@@ -196,7 +196,7 @@ function getFeedbackBoost(userContext, industry) {
  */
 function getSimilarityFeedbackBoost(userContext, similar) {
   const feedback = userContext.feedback || {};
-  if (!similar.length) return 0;
+  if (!Array.isArray(similar) || similar.length === 0) return 0;
 
   const entries = similar
     .map((sim) => feedback[sim.uuid])
@@ -210,6 +210,8 @@ function getSimilarityFeedbackBoost(userContext, similar) {
     return sum + entry.rating * weights[i];
   }, 0);
   const avgRating = weightedSum / totalWeight;
+
+  if (avgRating >= 2.9 && avgRating <= 3.1) return 0;
 
   const centered = (avgRating - 3) / 2;
   const scaled = Math.pow(Math.abs(centered), 0.7) * 10;
@@ -235,7 +237,11 @@ function getUniqueIndustryArticleBoost(userContext, article) {
 
   const isSimilarToSeen = readArticles.some((r) => similarIds.has(r.articleId));
 
-  if (hasSeenIndustry && !isSimilarToSeen) {
+  const hasReadCurrentArticle = readArticles.some(
+    (r) => r.articleId === article.uuid
+  );
+
+  if (hasSeenIndustry && !isSimilarToSeen && !hasReadCurrentArticle) {
     return 3;
   }
 
@@ -322,7 +328,9 @@ const getAllScores = (userContext, article) => {
     article.snippet || ""
   }`;
 
-  industry = article.entities[0].industry;
+  const industry = article.entities[0].industry;
+
+  const similarArticles = article.similar || [];
 
   return [
     { key: "Readability Score", value: calculateReadability(text) },
@@ -336,11 +344,11 @@ const getAllScores = (userContext, article) => {
     },
     {
       key: "Similarity Familiarity Boost",
-      value: getSimilarityFamiliarityBoost(userContext, article.similar),
+      value: getSimilarityFamiliarityBoost(userContext, similarArticles),
     },
     {
       key: "Similarity Feedback Boost",
-      value: getSimilarityFeedbackBoost(userContext, article.similar),
+      value: getSimilarityFeedbackBoost(userContext, similarArticles),
     },
     {
       key: "Unique Industry Article Boost",
@@ -352,7 +360,7 @@ const getAllScores = (userContext, article) => {
     },
     {
       key: "Similarity Time Spent Penalty",
-      value: -getSimilarityTimeSpentPenalty(userContext, article.similar),
+      value: -getSimilarityTimeSpentPenalty(userContext, similarArticles),
     },
   ];
 };
