@@ -1,5 +1,6 @@
 const { PrismaClient } = require("@prisma/client");
 const { getUserPreferences } = require("./userService");
+const { getRetirementAccountBalance } = require("./bankAccountService");
 const { getRecurringMonthlyTransactions } = require("./transactionService");
 const prisma = new PrismaClient();
 
@@ -133,7 +134,63 @@ const calculateWantsBreakdown = (totalWantsAmount, spendingFocus = []) => {
   };
 };
 
-const buildBudgetBreakdown = (preferences, recurringTxns) => {
+const getRetirementContributionPlan = async (
+  userId,
+  income,
+  savingsPriority
+) => {
+  const rothBalance = await getRetirementAccountBalance(userId);
+  const annualLimit = 7000;
+  const today = new Date();
+  const taxDeadline = new Date(today.getFullYear() + 1, 3, 15);
+  const monthsRemaining = Math.max(
+    0,
+    taxDeadline.getMonth() -
+      today.getMonth() +
+      (taxDeadline.getFullYear() - today.getFullYear()) * 12
+  );
+
+  const remainingLimit = Math.max(0, annualLimit - rothBalance);
+  const adjustedMonthlyLimit = remainingLimit / monthsRemaining;
+
+  const priorityWeights = {
+    low: 0.03,
+    medium: 0.06,
+    high: 0.1,
+  };
+
+  const suggestedMonthly = Math.min(
+    adjustedMonthlyLimit,
+    income * priorityWeights[savingsPriority]
+  );
+  const roundedSuggestedMonthly = Math.round(suggestedMonthly * 100) / 100;
+
+  const monthsTillMax =
+    suggestedMonthly > 0
+      ? Math.min(600, Math.ceil(remainingLimit / suggestedMonthly))
+      : null;
+
+  const willMaxOut = monthsTillMax !== null && monthsTillMax <= monthsRemaining;
+
+  const projectedBalanceByTaxDeadline =
+    rothBalance + roundedSuggestedMonthly * monthsRemaining;
+
+  return {
+    accountBalance: rothBalance,
+    remainingContributionLimit: remainingLimit,
+    monthlyContribution: roundedSuggestedMonthly,
+    monthsRemaining,
+    projectedBalanceByTaxDeadline: Math.min(
+      annualLimit,
+      Math.round(projectedBalanceByTaxDeadline * 100) / 100
+    ),
+    willMaxOut,
+    monthsTillMax,
+    alreadyMaxedOut: remainingLimit <= 0,
+  };
+};
+
+const buildBudgetBreakdown = async (preferences, recurringTxns, userId) => {
   const { monthlyIncome, debtPriority, savingsPriority, spendingFocus } =
     preferences;
 
@@ -152,9 +209,20 @@ const buildBudgetBreakdown = (preferences, recurringTxns) => {
     monthlyIncome
   );
 
+  const retirement = await getRetirementContributionPlan(
+    userId,
+    monthlyIncome,
+    savingsPriority
+  );
+
   const needs = calculateNeedsBreakdown(monthlyIncome, needsPct, recurringTxns);
   const totalWantsAmount = monthlyIncome * adjustedWantsPct;
   const wants = calculateWantsBreakdown(totalWantsAmount, spendingFocus);
+  const longTermTotal = monthlyIncome * adjustedFutureSavings;
+  const nonRetirementSavings = Math.max(
+    0,
+    longTermTotal - retirement.monthlyContribution
+  );
 
   return {
     income: monthlyIncome,
@@ -163,8 +231,12 @@ const buildBudgetBreakdown = (preferences, recurringTxns) => {
       wants,
       savings: {
         total: monthlyIncome * (adjustedFutureSavings + debtSavingsPct),
-        longTerm: monthlyIncome * adjustedFutureSavings,
         forDebt: monthlyIncome * debtSavingsPct,
+        longTerm: {
+          total: longTermTotal,
+          retirement,
+          other: nonRetirementSavings,
+        },
       },
     },
     warning: needs.warning || null,
@@ -179,9 +251,10 @@ const calculateBudget = async (userId) => {
       throw new Error("Missing income in user preferences.");
     }
 
-    const budgetData = buildBudgetBreakdown(
+    const budgetData = await buildBudgetBreakdown(
       preferences,
-      await getRecurringMonthlyTransactions(userId)
+      await getRecurringMonthlyTransactions(userId),
+      userId
     );
 
     const savedBudget = await saveBudget(userId, budgetData);
