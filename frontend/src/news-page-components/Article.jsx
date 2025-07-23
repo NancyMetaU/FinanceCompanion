@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { getAuth } from "firebase/auth";
 import DigestibilityLabel from "./DigestibilityLabel";
 import DigestibilityTag from "./DigestibilityTag";
@@ -6,9 +6,10 @@ import FeedbackModal from "./FeedbackModal";
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
-const Article = ({ article, onDigestibilityChange }) => {
+const Article = ({ article, onDigestibilityChange, userContext }) => {
   const [isRead, setIsRead] = useState(false);
   const [isFeedbackModalOpen, setIsFeedbackModalOpen] = useState(false);
+  const [hasFeedback, setHasFeedback] = useState(false);
 
   const getCurrentUserToken = async () => {
     const user = getAuth().currentUser;
@@ -91,6 +92,20 @@ const Article = ({ article, onDigestibilityChange }) => {
     }
   };
 
+  useEffect(() => {
+    const isArticleRead =
+      userContext?.readArticles?.some(
+        (item) => item.articleId === article.uuid
+      ) || false;
+    setIsRead(isArticleRead);
+  }, [userContext.readArticles, article.uuid]);
+
+  useEffect(() => {
+    const hasFeedbackSubmitted =
+      !!userContext?.feedback?.[article.uuid] || false;
+    setHasFeedback(hasFeedbackSubmitted);
+  }, [userContext.feedback, article.uuid]);
+
   const articlePreview =
     article.snippet || article.description || "No description available";
 
@@ -132,14 +147,16 @@ const Article = ({ article, onDigestibilityChange }) => {
 
           <button
             onClick={() => setIsFeedbackModalOpen(true)}
-            className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm cursor-pointer text-gray-600 hover:text-royal"
+            className={`w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm cursor-pointer ${
+              hasFeedback ? "text-royal" : "text-gray-600 hover:text-royal"
+            }`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
               viewBox="0 0 24 24"
-              fill="none"
+              fill={hasFeedback ? "currentColor" : "none"}
               stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
@@ -200,6 +217,7 @@ const Article = ({ article, onDigestibilityChange }) => {
         onClose={() => setIsFeedbackModalOpen(false)}
         article={article}
         onDigestibilityChange={onDigestibilityChange}
+        setHasFeedback={setHasFeedback}
       />
     </article>
   );
