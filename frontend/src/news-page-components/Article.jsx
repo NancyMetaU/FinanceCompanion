@@ -147,9 +147,8 @@ const Article = ({ article, onDigestibilityChange, userContext }) => {
 
           <button
             onClick={() => setIsFeedbackModalOpen(true)}
-            className={`w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm cursor-pointer ${
-              hasFeedback ? "text-royal" : "text-gray-600 hover:text-royal"
-            }`}
+            className={`w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm cursor-pointer ${hasFeedback ? "text-royal" : "text-gray-600 hover:text-royal"
+              }`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -205,6 +204,7 @@ const Article = ({ article, onDigestibilityChange, userContext }) => {
                   key={index}
                   label={flag.label}
                   type={flag.type}
+                  impact={flag.impact}
                 />
               ))}
             </div>
