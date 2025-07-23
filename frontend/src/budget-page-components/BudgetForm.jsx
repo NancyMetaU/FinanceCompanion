@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { getAuth } from "firebase/auth";
 import PreferenceRadioGroup from "./PreferenceRadioGroup";
+import EmploymentTypeRadioGroup from "./EmploymentTypeRadioGroup";
 import ErrorMessage from "../shared-components/ErrorMessage";
 import RankedMultiSelect from "./RankedMultiSelect";
 
@@ -27,6 +28,7 @@ const SPENDING_FOCUS_OPTIONS = [
 const BudgetForm = ({ closeModal, onSubmit }) => {
   const [formData, setFormData] = useState({
     monthlyIncome: "",
+    employmentType: "",
     savingsPriority: "",
     debtPriority: "",
     spendingFocus: [],
@@ -55,6 +57,7 @@ const BudgetForm = ({ closeModal, onSubmit }) => {
         },
         body: JSON.stringify({
           monthlyIncome: parseFloat(formData.monthlyIncome),
+          employmentType: formData.employmentType,
           savingsPriority: formData.savingsPriority,
           debtPriority: formData.debtPriority,
           spendingFocus: formData.spendingFocus,
@@ -100,7 +103,7 @@ const BudgetForm = ({ closeModal, onSubmit }) => {
           htmlFor="monthlyIncome"
           className="block text-sm font-medium text-gray-700 mb-2"
         >
-          Monthly Income ($)
+          Monthly Income (pre-tax)
         </label>
         <input
           id="monthlyIncome"
@@ -109,10 +112,17 @@ const BudgetForm = ({ closeModal, onSubmit }) => {
           value={formData.monthlyIncome}
           onChange={handleInputChange}
           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-          placeholder="Enter your monthly income"
+          placeholder="Enter your monthly income ($)"
           required
         />
       </div>
+
+      <EmploymentTypeRadioGroup
+        name="employmentType"
+        label="Employment Type"
+        value={formData.employmentType}
+        onChange={handleInputChange}
+      />
 
       <PreferenceRadioGroup
         name="savingsPriority"
