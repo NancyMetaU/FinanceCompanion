@@ -21,12 +21,13 @@ router.post("/init", verifyFirebaseToken, async (req, res) => {
 
 router.post("/preferences", verifyFirebaseToken, async (req, res) => {
   const userId = req.uid;
-  const { monthlyIncome, savingsPriority, debtPriority, spendingFocus } =
+  const { monthlyIncome, employmentType, savingsPriority, debtPriority, spendingFocus } =
     req.body;
 
   try {
     const updatedUser = await updateUserPreferences(userId, {
       monthlyIncome,
+      employmentType,
       savingsPriority,
       debtPriority,
       spendingFocus,
