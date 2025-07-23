@@ -1,7 +1,7 @@
 import React from "react";
 import Article from "./Article";
 
-const ArticleGrid = ({ articles, onDigestibilityChange }) => {
+const ArticleGrid = ({ articles, onDigestibilityChange, userContext }) => {
   const validArticles = articles?.filter((article) => article.uuid) || [];
 
   if (validArticles.length === 0) {
@@ -20,6 +20,7 @@ const ArticleGrid = ({ articles, onDigestibilityChange }) => {
             <Article
               article={article}
               onDigestibilityChange={onDigestibilityChange}
+              userContext={userContext}
             />
           </li>
         ))}

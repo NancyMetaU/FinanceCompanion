@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Header from "../shared-components/Header";
 import Footer from "../shared-components/Footer";
 import Sidebar from "../shared-components/Sidebar";
@@ -15,6 +15,10 @@ const NewsPage = () => {
   const [digestibilityScores, setDigestibilityScores] = useState({});
   const [digestibilityRefreshTrigger, setDigestibilityRefreshTrigger] =
     useState(0);
+  const [userContext, setUserContext] = useState({
+    readArticles: [],
+    feedback: {},
+  });
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -107,6 +111,30 @@ const NewsPage = () => {
     fetchDigestibilityScores();
   }, [articles, digestibilityRefreshTrigger]);
 
+  useEffect(() => {
+    const fetchUserContext = async () => {
+      try {
+        const user = getAuth().currentUser;
+        if (!user) return;
+
+        const idToken = await user.getIdToken();
+        const res = await fetch(`${BACKEND_URL}/api/articleContext`, {
+          headers: {
+            Authorization: `Bearer ${idToken}`,
+          },
+        });
+
+        if (!res.ok) throw new Error("Failed to load user article context");
+        const data = await res.json();
+        setUserContext(data);
+      } catch (err) {
+        console.error("Error fetching user context:", err);
+      }
+    };
+
+    fetchUserContext();
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -126,6 +154,7 @@ const NewsPage = () => {
               onDigestibilityChange={() =>
                 setDigestibilityRefreshTrigger((prev) => prev + 1)
               }
+              userContext={userContext}
             />
           )}
         </main>

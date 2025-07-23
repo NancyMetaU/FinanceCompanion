@@ -10,10 +10,18 @@ import { useState } from "react";
 import { getAuth } from "firebase/auth";
 import ErrorMessage from "../shared-components/ErrorMessage";
 import Loading from "../shared-components/Loading";
+import { useEffect } from "react";
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
-const FeedbackModal = ({ isOpen, onClose, article, onDigestibilityChange }) => {
+const FeedbackModal = ({
+  isOpen,
+  onClose,
+  article,
+  onDigestibilityChange,
+  setHasFeedback,
+  userContext,
+}) => {
   const [rating, setRating] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -56,6 +64,7 @@ const FeedbackModal = ({ isOpen, onClose, article, onDigestibilityChange }) => {
       }
 
       setSuccess(true);
+      if (setHasFeedback) setHasFeedback(true);
       if (onDigestibilityChange) onDigestibilityChange();
     } catch (error) {
       console.error("Error submitting feedback:", error);
@@ -64,6 +73,15 @@ const FeedbackModal = ({ isOpen, onClose, article, onDigestibilityChange }) => {
       setIsSubmitting(false);
     }
   };
+
+  useEffect(() => {
+    const existingFeedback =
+      article?.uuid && userContext?.feedback?.[article.uuid];
+    if (existingFeedback) {
+      setRating(existingFeedback.rating);
+      setSuccess(true);
+    }
+  }, [article.uuid, userContext?.feedback]);
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -81,9 +99,16 @@ const FeedbackModal = ({ isOpen, onClose, article, onDigestibilityChange }) => {
             <p className="text-base font-medium">
               Thank you for your feedback!
             </p>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-600 mb-4">
               You rated this article <strong>{rating}/5</strong>.
             </p>
+            <button
+              type="button"
+              onClick={() => setSuccess(false)}
+              className="px-4 py-2 rounded-md text-sm bg-royal text-white hover:bg-royal/90"
+            >
+              Resubmit Feedback
+            </button>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
