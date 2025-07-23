@@ -2960,6 +2960,150 @@
     ],
     "similar": [
       {
+        "uuid": "e60f88ba-068f-4d3a-9809-077d4957e1fc",
+        "title": "Republic Bancorp Reports a 25% Increase in Second Quarter Net Income | RBCAA Stock News",
+        "description": "Republic Bancorp, Inc. (RBCAA) reported a 25% increase in second quarter 2025 net income to $31.5 million.  Diluted earnings per share rose 24% to $1.61, and",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, RBCAA",
+        "snippet": "Republic Bancorp, Inc. (RBCAA, Financial) reported a 25% increase in second quarter 2025 net income to $31.5 million.\n\nDiluted earnings per share rose 24% to $1...",
+        "url": "https://www.gurufocus.com/news/2987366/republic-bancorp-reports-a-25-increase-in-second-quarter-net-income-rbcaa-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C000008S1.png?20",
+        "language": "en",
+        "published_at": "2025-07-18T13:17:44.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "RBCAA",
+            "name": "Republic Bancorp, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Financial Services",
+            "match_score": 112.84192,
+            "sentiment_score": 0.67865,
+            "highlights": [
+              {
+                "highlight": "<em>Republic</em> <em>Bancorp</em>, <em>[+363 characters]",
+                "sentiment": 0.8519,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "(<em>RBCAA</em>), headquartered in Louis[+264 characters]",
+                "sentiment": 0.7269,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Overall, <em>Republic</em> <em>Bancorp</[+124 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Republic</em> <em>Bancorp</em> Reports a 25% Increase in Second Quarter Net Income | <em>RBCAA</em> Stock News",
+                "sentiment": 0.3182,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "2a273287-89fc-46eb-8a1c-41b11a7d021b",
+        "title": "ACCO Brands Corporation Announces Second Quarter 2025 Earnings Webcast | ACCO Stock News",
+        "description": "ACCO Brands Corporation (ACCO) to release Q2 2025 earnings on July 31, 2025.    Conference call and webcast scheduled for August 1, 2025, at 8:30 a.m. EST.",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, ACCO",
+        "snippet": "ACCO Brands Corporation (ACCO, Financial) to release Q2 2025 earnings on July 31, 2025.\n\nConference call and webcast scheduled for August 1, 2025, at 8:30 a.m. ...",
+        "url": "https://www.gurufocus.com/news/2987141/acco-brands-corporation-announces-second-quarter-2025-earnings-webcast-acco-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C0000097H.png?20",
+        "language": "en",
+        "published_at": "2025-07-18T12:17:58.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "ACCO",
+            "name": "ACCO Brands Corporation",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Industrials",
+            "match_score": 144.32368,
+            "sentiment_score": 0,
+            "highlights": [
+              {
+                "highlight": "<em>ACCO</em> <em>Brands</em> <em>Corpor[+232 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>ACCO</em> <em>Brands</em> <em>Corpor[+278 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>ACCO</em> <em>Brands</em> is renowne[+225 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>ACCO</em> <em>Brands</em> <em>Corporation</em> Announces Second Quarter 2025 Earnings Webcast | ACCO Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "670ee401-3515-4293-8353-114b41eed482",
+        "title": "Coeur d'Alene Bancorp Announces Its Second Quarter 2025 Results | CDAB Stock News",
+        "description": "Coeur d'Alene Bancorp (CDAB) reports Q2 2025 net income of $372,894, maintaining $0.20 per share.    Gross loans increased by 14.1% to $137.6 million, whil",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, CDAB",
+        "snippet": "Coeur d'Alene Bancorp (CDAB, Financial) reports Q2 2025 net income of $372,894, maintaining $0.20 per share.\n\nGross loans increased by 14.1% to $137.6 million, ...",
+        "url": "https://www.gurufocus.com/news/2988357/coeur-dalene-bancorp-announces-its-second-quarter-2025-results-cdab-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C00008PNW.png?20",
+        "language": "en",
+        "published_at": "2025-07-18T19:15:55.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "CDAB",
+            "name": "Coeur d'Alene Bancorp, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Financial Services",
+            "match_score": 158.43143,
+            "sentiment_score": 0.18235,
+            "highlights": [
+              {
+                "highlight": "<em>Coeur</em> <em>d'Alene</em> <em>Banc[+285 characters]",
+                "sentiment": 0.0516,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Coeur</em> <em>d'Alene</em> <em>Banc[+242 characters]",
+                "sentiment": 0.296,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Coeur</em> <em>d'Alene</em> <em>Banc[+287 characters]",
+                "sentiment": 0.3818,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Coeur</em> <em>d'Alene</em> <em>Bancorp</em> Announces Its Second Quarter 2025 Results | <em>CDAB</em> Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "uuid": "922b2508-1422-45b2-878f-e6970b557250",
         "title": "Chino Commercial Bancorp Reports 8.7% Increase in Net Earnings | CCBC Stock News",
         "description": "Chino Commercial Bancorp (OTC: CCBC) reported net earnings of $1.35 million in Q1 2025, an 8.7% increase from the previous year.    Total assets reached a",
@@ -3171,8 +3315,7 @@
               }
             ]
           }
-        ],
-        "similar": []
+        ]
       }
     ]
   },
@@ -3590,6 +3733,255 @@
               },
               {
                 "highlight": "<em>Valmont</em> <em>Industries</em> <em[+142 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uuid": "d589dd3a-e7fc-4642-8d78-77c7008620b2",
+    "title": "BAX Sees Unusual Options Activity | BAX Stock News",
+    "description": "Investors have noticed an unusual spike in active option classes for Baxter International (BAX) during the market's opening. This activity suggests heightened i",
+    "keywords": "GuruFocus, Article, News, GuruFocus News, BAX",
+    "snippet": "Investors have noticed an unusual spike in active option classes for Baxter International (BAX, Financial) during the market's opening. This activity suggests h...",
+    "url": "https://www.gurufocus.com/news/2987812/bax-sees-unusual-options-activity-bax-stock-news",
+    "image_url": "https://static.gurufocus.com/logos/0C000006V2.png?20",
+    "language": "en",
+    "published_at": "2025-07-18T15:00:30.000000Z",
+    "source": "gurufocus.com",
+    "relevance_score": null,
+    "entities": [
+      {
+        "symbol": "BAX",
+        "name": "Baxter International Inc.",
+        "exchange": null,
+        "exchange_long": null,
+        "country": "us",
+        "type": "equity",
+        "industry": "Healthcare",
+        "match_score": 47.34993,
+        "sentiment_score": 0.442729,
+        "highlights": [
+          {
+            "highlight": "Investors have noticed an unusual spike [+200 characters]",
+            "sentiment": 0.6908,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Wall Street Analysts Forecast\n\nBased on [+300 characters]",
+            "sentiment": -0.2732,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "More detailed estimate data can be found[+283 characters]",
+            "sentiment": 0,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Based on GuruFocus estimates, the estima[+258 characters]",
+            "sentiment": 0.8176,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "More detailed data can be found on the <[+277 characters]",
+            "sentiment": 0,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Positive Points\n\n<em>Baxter</em> <em>Int[+293 characters]",
+            "sentiment": 0.9001,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>Baxter</em> <em>International</em> <[+322 characters]",
+            "sentiment": 0.9638,
+            "highlighted_in": "main_text"
+          }
+        ]
+      }
+    ],
+    "similar": [
+      {
+        "uuid": "3fa420e1-cd12-40b0-a28b-79e1f4804729",
+        "title": "XPeng (XPEV) Sees Unusual Put Activity as Earnings Loom | XPEV Stock News",
+        "description": "Significant bearish activity has been observed in XPeng (XPEV) with a notable increase in put option trading. A total of 5,404 put options were traded, which is",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, XPEV",
+        "snippet": "Significant bearish activity has been observed in XPeng (XPEV, Financial) with a notable increase in put option trading. A total of 5,404 put options were trade...",
+        "url": "https://www.gurufocus.com/news/2987868/xpeng-xpev-sees-unusual-put-activity-as-earnings-loom-xpev-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C0000BXZD.png?20",
+        "language": "en",
+        "published_at": "2025-07-18T15:30:57.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "XPEV",
+            "name": "XPeng Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Consumer Cyclical",
+            "match_score": 52.3278,
+            "sentiment_score": 0.4331,
+            "highlights": [
+              {
+                "highlight": "Significant bearish activity has been ob[+165 characters]",
+                "sentiment": 0.4767,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+277 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+330 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+236 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+216 characters]",
+                "sentiment": 0.5574,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Positive Points\n\n<em>XPeng</em> <em>Inc<[+247 characters]",
+                "sentiment": 0.7717,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>XPeng</em> <em>Inc</em> (XPEV) repor[+261 characters]",
+                "sentiment": 0.9022,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>XPeng</em> <em>Inc</em> (XPEV) antic[+121 characters]",
+                "sentiment": 0.3612,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>XPeng</em> (XPEV) Sees Unusual Put Activity as Earnings Loom | XPEV Stock News",
+                "sentiment": -0.2263,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "XPEVN.MX",
+            "name": "XPeng Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "mx",
+            "type": "equity",
+            "industry": "N/A",
+            "match_score": 52.325294,
+            "sentiment_score": 0.4331,
+            "highlights": [
+              {
+                "highlight": "Significant bearish activity has been ob[+165 characters]",
+                "sentiment": 0.4767,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+277 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+330 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+236 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+216 characters]",
+                "sentiment": 0.5574,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Positive Points\n\n<em>XPeng</em> <em>Inc<[+247 characters]",
+                "sentiment": 0.7717,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>XPeng</em> <em>Inc</em> (XPEV) repor[+261 characters]",
+                "sentiment": 0.9022,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>XPeng</em> <em>Inc</em> (XPEV) antic[+121 characters]",
+                "sentiment": 0.3612,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>XPeng</em> (XPEV) Sees Unusual Put Activity as Earnings Loom | XPEV Stock News",
+                "sentiment": -0.2263,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "adfba646-340b-435b-bbcd-a1ec76a02df0",
+        "title": "BNED: Options Activity and Market Expectations Ahead of Earnings | BNED Stock News",
+        "description": "In the lead-up to earnings, Barnes & Noble Education (BNED) is experiencing a typical volume of options trading, with a noticeable skew towards puts over calls",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, BNED",
+        "snippet": "In the lead-up to earnings, Barnes & Noble Education (BNED, Financial) is experiencing a typical volume of options trading, with a noticeable skew towards puts ...",
+        "url": "https://www.gurufocus.com/news/2988349/bned-options-activity-and-market-expectations-ahead-of-earnings-bned-stock-news",
+        "image_url": "https://static.gurufocus.com/images/global_logo_twitter_card.png",
+        "language": "en",
+        "published_at": "2025-07-18T19:15:21.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "BNED",
+            "name": "Barnes & Noble Education, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Consumer Cyclical",
+            "match_score": 76.54088,
+            "sentiment_score": 0.01818,
+            "highlights": [
+              {
+                "highlight": "In the lead-up to earnings, <em>Barnes</[+259 characters]",
+                "sentiment": -0.25,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+312 characters]",
+                "sentiment": -0.4767,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+310 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+274 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+84 characters]",
                 "sentiment": 0,
                 "highlighted_in": "main_text"
               }
@@ -4611,6 +5003,1174 @@
             "highlight": "<em>XPeng</em> (XPEV) Sees Unusual Put Activity as Earnings Loom | XPEV Stock News",
             "sentiment": -0.2263,
             "highlighted_in": "title"
+          }
+        ]
+      }
+    ],
+    "similar": [
+      {
+        "uuid": "d589dd3a-e7fc-4642-8d78-77c7008620b2",
+        "title": "BAX Sees Unusual Options Activity | BAX Stock News",
+        "description": "Investors have noticed an unusual spike in active option classes for Baxter International (BAX) during the market's opening. This activity suggests heightened i",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, BAX",
+        "snippet": "Investors have noticed an unusual spike in active option classes for Baxter International (BAX, Financial) during the market's opening. This activity suggests h...",
+        "url": "https://www.gurufocus.com/news/2987812/bax-sees-unusual-options-activity-bax-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C000006V2.png?20",
+        "language": "en",
+        "published_at": "2025-07-18T15:00:30.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "BAX",
+            "name": "Baxter International Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Healthcare",
+            "match_score": 47.34993,
+            "sentiment_score": 0.442729,
+            "highlights": [
+              {
+                "highlight": "Investors have noticed an unusual spike [+200 characters]",
+                "sentiment": 0.6908,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+300 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+283 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+258 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+277 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Positive Points\n\n<em>Baxter</em> <em>Int[+293 characters]",
+                "sentiment": 0.9001,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Baxter</em> <em>International</em> <[+322 characters]",
+                "sentiment": 0.9638,
+                "highlighted_in": "main_text"
+              }
+            ]
+          },
+          {
+            "symbol": "BAX.MX",
+            "name": "Baxter International Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "mx",
+            "type": "equity",
+            "industry": "Healthcare",
+            "match_score": 47.349285,
+            "sentiment_score": 0.442729,
+            "highlights": [
+              {
+                "highlight": "Investors have noticed an unusual spike [+200 characters]",
+                "sentiment": 0.6908,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+300 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+283 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+258 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+277 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Positive Points\n\n<em>Baxter</em> <em>Int[+293 characters]",
+                "sentiment": 0.9001,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Baxter</em> <em>International</em> <[+322 characters]",
+                "sentiment": 0.9638,
+                "highlighted_in": "main_text"
+              }
+            ]
+          },
+          {
+            "symbol": "0QK8.L",
+            "name": "Baxter International Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "gb",
+            "type": "equity",
+            "industry": "N/A",
+            "match_score": 47.349983,
+            "sentiment_score": 0.442729,
+            "highlights": [
+              {
+                "highlight": "Investors have noticed an unusual spike [+200 characters]",
+                "sentiment": 0.6908,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+300 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+283 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+258 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+277 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Positive Points\n\n<em>Baxter</em> <em>Int[+293 characters]",
+                "sentiment": 0.9001,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Baxter</em> <em>International</em> <[+322 characters]",
+                "sentiment": 0.9638,
+                "highlighted_in": "main_text"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "adfba646-340b-435b-bbcd-a1ec76a02df0",
+        "title": "BNED: Options Activity and Market Expectations Ahead of Earnings | BNED Stock News",
+        "description": "In the lead-up to earnings, Barnes & Noble Education (BNED) is experiencing a typical volume of options trading, with a noticeable skew towards puts over calls",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, BNED",
+        "snippet": "In the lead-up to earnings, Barnes & Noble Education (BNED, Financial) is experiencing a typical volume of options trading, with a noticeable skew towards puts ...",
+        "url": "https://www.gurufocus.com/news/2988349/bned-options-activity-and-market-expectations-ahead-of-earnings-bned-stock-news",
+        "image_url": "https://static.gurufocus.com/images/global_logo_twitter_card.png",
+        "language": "en",
+        "published_at": "2025-07-18T19:15:21.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "BNED",
+            "name": "Barnes & Noble Education, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Consumer Cyclical",
+            "match_score": 76.54088,
+            "sentiment_score": 0.01818,
+            "highlights": [
+              {
+                "highlight": "In the lead-up to earnings, <em>Barnes</[+259 characters]",
+                "sentiment": -0.25,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+312 characters]",
+                "sentiment": -0.4767,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+310 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+274 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+84 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uuid": "979fc621-f7f9-462a-afa6-dae3b35341ea",
+    "title": "Coastal Carolina Bancshares, Inc. Announces Second Quarter Results | CCNB Stock News",
+    "description": "Coastal Carolina Bancshares, Inc. (CCNB) reported a 6% increase in net income to $2.5 million for Q2 2025 compared to the prior quarter.    Total deposits",
+    "keywords": "GuruFocus, Article, News, GuruFocus News, CCNB",
+    "snippet": "Coastal Carolina Bancshares, Inc. (CCNB, Financial) reported a 6% increase in net income to $2.5 million for Q2 2025 compared to the prior quarter.\n\nTotal depos...",
+    "url": "https://www.gurufocus.com/news/2998535/coastal-carolina-bancshares-inc-announces-second-quarter-results-ccnb-stock-news",
+    "image_url": "https://static.gurufocus.com/logos/0C0000B9KL.png?20",
+    "language": "en",
+    "published_at": "2025-07-23T19:15:17.000000Z",
+    "source": "gurufocus.com",
+    "relevance_score": null,
+    "entities": [
+      {
+        "symbol": "CCNB",
+        "name": "Coastal Carolina Bancshares, Inc.",
+        "exchange": null,
+        "exchange_long": null,
+        "country": "us",
+        "type": "equity",
+        "industry": "Financial Services",
+        "match_score": 183.29704,
+        "sentiment_score": 0.62385,
+        "highlights": [
+          {
+            "highlight": "<em>Coastal</em> <em>Carolina</em> <em>B[+320 characters]",
+            "sentiment": 0.891,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>Coastal</em> <em>Carolina</em> <em>B[+314 characters]",
+            "sentiment": 0.6908,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>Coastal</em> <em>Carolina</em> <em>B[+238 characters]",
+            "sentiment": 0.9136,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>Coastal</em> <em>Carolina</em> <em>Bancshares</em>, <em>Inc</em>. Announces Second Quarter Results | CCNB Stock News",
+            "sentiment": 0,
+            "highlighted_in": "title"
+          }
+        ]
+      }
+    ],
+    "similar": [
+      {
+        "uuid": "5980300d-0445-485e-ac95-0250155066dd",
+        "title": "NVR, INC. ANNOUNCES SECOND QUARTER RESULTS | NVR Stock News",
+        "description": "NVR, Inc. (NVR) reports a 17% drop in net income for Q2 2025, totaling $333.7 million, or $108.54 per diluted share.    New home orders declined by 11% to",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, NVR",
+        "snippet": "NVR, Inc. (NVR, Financial) reports a 17% drop in net income for Q2 2025, totaling $333.7 million, or $108.54 per diluted share.\n\nNew home orders declined by 11%...",
+        "url": "https://www.gurufocus.com/news/2997682/nvr-inc-announces-second-quarter-results-nvr-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C00000BXP.png?20",
+        "language": "en",
+        "published_at": "2025-07-23T14:23:48.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "NVR",
+            "name": "NVR, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Consumer Cyclical",
+            "match_score": 107.52231,
+            "sentiment_score": 0.3332,
+            "highlights": [
+              {
+                "highlight": "<em>NVR</em>, <em>Inc</em>. (<em>NVR</em[+229 characters]",
+                "sentiment": 0.0258,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>NVR</em>, <em>Inc</em>. (<em>NVR</em[+321 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>NVR</em> also committed to its share[+167 characters]",
+                "sentiment": 0.7964,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>NVR</em>, <em>INC</em>. ANNOUNCES SECOND QUARTER RESULTS | <em>NVR</em> Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "NVR.MX",
+            "name": "NVR, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "mx",
+            "type": "equity",
+            "industry": "Consumer Cyclical",
+            "match_score": 107.46224,
+            "sentiment_score": 0.3332,
+            "highlights": [
+              {
+                "highlight": "<em>NVR</em>, <em>Inc</em>. (<em>NVR</em[+229 characters]",
+                "sentiment": 0.0258,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>NVR</em>, <em>Inc</em>. (<em>NVR</em[+321 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>NVR</em> also committed to its share[+167 characters]",
+                "sentiment": 0.7964,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>NVR</em>, <em>INC</em>. ANNOUNCES SECOND QUARTER RESULTS | <em>NVR</em> Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "N1VR34.SA",
+            "name": "NVR, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "br",
+            "type": "equity",
+            "industry": "Consumer Cyclical",
+            "match_score": 107.57314,
+            "sentiment_score": 0.3332,
+            "highlights": [
+              {
+                "highlight": "<em>NVR</em>, <em>Inc</em>. (<em>NVR</em[+229 characters]",
+                "sentiment": 0.0258,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>NVR</em>, <em>Inc</em>. (<em>NVR</em[+321 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>NVR</em> also committed to its share[+167 characters]",
+                "sentiment": 0.7964,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>NVR</em>, <em>INC</em>. ANNOUNCES SECOND QUARTER RESULTS | <em>NVR</em> Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "b83b8559-44ec-4a90-a6e5-899ced579ada",
+        "title": "Teledyne Technologies Reports Second Quarter Results | TDY Stock News",
+        "description": "Teledyne Technologies (TDY) reported record second-quarter net sales of $1,513.7 million, marking a 10.2% increase from the previous year.    The company a",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, TDY",
+        "snippet": "Teledyne Technologies (TDY, Financial) reported record second-quarter net sales of $1,513.7 million, marking a 10.2% increase from the previous year.\n\nThe compa...",
+        "url": "https://www.gurufocus.com/news/2996606/teledyne-technologies-reports-second-quarter-results-tdy-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C00000CKK.png?20",
+        "language": "en",
+        "published_at": "2025-07-23T12:17:32.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "TDY",
+            "name": "Teledyne Technologies Incorporated",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Technology",
+            "match_score": 45.90526,
+            "sentiment_score": 0.7506,
+            "highlights": [
+              {
+                "highlight": "<em>Teledyne</em> <em>Technologies</em> [+310 characters]",
+                "sentiment": 0.7506,
+                "highlighted_in": "main_text"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "b8f80420-8aa0-49b2-9595-59bcfd53fb32",
+        "title": "Prosperity Bancshares (PB): Strong Second Quarter with Robust Growth | PB Stock News",
+        "description": "Prosperity Bancshares (PB) reported a second quarter tangible book value per share of $42.38 and a Common Equity Tier 1 (CET1) capital ratio of 17.1%. The bank",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, PB",
+        "snippet": "Prosperity Bancshares (PB, Financial) reported a second quarter tangible book value per share of $42.38 and a Common Equity Tier 1 (CET1) capital ratio of 17.1%...",
+        "url": "https://www.gurufocus.com/news/2996586/prosperity-bancshares-pb-strong-second-quarter-with-robust-growth-pb-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C000008M4.png?20",
+        "language": "en",
+        "published_at": "2025-07-23T12:16:19.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "PB",
+            "name": "Prosperity Bancshares, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Financial Services",
+            "match_score": 91.18933,
+            "sentiment_score": 0.559867,
+            "highlights": [
+              {
+                "highlight": "<em>Prosperity</em> <em>Bancshares</em> [+211 characters]",
+                "sentiment": 0.5574,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "With substantial enhancements in net inc[+278 characters]",
+                "sentiment": 0.9081,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+300 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+289 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+258 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+298 characters]",
+                "sentiment": 0.5574,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Positive Points\n\n<em>Prosperity</em> <em[+315 characters]",
+                "sentiment": 0.9062,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Prosperity</em> <em>Bancshares</em> [+281 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Prosperity</em> <em>Bancshares</em> (PB): Strong Second Quarter with Robust Growth | PB Stock News",
+                "sentiment": 0.8074,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "386720bf-75bb-4701-baca-874a371ce6d7",
+        "title": "Lennox Reports Second Quarter Results | LII Stock News",
+        "description": "”¢ Lennox (LII) posts strong Q2 2025 financial results with 3% revenue growth and 11% rise in operating income.\n                \n            ”¢ F",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, LII",
+        "snippet": "• Lennox (LII, Financial) posts strong Q2 2025 financial results with 3% revenue growth and 11% rise in operating income.\n\n• Full-year guidance is raised, a...",
+        "url": "https://www.gurufocus.com/news/2996511/lennox-reports-second-quarter-results-lii-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C0000082P.png?20",
+        "language": "en",
+        "published_at": "2025-07-23T12:00:26.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "LII",
+            "name": "Lennox International Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Industrials",
+            "match_score": 34.481464,
+            "sentiment_score": 0.8555,
+            "highlights": [
+              {
+                "highlight": "<em>Lennox</em> <em>International</em> <[+288 characters]",
+                "sentiment": 0.8555,
+                "highlighted_in": "main_text"
+              }
+            ]
+          },
+          {
+            "symbol": "LII.MX",
+            "name": "Lennox International Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "mx",
+            "type": "equity",
+            "industry": "Industrials",
+            "match_score": 34.475883,
+            "sentiment_score": 0.8555,
+            "highlights": [
+              {
+                "highlight": "<em>Lennox</em> <em>International</em> <[+288 characters]",
+                "sentiment": 0.8555,
+                "highlighted_in": "main_text"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "6d384c85-b462-44cb-befc-a8ec1ef74b5f",
+        "title": "PROSPERITY BANCSHARES, INC.® REPORTS SECOND QUARTER 2025 EARNINGS",
+        "description": "PR NewswireHOUSTON, July 23, 2025\n\n\n\nSecond quarter earnings per share (diluted) of $1.42, an increase of 21.4% compared to second quarter 2024Second quarter",
+        "keywords": "GuruFocus, Article, News, PRNewswire, NYSE:PB",
+        "snippet": "Second quarter earnings per share (diluted) of $1.42 , an increase of 21.4% compared to second quarter 2024\n\nSecond quarter net income increased 21.1% to $135.2...",
+        "url": "https://www.gurufocus.com/news/2996488/prosperity-bancshares-inc-reports-second-quarter-2025-earnings",
+        "image_url": "https://static.gurufocus.com/images/global_logo_twitter_card.png",
+        "language": "en",
+        "published_at": "2025-07-23T12:00:10.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "PB",
+            "name": "Prosperity Bancshares, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Financial Services",
+            "match_score": 149.9996,
+            "sentiment_score": 0.288445,
+            "highlights": [
+              {
+                "highlight": "<em>Bancshares</em>, <em>Inc</em>.® (<e[+272 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Dividend\n\n<em>Prosperity</em> <em>Bancsh[+159 characters]",
+                "sentiment": 0.296,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "(\"American Bank\"), will merge with and i[+103 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Under the terms and subject to the condi[+249 characters]",
+                "sentiment": 0.9136,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Prosperity</em> <em>Bancshares</em>,[+284 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Copies of the Proxy Statement/Prospectus[+341 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Prosperity</em> <em>Bancshares</em>,[+339 characters]",
+                "sentiment": 0.9136,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Prosperity</em> <em>Bancshares</em>,[+339 characters]",
+                "sentiment": 0.1779,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Prosperity</em> <em>Bancshares</em>,[+338 characters]",
+                "sentiment": 0.3612,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "-2025-earnings-302511658.html\n\nSOURCE <e[+52 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>PROSPERITY</em> <em>BANCSHARES</em>, <em>INC</em>.® REPORTS SECOND QUARTER 2025 EARNINGS",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "EBF",
+            "name": "Ennis, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Industrials",
+            "match_score": 2.293182,
+            "sentiment_score": 0.2263,
+            "highlights": [
+              {
+                "highlight": "Roanoke River Oaks Edna Floydada Elgin S[+326 characters]",
+                "sentiment": 0.2263,
+                "highlighted_in": "main_text"
+              }
+            ]
+          },
+          {
+            "symbol": "PKY",
+            "name": "Parkway, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Financial",
+            "match_score": 4.274265,
+            "sentiment_score": 0.505375,
+            "highlights": [
+              {
+                "highlight": "Winnsboro Wharton Wadley College Station[+331 characters]",
+                "sentiment": 0.3612,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Southwest <em>Parkway</em> Preston Royal[+321 characters]",
+                "sentiment": 0.6597,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Cattlemans Congress Trinity Mills Fry Ro[+319 characters]",
+                "sentiment": 0.7506,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Harvard Cedar Hill Gun Barrel City Liber[+326 characters]",
+                "sentiment": 0.25,
+                "highlighted_in": "main_text"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uuid": "e60f88ba-068f-4d3a-9809-077d4957e1fc",
+    "title": "Republic Bancorp Reports a 25% Increase in Second Quarter Net Income | RBCAA Stock News",
+    "description": "Republic Bancorp, Inc. (RBCAA) reported a 25% increase in second quarter 2025 net income to $31.5 million.  Diluted earnings per share rose 24% to $1.61, and",
+    "keywords": "GuruFocus, Article, News, GuruFocus News, RBCAA",
+    "snippet": "Republic Bancorp, Inc. (RBCAA, Financial) reported a 25% increase in second quarter 2025 net income to $31.5 million.\n\nDiluted earnings per share rose 24% to $1...",
+    "url": "https://www.gurufocus.com/news/2987366/republic-bancorp-reports-a-25-increase-in-second-quarter-net-income-rbcaa-stock-news",
+    "image_url": "https://static.gurufocus.com/logos/0C000008S1.png?20",
+    "language": "en",
+    "published_at": "2025-07-18T13:17:44.000000Z",
+    "source": "gurufocus.com",
+    "relevance_score": null,
+    "entities": [
+      {
+        "symbol": "RBCAA",
+        "name": "Republic Bancorp, Inc.",
+        "exchange": null,
+        "exchange_long": null,
+        "country": "us",
+        "type": "equity",
+        "industry": "Financial Services",
+        "match_score": 112.84192,
+        "sentiment_score": 0.67865,
+        "highlights": [
+          {
+            "highlight": "<em>Republic</em> <em>Bancorp</em>, <em>[+363 characters]",
+            "sentiment": 0.8519,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "(<em>RBCAA</em>), headquartered in Louis[+264 characters]",
+            "sentiment": 0.7269,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Overall, <em>Republic</em> <em>Bancorp</[+124 characters]",
+            "sentiment": 0.8176,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>Republic</em> <em>Bancorp</em> Reports a 25% Increase in Second Quarter Net Income | <em>RBCAA</em> Stock News",
+            "sentiment": 0.3182,
+            "highlighted_in": "title"
+          }
+        ]
+      }
+    ],
+    "similar": [
+      {
+        "uuid": "670ee401-3515-4293-8353-114b41eed482",
+        "title": "Coeur d'Alene Bancorp Announces Its Second Quarter 2025 Results | CDAB Stock News",
+        "description": "Coeur d'Alene Bancorp (CDAB) reports Q2 2025 net income of $372,894, maintaining $0.20 per share.    Gross loans increased by 14.1% to $137.6 million, whil",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, CDAB",
+        "snippet": "Coeur d'Alene Bancorp (CDAB, Financial) reports Q2 2025 net income of $372,894, maintaining $0.20 per share.\n\nGross loans increased by 14.1% to $137.6 million, ...",
+        "url": "https://www.gurufocus.com/news/2988357/coeur-dalene-bancorp-announces-its-second-quarter-2025-results-cdab-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C00008PNW.png?20",
+        "language": "en",
+        "published_at": "2025-07-18T19:15:55.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "CDAB",
+            "name": "Coeur d'Alene Bancorp, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Financial Services",
+            "match_score": 158.43143,
+            "sentiment_score": 0.18235,
+            "highlights": [
+              {
+                "highlight": "<em>Coeur</em> <em>d'Alene</em> <em>Banc[+285 characters]",
+                "sentiment": 0.0516,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Coeur</em> <em>d'Alene</em> <em>Banc[+242 characters]",
+                "sentiment": 0.296,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Coeur</em> <em>d'Alene</em> <em>Banc[+287 characters]",
+                "sentiment": 0.3818,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Coeur</em> <em>d'Alene</em> <em>Bancorp</em> Announces Its Second Quarter 2025 Results | <em>CDAB</em> Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "d7d87aa0-fd4e-4756-bf41-72e3774781ec",
+        "title": "Chino Commercial Bancorp Reports 25% Increase in Net Earnings | CCBC Stock News",
+        "description": "Chino Commercial Bancorp (OTC: CCBC) reported a 25.04% increase in net earnings for Q2 2025, totaling $1.54 million.    The newly opened Corona branch attr",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, CCBC",
+        "snippet": "Chino Commercial Bancorp (OTC: CCBC) reported a 25.04% increase in net earnings for Q2 2025, totaling $1.54 million.\n\nThe newly opened Corona branch attracted $...",
+        "url": "https://www.gurufocus.com/news/2988350/chino-commercial-bancorp-reports-25-increase-in-net-earnings-ccbc-stock-news",
+        "image_url": "https://static.gurufocus.com/images/global_logo_twitter_card.png",
+        "language": "en",
+        "published_at": "2025-07-18T19:15:23.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "CCBC",
+            "name": "Chino Commercial Bancorp",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Financial Services",
+            "match_score": 192.9519,
+            "sentiment_score": 0.669275,
+            "highlights": [
+              {
+                "highlight": "<em>Chino</em> <em>Commercial</em> <em>B[+291 characters]",
+                "sentiment": 0.8807,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Chino</em> <em>Commercial</em> <em>B[+321 characters]",
+                "sentiment": 0.8658,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Total assets of <em>Chino</em> <em>Comme[+249 characters]",
+                "sentiment": 0.6124,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Chino</em> <em>Commercial</em> <em>Bancorp</em> Reports 25% Increase in Net Earnings | CCBC Stock News",
+                "sentiment": 0.3182,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uuid": "ba58238f-aad5-455e-9f28-1f5cfc1fe12f",
+    "title": "Chipotle (CMG) Prepares for Earnings with Normal Options Volume | CMG Stock News",
+    "description": "As Chipotle (CMG) approaches its earnings announcement, the options market activity appears typical, with a higher ratio of call options compared to puts at 5:4",
+    "keywords": "GuruFocus, Article, News, GuruFocus News, CMG",
+    "snippet": "As Chipotle (CMG, Financial) approaches its earnings announcement, the options market activity appears typical, with a higher ratio of call options compared to ...",
+    "url": "https://www.gurufocus.com/news/2998544/chipotle-cmg-prepares-for-earnings-with-normal-options-volume-cmg-stock-news",
+    "image_url": "https://static.gurufocus.com/logos/0C00000E2B.png?20",
+    "language": "en",
+    "published_at": "2025-07-23T19:16:05.000000Z",
+    "source": "gurufocus.com",
+    "relevance_score": null,
+    "entities": [
+      {
+        "symbol": "CMG",
+        "name": "Chipotle Mexican Grill, Inc.",
+        "exchange": null,
+        "exchange_long": null,
+        "country": "us",
+        "type": "equity",
+        "industry": "Consumer Cyclical",
+        "match_score": 85.61746,
+        "sentiment_score": 0.4844,
+        "highlights": [
+          {
+            "highlight": "Wall Street Analysts Forecast\n\nBased on [+311 characters]",
+            "sentiment": -0.2732,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "More detailed estimate data can be found[+311 characters]",
+            "sentiment": 0,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Based on GuruFocus estimates, the estima[+271 characters]",
+            "sentiment": 0.8176,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "More detailed data can be found on the <[+306 characters]",
+            "sentiment": 0.6369,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Positive Points\n\n<em>Chipotle</em> <em>M[+266 characters]",
+            "sentiment": 0.9287,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>Chipotle</em> <em>Mexican</em> <em>G[+325 characters]",
+            "sentiment": 0.7964,
+            "highlighted_in": "main_text"
+          }
+        ]
+      }
+    ],
+    "similar": [
+      {
+        "uuid": "714db2f9-0d45-49ab-aaba-0b67f0920212",
+        "title": "Tractor Supply (TSCO) Poised for Q2 Earnings Announcement",
+        "description": "Summary:\n    Tractor Supply Co (TSCO) is expected to report a significant decline in Q2 earnings, yet a modest revenue increase is anticipated.    Analysts targ",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, TSCO",
+        "snippet": "Summary:\n\nTractor Supply Co (TSCO, Financial) is expected to report a significant decline in Q2 earnings, yet a modest revenue increase is anticipated.\n\nAnalyst...",
+        "url": "https://www.gurufocus.com/news/2998391/tractor-supply-tsco-poised-for-q2-earnings-announcement",
+        "image_url": "https://static.gurufocus.com/logos/0C00000CP9.png?20",
+        "language": "en",
+        "published_at": "2025-07-23T17:56:14.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "TSCO",
+            "name": "Tractor Supply Company",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Consumer Cyclical",
+            "match_score": 81.59511,
+            "sentiment_score": 0.3192,
+            "highlights": [
+              {
+                "highlight": "Summary:\n\n<em>Tractor</em> <em>Supply</e[+234 characters]",
+                "sentiment": 0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Upcoming Earnings Report: Key Expectatio[+294 characters]",
+                "sentiment": 0.5267,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Analyst Price Targets and Recommendation[+239 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Investors can delve into more detailed p[+260 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Evaluating GF Value and Market Position\n[+232 characters]",
+                "sentiment": 0.6369,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Investors can explore more comprehensive[+272 characters]",
+                "sentiment": 0.3102,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Tractor</em> <em>Supply</em> (TSCO) Poised for Q2 Earnings Announcement",
+                "sentiment": 0.25,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "51b96692-0955-474b-8caa-7b351f07ed1e",
+        "title": "Honeywell (HON) Prepares for Strategic Shift with Upcoming Earnings",
+        "description": "Key Highlights:\n  Honeywell International (HON) is expected to release quarterly earnings with an anticipated EPS of $2.66.  The company is undergoing restructu",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, HON",
+        "snippet": "Key Highlights:\n\nHoneywell International (HON, Financial) is expected to release quarterly earnings with an anticipated EPS of $2.66.\n\nThe company is undergoing...",
+        "url": "https://www.gurufocus.com/news/2998256/honeywell-hon-prepares-for-strategic-shift-with-upcoming-earnings",
+        "image_url": "https://static.gurufocus.com/logos/0C00000BBJ.png?20",
+        "language": "en",
+        "published_at": "2025-07-23T16:58:33.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "HON",
+            "name": "Honeywell International Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Industrials",
+            "match_score": 49.6864,
+            "sentiment_score": 0.224883,
+            "highlights": [
+              {
+                "highlight": "Key Highlights:\n\n<em>Honeywell</em> <em>[+289 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Earnings Anticipation and Company Transf[+217 characters]",
+                "sentiment": 0.3818,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Analyst Price Targets and Recommendation[+258 characters]",
+                "sentiment": 0.296,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For a deeper dive into these projections[+251 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "GF Value and Market Position\n\nAccording [+238 characters]",
+                "sentiment": 0.4215,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For comprehensive insights, explore the [+74 characters]",
+                "sentiment": 0.25,
+                "highlighted_in": "main_text"
+              }
+            ]
+          },
+          {
+            "symbol": "HON.MX",
+            "name": "Honeywell International Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "mx",
+            "type": "equity",
+            "industry": "Industrials",
+            "match_score": 49.685898,
+            "sentiment_score": 0.224883,
+            "highlights": [
+              {
+                "highlight": "Key Highlights:\n\n<em>Honeywell</em> <em>[+289 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Earnings Anticipation and Company Transf[+217 characters]",
+                "sentiment": 0.3818,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Analyst Price Targets and Recommendation[+258 characters]",
+                "sentiment": 0.296,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For a deeper dive into these projections[+251 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "GF Value and Market Position\n\nAccording [+238 characters]",
+                "sentiment": 0.4215,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For comprehensive insights, explore the [+74 characters]",
+                "sentiment": 0.25,
+                "highlighted_in": "main_text"
+              }
+            ]
+          },
+          {
+            "symbol": "HON.L",
+            "name": "Honeywell International Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "gb",
+            "type": "equity",
+            "industry": "Industrials",
+            "match_score": 49.686066,
+            "sentiment_score": 0.224883,
+            "highlights": [
+              {
+                "highlight": "Key Highlights:\n\n<em>Honeywell</em> <em>[+289 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Earnings Anticipation and Company Transf[+217 characters]",
+                "sentiment": 0.3818,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Analyst Price Targets and Recommendation[+258 characters]",
+                "sentiment": 0.296,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For a deeper dive into these projections[+251 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "GF Value and Market Position\n\nAccording [+238 characters]",
+                "sentiment": 0.4215,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For comprehensive insights, explore the [+74 characters]",
+                "sentiment": 0.25,
+                "highlighted_in": "main_text"
+              }
+            ]
+          },
+          {
+            "symbol": "HONB34.SA",
+            "name": "Honeywell International Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "br",
+            "type": "equity",
+            "industry": "Industrials",
+            "match_score": 49.68606,
+            "sentiment_score": 0.224883,
+            "highlights": [
+              {
+                "highlight": "Key Highlights:\n\n<em>Honeywell</em> <em>[+289 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Earnings Anticipation and Company Transf[+217 characters]",
+                "sentiment": 0.3818,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Analyst Price Targets and Recommendation[+258 characters]",
+                "sentiment": 0.296,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For a deeper dive into these projections[+251 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "GF Value and Market Position\n\nAccording [+238 characters]",
+                "sentiment": 0.4215,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For comprehensive insights, explore the [+74 characters]",
+                "sentiment": 0.25,
+                "highlighted_in": "main_text"
+              }
+            ]
+          },
+          {
+            "symbol": "HON.SN",
+            "name": "Honeywell International Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "cl",
+            "type": "equity",
+            "industry": "Industrials",
+            "match_score": 49.682457,
+            "sentiment_score": 0.224883,
+            "highlights": [
+              {
+                "highlight": "Key Highlights:\n\n<em>Honeywell</em> <em>[+289 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Earnings Anticipation and Company Transf[+217 characters]",
+                "sentiment": 0.3818,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Analyst Price Targets and Recommendation[+258 characters]",
+                "sentiment": 0.296,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For a deeper dive into these projections[+251 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "GF Value and Market Position\n\nAccording [+238 characters]",
+                "sentiment": 0.4215,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For comprehensive insights, explore the [+74 characters]",
+                "sentiment": 0.25,
+                "highlighted_in": "main_text"
+              }
+            ]
           }
         ]
       }
