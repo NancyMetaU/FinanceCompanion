@@ -15,6 +15,7 @@ const updateUserPreferences = async (id, preferences) => {
     where: { id },
     data: {
       monthlyIncome: preferences.monthlyIncome,
+      employmentType: preferences.employmentType,
       savingsPriority: preferences.savingsPriority,
       debtPriority: preferences.debtPriority,
       spendingFocus: preferences.spendingFocus,
@@ -27,6 +28,7 @@ const getUserPreferences = async (id) => {
     where: { id },
     select: {
       monthlyIncome: true,
+      employmentType: true,
       savingsPriority: true,
       debtPriority: true,
       spendingFocus: true,
