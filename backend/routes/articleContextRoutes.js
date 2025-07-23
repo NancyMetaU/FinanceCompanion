@@ -11,6 +11,20 @@ const {
 
 const router = express.Router();
 
+router.get("/", verifyFirebaseToken, async (req, res) => {
+  try {
+    const userId = req.uid;
+    const context = await getUserArticleContext(userId);
+    res.status(200).json({
+      readArticles: context.readArticles || [],
+      feedback: context.feedback || {}
+    });
+  } catch (err) {
+    console.error("Get full article context error:", err);
+    res.status(500).json({ error: "Failed to retrieve article context" });
+  }
+});
+
 router.get("/read", verifyFirebaseToken, async (req, res) => {
   try {
     const userId = req.uid;
