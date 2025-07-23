@@ -218,6 +218,7 @@ const Article = ({ article, onDigestibilityChange, userContext }) => {
         article={article}
         onDigestibilityChange={onDigestibilityChange}
         setHasFeedback={setHasFeedback}
+        userContext={userContext}
       />
     </article>
   );

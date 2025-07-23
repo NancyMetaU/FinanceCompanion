@@ -10,6 +10,7 @@ import { useState } from "react";
 import { getAuth } from "firebase/auth";
 import ErrorMessage from "../shared-components/ErrorMessage";
 import Loading from "../shared-components/Loading";
+import { useEffect } from "react";
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
@@ -19,6 +20,7 @@ const FeedbackModal = ({
   article,
   onDigestibilityChange,
   setHasFeedback,
+  userContext,
 }) => {
   const [rating, setRating] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -72,6 +74,15 @@ const FeedbackModal = ({
     }
   };
 
+  useEffect(() => {
+    const existingFeedback =
+      article?.uuid && userContext?.feedback?.[article.uuid];
+    if (existingFeedback) {
+      setRating(existingFeedback.rating);
+      setSuccess(true);
+    }
+  }, [article.uuid, userContext?.feedback]);
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
@@ -88,9 +99,16 @@ const FeedbackModal = ({
             <p className="text-base font-medium">
               Thank you for your feedback!
             </p>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-600 mb-4">
               You rated this article <strong>{rating}/5</strong>.
             </p>
+            <button
+              type="button"
+              onClick={() => setSuccess(false)}
+              className="px-4 py-2 rounded-md text-sm bg-royal text-white hover:bg-royal/90"
+            >
+              Resubmit Feedback
+            </button>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -104,10 +122,11 @@ const FeedbackModal = ({
                     key={value}
                     type="button"
                     onClick={() => setRating(value)}
-                    className={`w-10 h-10 rounded-full text-sm font-medium flex items-center justify-center cursor-pointer ${rating >= value
+                    className={`w-10 h-10 rounded-full text-sm font-medium flex items-center justify-center cursor-pointer ${
+                      rating >= value
                         ? "bg-royal text-white"
                         : "bg-gray-200 text-gray-600 hover:bg-gray-300"
-                      }`}
+                    }`}
                   >
                     {value}
                   </button>
@@ -130,10 +149,11 @@ const FeedbackModal = ({
               <button
                 type="submit"
                 disabled={rating === 0}
-                className={`px-4 py-2 rounded-md text-white ${rating === 0
+                className={`px-4 py-2 rounded-md text-white ${
+                  rating === 0
                     ? "bg-gray-400 cursor-not-allowed"
                     : "bg-royal hover:bg-royal/90 cursor-pointer"
-                  }`}
+                }`}
               >
                 Submit Feedback
               </button>
