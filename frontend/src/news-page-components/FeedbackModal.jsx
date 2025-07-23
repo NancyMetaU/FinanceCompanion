@@ -13,7 +13,13 @@ import Loading from "../shared-components/Loading";
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
-const FeedbackModal = ({ isOpen, onClose, article, onDigestibilityChange }) => {
+const FeedbackModal = ({
+  isOpen,
+  onClose,
+  article,
+  onDigestibilityChange,
+  setHasFeedback,
+}) => {
   const [rating, setRating] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -56,6 +62,7 @@ const FeedbackModal = ({ isOpen, onClose, article, onDigestibilityChange }) => {
       }
 
       setSuccess(true);
+      if (setHasFeedback) setHasFeedback(true);
       if (onDigestibilityChange) onDigestibilityChange();
     } catch (error) {
       console.error("Error submitting feedback:", error);
@@ -97,11 +104,10 @@ const FeedbackModal = ({ isOpen, onClose, article, onDigestibilityChange }) => {
                     key={value}
                     type="button"
                     onClick={() => setRating(value)}
-                    className={`w-10 h-10 rounded-full text-sm font-medium flex items-center justify-center cursor-pointer ${
-                      rating >= value
+                    className={`w-10 h-10 rounded-full text-sm font-medium flex items-center justify-center cursor-pointer ${rating >= value
                         ? "bg-royal text-white"
                         : "bg-gray-200 text-gray-600 hover:bg-gray-300"
-                    }`}
+                      }`}
                   >
                     {value}
                   </button>
@@ -124,11 +130,10 @@ const FeedbackModal = ({ isOpen, onClose, article, onDigestibilityChange }) => {
               <button
                 type="submit"
                 disabled={rating === 0}
-                className={`px-4 py-2 rounded-md text-white ${
-                  rating === 0
+                className={`px-4 py-2 rounded-md text-white ${rating === 0
                     ? "bg-gray-400 cursor-not-allowed"
                     : "bg-royal hover:bg-royal/90 cursor-pointer"
-                }`}
+                  }`}
               >
                 Submit Feedback
               </button>
