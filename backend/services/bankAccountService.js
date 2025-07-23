@@ -88,8 +88,24 @@ const getTotalDebt = async (userId) => {
   };
 };
 
+const getRetirementAccountBalance = async (userId) => {
+  const retirementAccount = await prisma.bankAccount.findFirst({
+    where: {
+      userId,
+      name: {
+        contains: "IRA",
+        mode: "insensitive",
+      },
+      subtype: "ira",
+    },
+  });
+
+  return retirementAccount ? retirementAccount.balance : 0;
+};
+
 module.exports = {
   syncBankAccounts,
   getUserAccounts,
   getTotalDebt,
+  getRetirementAccountBalance,
 };
