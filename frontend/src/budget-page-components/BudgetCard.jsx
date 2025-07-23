@@ -1,4 +1,5 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/lib/ui/card";
+import RetirementTooltip from "./RetirementTooltip";
 import BudgetItem from "./BudgetItem";
 
 const BudgetCard = ({
@@ -80,10 +81,33 @@ const BudgetCard = ({
             <>
               <BudgetItem
                 label="Long-Term Savings"
-                amount={bucketData.longTerm}
+                amount={bucketData.longTerm.total}
                 total={income}
                 isSubItem={true}
               />
+
+              <div className="pl-4">
+                <BudgetItem
+                  label={
+                    <div className="flex items-center gap-1">
+                      <span>Retirement</span>
+                      <RetirementTooltip
+                        retirement={bucketData.longTerm.retirement}
+                      />
+                    </div>
+                  }
+                  amount={bucketData.longTerm.retirement.monthlyContribution}
+                  total={income}
+                  isSubItem={true}
+                />
+
+                <BudgetItem
+                  label="Other Savings"
+                  amount={bucketData.longTerm.other}
+                  total={income}
+                  isSubItem={true}
+                />
+              </div>
               <BudgetItem
                 label="Debt Payment"
                 amount={bucketData.forDebt}
