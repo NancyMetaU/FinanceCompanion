@@ -1,183 +1,1608 @@
 [
   {
-    "uuid": "69b15807-469a-4f2d-90ac-d15472204e30",
-    "title": "Tesla: Another Miss, Another Rally - We’re Still Buying Ahead Of Q2 (NASDAQ:TSLA)",
-    "description": "Tesla, Inc.'s Q2 deliveries missed targets, but low expectations and Musk-driven sentiment keep the stock strong. Click for our TSLA update and earnings preview.",
-    "keywords": "",
-    "snippet": "Don’t just invest—dominate with Tech Contrarians' realized return on closed positions of 65.8% since inception. You’ll get exclusive insights into high-fo...",
-    "url": "https://seekingalpha.com/article/4798941-tesla-another-miss-another-rally-were-still-buying-ahead-of-q2",
-    "image_url": "https://static.seekingalpha.com/cdn/s3/uploads/getty_images/2171333579/image_2171333579.jpg?io=getty-c-w1536",
+    "uuid": "adfba646-340b-435b-bbcd-a1ec76a02df0",
+    "title": "BNED: Options Activity and Market Expectations Ahead of Earnings | BNED Stock News",
+    "description": "In the lead-up to earnings, Barnes & Noble Education (BNED) is experiencing a typical volume of options trading, with a noticeable skew towards puts over calls",
+    "keywords": "GuruFocus, Article, News, GuruFocus News, BNED",
+    "snippet": "In the lead-up to earnings, Barnes & Noble Education (BNED, Financial) is experiencing a typical volume of options trading, with a noticeable skew towards puts ...",
+    "url": "https://www.gurufocus.com/news/2988349/bned-options-activity-and-market-expectations-ahead-of-earnings-bned-stock-news",
+    "image_url": "https://static.gurufocus.com/images/global_logo_twitter_card.png",
     "language": "en",
-    "published_at": "2025-07-02T19:00:58.000000Z",
-    "source": "seekingalpha.com",
+    "published_at": "2025-07-18T19:15:21.000000Z",
+    "source": "gurufocus.com",
     "relevance_score": null,
     "entities": [
       {
-        "symbol": "TSLA",
-        "name": "Tesla, Inc.",
+        "symbol": "BNED",
+        "name": "Barnes & Noble Education, Inc.",
         "exchange": null,
         "exchange_long": null,
         "country": "us",
         "type": "equity",
         "industry": "Consumer Cyclical",
-        "match_score": 80.707054,
-        "sentiment_score": -0.21315,
+        "match_score": 76.54088,
+        "sentiment_score": 0.01818,
         "highlights": [
           {
-            "highlight": "<em>Tesla</em>, <em>Inc</em>. (<em>NASDA[+134 characters]",
+            "highlight": "In the lead-up to earnings, <em>Barnes</[+259 characters]",
+            "sentiment": -0.25,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Wall Street Analysts Forecast\n\nBased on [+312 characters]",
+            "sentiment": -0.4767,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "More detailed estimate data can be found[+310 characters]",
+            "sentiment": 0,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Based on GuruFocus estimates, the estima[+274 characters]",
+            "sentiment": 0.8176,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "More detailed data can be found on the <[+84 characters]",
+            "sentiment": 0,
+            "highlighted_in": "main_text"
+          }
+        ]
+      }
+    ],
+    "similar": [
+      {
+        "uuid": "3fa420e1-cd12-40b0-a28b-79e1f4804729",
+        "title": "XPeng (XPEV) Sees Unusual Put Activity as Earnings Loom | XPEV Stock News",
+        "description": "Significant bearish activity has been observed in XPeng (XPEV) with a notable increase in put option trading. A total of 5,404 put options were traded, which is",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, XPEV",
+        "snippet": "Significant bearish activity has been observed in XPeng (XPEV, Financial) with a notable increase in put option trading. A total of 5,404 put options were trade...",
+        "url": "https://www.gurufocus.com/news/2987868/xpeng-xpev-sees-unusual-put-activity-as-earnings-loom-xpev-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C0000BXZD.png?20",
+        "language": "en",
+        "published_at": "2025-07-18T15:30:57.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "XPEV",
+            "name": "XPeng Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Consumer Cyclical",
+            "match_score": 52.3278,
+            "sentiment_score": 0.4331,
+            "highlights": [
+              {
+                "highlight": "Significant bearish activity has been ob[+165 characters]",
+                "sentiment": 0.4767,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+277 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+330 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+236 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+216 characters]",
+                "sentiment": 0.5574,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Positive Points\n\n<em>XPeng</em> <em>Inc<[+247 characters]",
+                "sentiment": 0.7717,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>XPeng</em> <em>Inc</em> (XPEV) repor[+261 characters]",
+                "sentiment": 0.9022,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>XPeng</em> <em>Inc</em> (XPEV) antic[+121 characters]",
+                "sentiment": 0.3612,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>XPeng</em> (XPEV) Sees Unusual Put Activity as Earnings Loom | XPEV Stock News",
+                "sentiment": -0.2263,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "XPEVN.MX",
+            "name": "XPeng Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "mx",
+            "type": "equity",
+            "industry": "N/A",
+            "match_score": 52.325294,
+            "sentiment_score": 0.4331,
+            "highlights": [
+              {
+                "highlight": "Significant bearish activity has been ob[+165 characters]",
+                "sentiment": 0.4767,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+277 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+330 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+236 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+216 characters]",
+                "sentiment": 0.5574,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Positive Points\n\n<em>XPeng</em> <em>Inc<[+247 characters]",
+                "sentiment": 0.7717,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>XPeng</em> <em>Inc</em> (XPEV) repor[+261 characters]",
+                "sentiment": 0.9022,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>XPeng</em> <em>Inc</em> (XPEV) antic[+121 characters]",
+                "sentiment": 0.3612,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>XPeng</em> (XPEV) Sees Unusual Put Activity as Earnings Loom | XPEV Stock News",
+                "sentiment": -0.2263,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "d589dd3a-e7fc-4642-8d78-77c7008620b2",
+        "title": "BAX Sees Unusual Options Activity | BAX Stock News",
+        "description": "Investors have noticed an unusual spike in active option classes for Baxter International (BAX) during the market's opening. This activity suggests heightened i",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, BAX",
+        "snippet": "Investors have noticed an unusual spike in active option classes for Baxter International (BAX, Financial) during the market's opening. This activity suggests h...",
+        "url": "https://www.gurufocus.com/news/2987812/bax-sees-unusual-options-activity-bax-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C000006V2.png?20",
+        "language": "en",
+        "published_at": "2025-07-18T15:00:30.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "BAX",
+            "name": "Baxter International Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Healthcare",
+            "match_score": 47.34993,
+            "sentiment_score": 0.442729,
+            "highlights": [
+              {
+                "highlight": "Investors have noticed an unusual spike [+200 characters]",
+                "sentiment": 0.6908,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+300 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+283 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+258 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+277 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Positive Points\n\n<em>Baxter</em> <em>Int[+293 characters]",
+                "sentiment": 0.9001,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Baxter</em> <em>International</em> <[+322 characters]",
+                "sentiment": 0.9638,
+                "highlighted_in": "main_text"
+              }
+            ]
+          },
+          {
+            "symbol": "BAX.MX",
+            "name": "Baxter International Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "mx",
+            "type": "equity",
+            "industry": "Healthcare",
+            "match_score": 47.349285,
+            "sentiment_score": 0.442729,
+            "highlights": [
+              {
+                "highlight": "Investors have noticed an unusual spike [+200 characters]",
+                "sentiment": 0.6908,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+300 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+283 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+258 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+277 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Positive Points\n\n<em>Baxter</em> <em>Int[+293 characters]",
+                "sentiment": 0.9001,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Baxter</em> <em>International</em> <[+322 characters]",
+                "sentiment": 0.9638,
+                "highlighted_in": "main_text"
+              }
+            ]
+          },
+          {
+            "symbol": "0QK8.L",
+            "name": "Baxter International Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "gb",
+            "type": "equity",
+            "industry": "N/A",
+            "match_score": 47.349983,
+            "sentiment_score": 0.442729,
+            "highlights": [
+              {
+                "highlight": "Investors have noticed an unusual spike [+200 characters]",
+                "sentiment": 0.6908,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+300 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+283 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+258 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+277 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Positive Points\n\n<em>Baxter</em> <em>Int[+293 characters]",
+                "sentiment": 0.9001,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Baxter</em> <em>International</em> <[+322 characters]",
+                "sentiment": 0.9638,
+                "highlighted_in": "main_text"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uuid": "ca0b54f2-3e9a-4ad3-89e2-6a2e91d92e42",
+    "title": "Fiserv (FI) Shares Plummet by 17.5% in Recent Trading Session | FI Stock News",
+    "description": "Fiserv (FI) experienced a sharp decline in its stock value, dropping by 17.5%, equivalent to a $29.01 decrease, bringing the price to $136.97. This significant",
+    "keywords": "GuruFocus, Article, News, GuruFocus News, FI",
+    "snippet": "Fiserv (FI, Financial) experienced a sharp decline in its stock value, dropping by 17.5%, equivalent to a $29.01 decrease, bringing the price to $136.97. This s...",
+    "url": "https://www.gurufocus.com/news/2998329/fiserv-fi-shares-plummet-by-175-in-recent-trading-session-fi-stock-news",
+    "image_url": "https://static.gurufocus.com/logos/0C000007OX.png?20",
+    "language": "en",
+    "published_at": "2025-07-23T17:16:23.000000Z",
+    "source": "gurufocus.com",
+    "relevance_score": null,
+    "entities": [
+      {
+        "symbol": "FISV",
+        "name": "Fiserv, Inc.",
+        "exchange": null,
+        "exchange_long": null,
+        "country": "us",
+        "type": "equity",
+        "industry": "Technology",
+        "match_score": 54.973026,
+        "sentiment_score": 0.307483,
+        "highlights": [
+          {
+            "highlight": "<em>Fiserv</em> (FI, Financial) experien[+248 characters]",
+            "sentiment": 0.4939,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Wall Street Analysts Forecast\n\nBased on [+280 characters]",
             "sentiment": -0.2732,
             "highlighted_in": "main_text"
           },
           {
-            "highlight": "<em>Tesla</em>: Another Miss, Another Rally - We’re Still Buying Ahead Of Q2 (<em>NASDAQ:TSLA</em>)",
-            "sentiment": -0.1531,
-            "highlighted_in": "title"
-          }
-        ]
-      }
-    ],
-    "similar": []
-  },
-  {
-    "uuid": "3b64a10e-6858-4734-a5f8-51b20b106b2c",
-    "title": "Tesla's Deliveries Report: A Major Miss (Rating Upgrade) (NASDAQ:TSLA)",
-    "description": "Tesla stock rallied after the release came out, maybe because retail investors had different expectations than Wall Street firms. Find out why TSLA is a Hold.",
-    "keywords": "",
-    "snippet": "Tesla, Inc. (NASDAQ: TSLA ) releases its second quarter earnings on July 23 . Heading into the release, we already have strong indications that the company will...",
-    "url": "https://seekingalpha.com/article/4798938-tesla-deliveries-report-a-major-miss-rating-upgrade",
-    "image_url": "https://static.seekingalpha.com/cdn/s3/uploads/getty_images/2217857584/image_2217857584.jpg?io=getty-c-w1536",
-    "language": "en",
-    "published_at": "2025-07-02T18:58:05.000000Z",
-    "source": "seekingalpha.com",
-    "relevance_score": null,
-    "entities": [
-      {
-        "symbol": "TSLA",
-        "name": "Tesla, Inc.",
-        "exchange": null,
-        "exchange_long": null,
-        "country": "us",
-        "type": "equity",
-        "industry": "Consumer Cyclical",
-        "match_score": 72.741714,
-        "sentiment_score": 0,
-        "highlights": [
-          {
-            "highlight": "<em>Tesla</em>, <em>Inc</em>. (<em>NASDA[+189 characters]",
-            "sentiment": 0.1531,
+            "highlight": "More detailed estimate data can be found[+328 characters]",
+            "sentiment": 0.5106,
             "highlighted_in": "main_text"
           },
           {
-            "highlight": "Tesla's Deliveries Report: A Major Miss (Rating Upgrade) (<em>NASDAQ:TSLA</em>)",
-            "sentiment": -0.1531,
-            "highlighted_in": "title"
-          }
-        ]
-      }
-    ],
-    "similar": []
-  },
-  {
-    "uuid": "5336f36e-7823-4844-b04a-f271c068a9a5",
-    "title": "IDEX: Navigating Uncertainty With Steady Growth And Strong Cash Flow (NYSE:IEX)",
-    "description": "IDEX Corporation delivers steady cash flow and high margins from niche industrial markets, supported by a diversified portfolio and mission-critical products. Learn more on IEX stock here.",
-    "keywords": "",
-    "snippet": "I hold a PhD in Machine Learning focused on Economics and Finance and have academic affiliations with IESE Business School, ESADE Business School, and the Barce...",
-    "url": "https://seekingalpha.com/article/4798936-idex-navigating-uncertainty-with-steady-growth-and-strong-cash-flow",
-    "image_url": "https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1488572671/image_1488572671.jpg?io=getty-c-w1536",
-    "language": "en",
-    "published_at": "2025-07-02T18:51:28.000000Z",
-    "source": "seekingalpha.com",
-    "relevance_score": null,
-    "entities": [
-      {
-        "symbol": "IEX",
-        "name": "IDEX Corporation",
-        "exchange": null,
-        "exchange_long": null,
-        "country": "us",
-        "type": "equity",
-        "industry": "Industrials",
-        "match_score": 75.5096,
-        "sentiment_score": 0.5423,
-        "highlights": [
-          {
-            "highlight": "<em>IDEX</em>: Navigating Uncertainty With Steady Growth And Strong Cash Flow (<em>NYSE:IEX</em>)",
-            "sentiment": 0.5423,
-            "highlighted_in": "title"
-          }
-        ]
-      }
-    ],
-    "similar": []
-  },
-  {
-    "uuid": "ed35bdcd-6f6a-4007-9949-b769fbe2e36d",
-    "title": "Amazon.com mulls new multi-billion dollar investment in Anthropic, the Information reports By Reuters",
-    "description": "Amazon.com mulls new multi-billion dollar investment in Anthropic, the Information reports",
-    "keywords": "",
-    "snippet": "(Reuters) -Amazon is in talks for its second multi-billion dollar investment in artificial intelligence startup Anthropic, the Information reported on Thursday,...",
-    "url": "https://www.investing.com/news/stock-market-news/amazoncom-mulls-new-multibillion-dollar-investment-in-anthropic-the-information-reports-3710319",
-    "image_url": "https://i-invdn-com.investing.com/news/amazon_800x533_L_1411373482.jpg",
-    "language": "en",
-    "published_at": "2024-11-07T23:49:09.000000Z",
-    "source": "investing.com",
-    "relevance_score": null,
-    "entities": [
-      {
-        "symbol": "AMZN",
-        "name": "Amazon.com, Inc.",
-        "exchange": null,
-        "exchange_long": null,
-        "country": "us",
-        "type": "equity",
-        "industry": "Consumer Cyclical",
-        "match_score": 34.292408,
-        "sentiment_score": 0,
-        "highlights": [
-          {
-            "highlight": "<em>Amazon.com</em> mulls new multi-billion dollar investment in Anthropic, the Information reports By Reuters",
-            "sentiment": 0,
-            "highlighted_in": "title"
-          }
-        ]
-      }
-    ],
-    "similar": []
-  },
-  {
-    "uuid": "2ca2cbbf-c613-4d1c-b470-9d1bac3a256a",
-    "title": "Market Soars to Record Highs: November 7, 2024 Stock Market Recap",
-    "description": "The U.S. stock market experienced a historic surge on Thursday, November 7, 2024, as investors reacted to Donald Trump's unexpected victory in the 2024 U.S.",
-    "keywords": "",
-    "snippet": "Why Was the Market Up Today? Trump’s Victory Sparks Rally\n\nThe U.S. stock market experienced a historic surge on Thursday, November 7, 2024, as investors reac...",
-    "url": "https://thestockmarketwatch.com/stock-market-news/market-soars-to-record-highs-november-7-2024-stock-market-recap/48362/",
-    "image_url": "https://thestockmarketwatch.com/stock-market-news/wp-content/uploads/2024/08/5.jpg",
-    "language": "en",
-    "published_at": "2024-11-07T22:28:28.000000Z",
-    "source": "thestockmarketwatch.com",
-    "relevance_score": null,
-    "entities": [
-      {
-        "symbol": "TSLA",
-        "name": "Tesla, Inc.",
-        "exchange": null,
-        "exchange_long": null,
-        "country": "us",
-        "type": "equity",
-        "industry": "Consumer Cyclical",
-        "match_score": 17.491323,
-        "sentiment_score": 0.7783,
-        "highlights": [
-          {
-            "highlight": "<em>Tesla</em>, <em>Inc</em>. (TSLA), wh[+166 characters]",
-            "sentiment": 0.7783,
+            "highlight": "Based on GuruFocus estimates, the estima[+236 characters]",
+            "sentiment": 0.8176,
             "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "More detailed data can be found on the <[+46 characters]",
+            "sentiment": 0,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>Fiserv</em> (FI) Shares Plummet by 17.5% in Recent Trading Session | FI Stock News",
+            "sentiment": 0.296,
+            "highlighted_in": "title"
           }
         ]
       }
     ],
-    "similar": []
+    "similar": [
+      {
+        "uuid": "002b48c5-4c0c-4d12-acfa-8fe07cc8876e",
+        "title": "Fiserv (FI) Enhances Merchant Services with New Agreements | FI Stock News",
+        "description": "Fiserv (FI) has secured a long-term Strategic Managed Services contract with TD Bank, focusing on enhancing TD Merchant Solutions through the implementation of",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, FI",
+        "snippet": "Fiserv (FI, Financial) has secured a long-term Strategic Managed Services contract with TD Bank, focusing on enhancing TD Merchant Solutions through the impleme...",
+        "url": "https://www.gurufocus.com/news/2996929/fiserv-fi-enhances-merchant-services-with-new-agreements-fi-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C000007OX.png?20",
+        "language": "en",
+        "published_at": "2025-07-23T13:01:24.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "FISV.MX",
+            "name": "Fiserv, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "mx",
+            "type": "equity",
+            "industry": "Technology",
+            "match_score": 56.902367,
+            "sentiment_score": 0.295886,
+            "highlights": [
+              {
+                "highlight": "<em>Fiserv</em> (FI, Financial) has secu[+218 characters]",
+                "sentiment": 0.743,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Additionally, <em>Fiserv</em> has entere[+283 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+280 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+328 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+235 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+46 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em> (FI) Enhances Merchant Services with New Agreements | FI Stock News",
+                "sentiment": 0.2732,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "0IP9.L",
+            "name": "Fiserv, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "gb",
+            "type": "equity",
+            "industry": "N/A",
+            "match_score": 56.856033,
+            "sentiment_score": 0.295886,
+            "highlights": [
+              {
+                "highlight": "<em>Fiserv</em> (FI, Financial) has secu[+218 characters]",
+                "sentiment": 0.743,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Additionally, <em>Fiserv</em> has entere[+283 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+280 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+328 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+235 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+46 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em> (FI) Enhances Merchant Services with New Agreements | FI Stock News",
+                "sentiment": 0.2732,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "FISV",
+            "name": "Fiserv, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Technology",
+            "match_score": 56.86785,
+            "sentiment_score": 0.295886,
+            "highlights": [
+              {
+                "highlight": "<em>Fiserv</em> (FI, Financial) has secu[+218 characters]",
+                "sentiment": 0.743,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Additionally, <em>Fiserv</em> has entere[+283 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+280 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+328 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+235 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+46 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em> (FI) Enhances Merchant Services with New Agreements | FI Stock News",
+                "sentiment": 0.2732,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "F1IS34.SA",
+            "name": "Fiserv, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "br",
+            "type": "equity",
+            "industry": "Technology",
+            "match_score": 57.01129,
+            "sentiment_score": 0.295886,
+            "highlights": [
+              {
+                "highlight": "<em>Fiserv</em> (FI, Financial) has secu[+218 characters]",
+                "sentiment": 0.743,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Additionally, <em>Fiserv</em> has entere[+283 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+280 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+328 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+235 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+46 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em> (FI) Enhances Merchant Services with New Agreements | FI Stock News",
+                "sentiment": 0.2732,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "FIV.DE",
+            "name": "Fiserv, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "de",
+            "type": "equity",
+            "industry": "Technology",
+            "match_score": 56.92983,
+            "sentiment_score": 0.295886,
+            "highlights": [
+              {
+                "highlight": "<em>Fiserv</em> (FI, Financial) has secu[+218 characters]",
+                "sentiment": 0.743,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Additionally, <em>Fiserv</em> has entere[+283 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+280 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+328 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+235 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+46 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em> (FI) Enhances Merchant Services with New Agreements | FI Stock News",
+                "sentiment": 0.2732,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "4a701e9e-acb2-4798-8cf7-66c1f6463e51",
+        "title": "Fiserv (FI) Stock Drops Amid Revised Growth Forecast",
+        "description": "Key Highlights:\n    Fiserv (FI) experiences a 13% premarket decline amid a downward revision of its full-year organic growth forecast, despite raising earnings",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, FI",
+        "snippet": "Key Highlights:\n\nFiserv (FI, Financial) experiences a 13% premarket decline amid a downward revision of its full-year organic growth forecast, despite raising e...",
+        "url": "https://www.gurufocus.com/news/2996808/fiserv-fi-stock-drops-amid-revised-growth-forecast",
+        "image_url": "https://static.gurufocus.com/logos/0C000007OX.png?20",
+        "language": "en",
+        "published_at": "2025-07-23T12:59:36.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "FISV.MX",
+            "name": "Fiserv, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "mx",
+            "type": "equity",
+            "industry": "Technology",
+            "match_score": 60.583176,
+            "sentiment_score": 0.455213,
+            "highlights": [
+              {
+                "highlight": "Key Highlights:\n\n<em>Fiserv</em> (FI, Fi[+242 characters]",
+                "sentiment": 0.5859,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Analysts set an average target price of [+249 characters]",
+                "sentiment": 0.5859,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Looking ahead, <em>Fiserv</em> projects [+106 characters]",
+                "sentiment": 0.7239,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Analyst Price Targets and Recommendation[+307 characters]",
+                "sentiment": 0.0516,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Investors can discover more detailed pro[+333 characters]",
+                "sentiment": 0.4767,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "GuruFocus Insights and GF Value Assessme[+194 characters]",
+                "sentiment": 0.5859,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For comprehensive data and insights, vis[+54 characters]",
+                "sentiment": 0.25,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em> (FI) Stock Drops Amid Revised Growth Forecast",
+                "sentiment": 0.3818,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "0IP9.L",
+            "name": "Fiserv, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "gb",
+            "type": "equity",
+            "industry": "N/A",
+            "match_score": 60.532333,
+            "sentiment_score": 0.455213,
+            "highlights": [
+              {
+                "highlight": "Key Highlights:\n\n<em>Fiserv</em> (FI, Fi[+242 characters]",
+                "sentiment": 0.5859,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Analysts set an average target price of [+249 characters]",
+                "sentiment": 0.5859,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Looking ahead, <em>Fiserv</em> projects [+106 characters]",
+                "sentiment": 0.7239,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Analyst Price Targets and Recommendation[+307 characters]",
+                "sentiment": 0.0516,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Investors can discover more detailed pro[+333 characters]",
+                "sentiment": 0.4767,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "GuruFocus Insights and GF Value Assessme[+194 characters]",
+                "sentiment": 0.5859,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For comprehensive data and insights, vis[+54 characters]",
+                "sentiment": 0.25,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em> (FI) Stock Drops Amid Revised Growth Forecast",
+                "sentiment": 0.3818,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "FISV",
+            "name": "Fiserv, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Technology",
+            "match_score": 60.545177,
+            "sentiment_score": 0.455213,
+            "highlights": [
+              {
+                "highlight": "Key Highlights:\n\n<em>Fiserv</em> (FI, Fi[+242 characters]",
+                "sentiment": 0.5859,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Analysts set an average target price of [+249 characters]",
+                "sentiment": 0.5859,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Looking ahead, <em>Fiserv</em> projects [+106 characters]",
+                "sentiment": 0.7239,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Analyst Price Targets and Recommendation[+307 characters]",
+                "sentiment": 0.0516,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Investors can discover more detailed pro[+333 characters]",
+                "sentiment": 0.4767,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "GuruFocus Insights and GF Value Assessme[+194 characters]",
+                "sentiment": 0.5859,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For comprehensive data and insights, vis[+54 characters]",
+                "sentiment": 0.25,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em> (FI) Stock Drops Amid Revised Growth Forecast",
+                "sentiment": 0.3818,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "F1IS34.SA",
+            "name": "Fiserv, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "br",
+            "type": "equity",
+            "industry": "Technology",
+            "match_score": 60.70229,
+            "sentiment_score": 0.455213,
+            "highlights": [
+              {
+                "highlight": "Key Highlights:\n\n<em>Fiserv</em> (FI, Fi[+242 characters]",
+                "sentiment": 0.5859,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Analysts set an average target price of [+249 characters]",
+                "sentiment": 0.5859,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Looking ahead, <em>Fiserv</em> projects [+106 characters]",
+                "sentiment": 0.7239,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Analyst Price Targets and Recommendation[+307 characters]",
+                "sentiment": 0.0516,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Investors can discover more detailed pro[+333 characters]",
+                "sentiment": 0.4767,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "GuruFocus Insights and GF Value Assessme[+194 characters]",
+                "sentiment": 0.5859,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For comprehensive data and insights, vis[+54 characters]",
+                "sentiment": 0.25,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em> (FI) Stock Drops Amid Revised Growth Forecast",
+                "sentiment": 0.3818,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "FIV.DE",
+            "name": "Fiserv, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "de",
+            "type": "equity",
+            "industry": "Technology",
+            "match_score": 60.614098,
+            "sentiment_score": 0.455213,
+            "highlights": [
+              {
+                "highlight": "Key Highlights:\n\n<em>Fiserv</em> (FI, Fi[+242 characters]",
+                "sentiment": 0.5859,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Analysts set an average target price of [+249 characters]",
+                "sentiment": 0.5859,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Looking ahead, <em>Fiserv</em> projects [+106 characters]",
+                "sentiment": 0.7239,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Analyst Price Targets and Recommendation[+307 characters]",
+                "sentiment": 0.0516,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Investors can discover more detailed pro[+333 characters]",
+                "sentiment": 0.4767,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "GuruFocus Insights and GF Value Assessme[+194 characters]",
+                "sentiment": 0.5859,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For comprehensive data and insights, vis[+54 characters]",
+                "sentiment": 0.25,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em> (FI) Stock Drops Amid Revised Growth Forecast",
+                "sentiment": 0.3818,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "607dd044-0a02-459c-bf7e-a2639b75b27c",
+        "title": "Fiserv Announces Strategic Relationship With TD | FI Stock News",
+        "description": "Fiserv (FI) has entered a strategic agreement with TD Bank Group to enhance its presence in Canada using Clover technology.    The agreement includes Fiser",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, FI",
+        "snippet": "Fiserv (FI, Financial) has entered a strategic agreement with TD Bank Group to enhance its presence in Canada using Clover technology.\n\nThe agreement includes F...",
+        "url": "https://www.gurufocus.com/news/2996728/fiserv-announces-strategic-relationship-with-td-fi-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C000007OX.png?20",
+        "language": "en",
+        "published_at": "2025-07-23T12:45:29.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "FISV.MX",
+            "name": "Fiserv, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "mx",
+            "type": "equity",
+            "industry": "Technology",
+            "match_score": 50.994907,
+            "sentiment_score": 0.650317,
+            "highlights": [
+              {
+                "highlight": "<em>Fiserv</em> (FI, Financial) has ente[+235 characters]",
+                "sentiment": 0.7506,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em>, <em>Inc</em>. (FI), a g[+307 characters]",
+                "sentiment": 0.6908,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "This partnership marks a pivotal expansi[+254 characters]",
+                "sentiment": 0.7269,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "\"We are pleased to expand Clover’s rea[+277 characters]",
+                "sentiment": 0.9686,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "This strategic relationship with <em>Fis[+256 characters]",
+                "sentiment": 0.765,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em> Announces Strategic Relationship With TD | FI Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "0IP9.L",
+            "name": "Fiserv, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "gb",
+            "type": "equity",
+            "industry": "N/A",
+            "match_score": 50.94826,
+            "sentiment_score": 0.650317,
+            "highlights": [
+              {
+                "highlight": "<em>Fiserv</em> (FI, Financial) has ente[+235 characters]",
+                "sentiment": 0.7506,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em>, <em>Inc</em>. (FI), a g[+307 characters]",
+                "sentiment": 0.6908,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "This partnership marks a pivotal expansi[+254 characters]",
+                "sentiment": 0.7269,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "\"We are pleased to expand Clover’s rea[+277 characters]",
+                "sentiment": 0.9686,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "This strategic relationship with <em>Fis[+256 characters]",
+                "sentiment": 0.765,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em> Announces Strategic Relationship With TD | FI Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "FISV",
+            "name": "Fiserv, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Technology",
+            "match_score": 50.959854,
+            "sentiment_score": 0.650317,
+            "highlights": [
+              {
+                "highlight": "<em>Fiserv</em> (FI, Financial) has ente[+235 characters]",
+                "sentiment": 0.7506,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em>, <em>Inc</em>. (FI), a g[+307 characters]",
+                "sentiment": 0.6908,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "This partnership marks a pivotal expansi[+254 characters]",
+                "sentiment": 0.7269,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "\"We are pleased to expand Clover’s rea[+277 characters]",
+                "sentiment": 0.9686,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "This strategic relationship with <em>Fis[+256 characters]",
+                "sentiment": 0.765,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em> Announces Strategic Relationship With TD | FI Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "F1IS34.SA",
+            "name": "Fiserv, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "br",
+            "type": "equity",
+            "industry": "Technology",
+            "match_score": 51.102474,
+            "sentiment_score": 0.650317,
+            "highlights": [
+              {
+                "highlight": "<em>Fiserv</em> (FI, Financial) has ente[+235 characters]",
+                "sentiment": 0.7506,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em>, <em>Inc</em>. (FI), a g[+307 characters]",
+                "sentiment": 0.6908,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "This partnership marks a pivotal expansi[+254 characters]",
+                "sentiment": 0.7269,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "\"We are pleased to expand Clover’s rea[+277 characters]",
+                "sentiment": 0.9686,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "This strategic relationship with <em>Fis[+256 characters]",
+                "sentiment": 0.765,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em> Announces Strategic Relationship With TD | FI Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "FIV.DE",
+            "name": "Fiserv, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "de",
+            "type": "equity",
+            "industry": "Technology",
+            "match_score": 51.02507,
+            "sentiment_score": 0.650317,
+            "highlights": [
+              {
+                "highlight": "<em>Fiserv</em> (FI, Financial) has ente[+235 characters]",
+                "sentiment": 0.7506,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em>, <em>Inc</em>. (FI), a g[+307 characters]",
+                "sentiment": 0.6908,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "This partnership marks a pivotal expansi[+254 characters]",
+                "sentiment": 0.7269,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "\"We are pleased to expand Clover’s rea[+277 characters]",
+                "sentiment": 0.9686,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "This strategic relationship with <em>Fis[+256 characters]",
+                "sentiment": 0.765,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Fiserv</em> Announces Strategic Relationship With TD | FI Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uuid": "bea8df3c-0c5c-493a-a20a-738e595b21d1",
+    "title": "Comcast's Xfinity Unveils StreamStore: A Smarter, Simpler Way to Discover, Manage and Enjoy Entertainment | CMCSA Stock News",
+    "description": "Xfinity introduces StreamStore, a new hub for managing streaming services, offering over 450 apps and channels.    StreamStore integrates seamlessly with t",
+    "keywords": "GuruFocus, Article, News, GuruFocus News, CMCSA",
+    "snippet": "Xfinity introduces StreamStore, a new hub for managing streaming services, offering over 450 apps and channels.\n\nStreamStore integrates seamlessly with the nati...",
+    "url": "https://www.gurufocus.com/news/2998317/comcasts-xfinity-unveils-streamstore-a-smarter-simpler-way-to-discover-manage-and-enjoy-entertainment-cmcsa-stock-news",
+    "image_url": "https://static.gurufocus.com/logos/0C00000AMP.png?20",
+    "language": "en",
+    "published_at": "2025-07-23T17:15:19.000000Z",
+    "source": "gurufocus.com",
+    "relevance_score": null,
+    "entities": [
+      {
+        "symbol": "CMCSA",
+        "name": "Comcast Corporation",
+        "exchange": null,
+        "exchange_long": null,
+        "country": "us",
+        "type": "equity",
+        "industry": "Communication Services",
+        "match_score": 61.093384,
+        "sentiment_score": 0.6656,
+        "highlights": [
+          {
+            "highlight": "<em>Comcast</em> <em>Corporation</em> (<[+225 characters]",
+            "sentiment": 0.7351,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>Comcast</em> <em>Corporation</em> (<[+173 characters]",
+            "sentiment": 0.4215,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Comcast's Xfinity Unveils StreamStore: A Smarter, Simpler Way to Discover, Manage and Enjoy Entertainment | <em>CMCSA</em> Stock News",
+            "sentiment": 0.8402,
+            "highlighted_in": "title"
+          }
+        ]
+      }
+    ],
+    "similar": [
+      {
+        "uuid": "6d7f92a1-193e-4f80-9792-bd60c0bb904e",
+        "title": "Kroger Unveils Back-to-School Savings with New Online Tool | KR stock news",
+        "description": "Summary The Kroger Co (KR) announced on July 23, 2025, the launch of its Big Deal! back-to-school savings initiative, featuring a new online tool called the Kro",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, KR",
+        "snippet": "Summary\n\nThe Kroger Co (KR, Financial) announced on July 23, 2025, the launch of its Big Deal! back-to-school savings initiative, featuring a new online tool ca...",
+        "url": "https://www.gurufocus.com/news/2998005/kroger-unveils-backtoschool-savings-with-new-online-tool-kr-stock-news",
+        "image_url": "https://static.gurufocus.com/images/global_logo_twitter_card.png",
+        "language": "en",
+        "published_at": "2025-07-23T15:10:03.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "KR",
+            "name": "The Kroger Co.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Consumer Defensive",
+            "match_score": 30.186853,
+            "sentiment_score": 0.54016,
+            "highlights": [
+              {
+                "highlight": "Summary\n\n<em>The</em> <em>Kroger</em> <e[+350 characters]",
+                "sentiment": 0.4753,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Positive Aspects\n\nIntroduction of <em>th[+252 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Financial Analyst Perspective\n\nFrom a fi[+242 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Market Research Analyst Perspective\n\nAs [+177 characters]",
+                "sentiment": 0.296,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "FAQ\n\nQ: What is <em>the</em> <em>Kroger<[+251 characters]",
+                "sentiment": 0.4137,
+                "highlighted_in": "main_text"
+              }
+            ]
+          },
+          {
+            "symbol": "KOG.DE",
+            "name": "The Kroger Co.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "de",
+            "type": "equity",
+            "industry": "Consumer Defensive",
+            "match_score": 30.187172,
+            "sentiment_score": 0.54016,
+            "highlights": [
+              {
+                "highlight": "Summary\n\n<em>The</em> <em>Kroger</em> <e[+350 characters]",
+                "sentiment": 0.4753,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Positive Aspects\n\nIntroduction of <em>th[+252 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Financial Analyst Perspective\n\nFrom a fi[+242 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Market Research Analyst Perspective\n\nAs [+177 characters]",
+                "sentiment": 0.296,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "FAQ\n\nQ: What is <em>the</em> <em>Kroger<[+251 characters]",
+                "sentiment": 0.4137,
+                "highlighted_in": "main_text"
+              }
+            ]
+          },
+          {
+            "symbol": "KR.MX",
+            "name": "The Kroger Co.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "mx",
+            "type": "equity",
+            "industry": "Consumer Defensive",
+            "match_score": 30.185707,
+            "sentiment_score": 0.54016,
+            "highlights": [
+              {
+                "highlight": "Summary\n\n<em>The</em> <em>Kroger</em> <e[+350 characters]",
+                "sentiment": 0.4753,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Positive Aspects\n\nIntroduction of <em>th[+252 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Financial Analyst Perspective\n\nFrom a fi[+242 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Market Research Analyst Perspective\n\nAs [+177 characters]",
+                "sentiment": 0.296,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "FAQ\n\nQ: What is <em>the</em> <em>Kroger<[+251 characters]",
+                "sentiment": 0.4137,
+                "highlighted_in": "main_text"
+              }
+            ]
+          },
+          {
+            "symbol": "0JS2.L",
+            "name": "The Kroger Co.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "gb",
+            "type": "equity",
+            "industry": "N/A",
+            "match_score": 30.185644,
+            "sentiment_score": 0.54016,
+            "highlights": [
+              {
+                "highlight": "Summary\n\n<em>The</em> <em>Kroger</em> <e[+350 characters]",
+                "sentiment": 0.4753,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Positive Aspects\n\nIntroduction of <em>th[+252 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Financial Analyst Perspective\n\nFrom a fi[+242 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Market Research Analyst Perspective\n\nAs [+177 characters]",
+                "sentiment": 0.296,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "FAQ\n\nQ: What is <em>the</em> <em>Kroger<[+251 characters]",
+                "sentiment": 0.4137,
+                "highlighted_in": "main_text"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "2931a555-06c6-447d-900f-656767024543",
+        "title": "Thunderbird Entertainment and tokidoki Unveil Limited Edition Mermicorno Collectible at San Diego Comic-Con | THBRF Stock News",
+        "description": "Thunderbird Entertainment Group Inc. (TSXV:TBRD, OTC:THBRF) announces the launch of exclusive Mermicorno collectibles at San Diego Comic-Con 2025.    The J",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, THBRF",
+        "snippet": "Thunderbird Entertainment Group Inc. (TSXV:TBRD, OTC:THBRF) announces the launch of exclusive Mermicorno collectibles at San Diego Comic-Con 2025.\n\nThe Jazwares...",
+        "url": "https://www.gurufocus.com/news/2997694/thunderbird-entertainment-and-tokidoki-unveil-limited-edition-mermicorno-collectible-at-san-diego-comiccon-thbrf-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C00000JXF.png?20",
+        "language": "en",
+        "published_at": "2025-07-23T14:25:40.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "THBRF",
+            "name": "Thunderbird Entertainment Group Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Communication Services",
+            "match_score": 145.22571,
+            "sentiment_score": 0.050567,
+            "highlights": [
+              {
+                "highlight": "<em>Thunderbird</em> <em>Entertainment</[+290 characters]",
+                "sentiment": 0.25,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Thunderbird Distribution and Thunderbird[+250 characters]",
+                "sentiment": 0.128,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Thunderbird</em> <em>Entertainment</em> and tokidoki Unveil Limited Edition Mermicorno Collectible at San Diego Comic-Con | <em>THBRF</em> Stock News",
+                "sentiment": -0.2263,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "TBRD.V",
+            "name": "Thunderbird Entertainment Group Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "ca",
+            "type": "equity",
+            "industry": "Communication Services",
+            "match_score": 103.267586,
+            "sentiment_score": 0.050567,
+            "highlights": [
+              {
+                "highlight": "<em>Thunderbird</em> <em>Entertainment</[+290 characters]",
+                "sentiment": 0.25,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Thunderbird Distribution and Thunderbird[+250 characters]",
+                "sentiment": 0.128,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Thunderbird</em> <em>Entertainment</em> and tokidoki Unveil Limited Edition Mermicorno Collectible at San Diego Comic-Con | THBRF Stock News",
+                "sentiment": -0.2263,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "acb11788-3105-4990-a713-6187e3e4e2ab",
+        "title": "Newell Brands Inc (NWL) Unveils Yankee Candle's Bold Brand Refresh | NWL stock news",
+        "description": "Summary Newell Brands Inc (NWL) announced a significant relaunch of its Yankee Candle brand on July 23, 2025. The refresh includes a modernized design, an impro",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, NWL",
+        "snippet": "Summary\n\nNewell Brands Inc (NWL, Financial) announced a significant relaunch of its Yankee Candle brand on July 23, 2025. The refresh includes a modernized desi...",
+        "url": "https://www.gurufocus.com/news/2997511/newell-brands-inc-nwl-unveils-yankee-candles-bold-brand-refresh-nwl-stock-news",
+        "image_url": "https://static.gurufocus.com/images/global_logo_twitter_card.png",
+        "language": "en",
+        "published_at": "2025-07-23T14:00:58.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "0K7J.L",
+            "name": "Newell Brands Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "gb",
+            "type": "equity",
+            "industry": "N/A",
+            "match_score": 125.56625,
+            "sentiment_score": 0.611033,
+            "highlights": [
+              {
+                "highlight": "Summary\n\n<em>Newell</em> <em>Brands</em>[+268 characters]",
+                "sentiment": 0.5994,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Financial Analyst Perspective\n\nFrom a fi[+284 characters]",
+                "sentiment": 0.8519,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Newell</em> <em>Brands</em> <em>Inc</em> (NWL) Unveils Yankee Candle's Bold Brand Refresh | NWL stock news",
+                "sentiment": 0.3818,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "NWL",
+            "name": "Newell Brands Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Consumer Defensive",
+            "match_score": 125.56093,
+            "sentiment_score": 0.611033,
+            "highlights": [
+              {
+                "highlight": "Summary\n\n<em>Newell</em> <em>Brands</em>[+268 characters]",
+                "sentiment": 0.5994,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Financial Analyst Perspective\n\nFrom a fi[+284 characters]",
+                "sentiment": 0.8519,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Newell</em> <em>Brands</em> <em>Inc</em> (NWL) Unveils Yankee Candle's Bold Brand Refresh | NWL stock news",
+                "sentiment": 0.3818,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "NWL.MX",
+            "name": "Newell Brands Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "mx",
+            "type": "equity",
+            "industry": "Consumer Defensive",
+            "match_score": 125.55918,
+            "sentiment_score": 0.611033,
+            "highlights": [
+              {
+                "highlight": "Summary\n\n<em>Newell</em> <em>Brands</em>[+268 characters]",
+                "sentiment": 0.5994,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Financial Analyst Perspective\n\nFrom a fi[+284 characters]",
+                "sentiment": 0.8519,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Newell</em> <em>Brands</em> <em>Inc</em> (NWL) Unveils Yankee Candle's Bold Brand Refresh | NWL stock news",
+                "sentiment": 0.3818,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "1da053de-cbef-4265-8093-ec4f32f2a39c",
+        "title": "Accel Entertainment Inc (ACEL) Announces Q2 2025 Financial Results Release Date | ACEL stock news",
+        "description": "Summary Accel Entertainment Inc (ACEL), a prominent service provider in the locals-focused gaming industry, has announced that it will release its financial and",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, ACEL",
+        "snippet": "Summary\n\nAccel Entertainment Inc (ACEL, Financial), a prominent service provider in the locals-focused gaming industry, has announced that it will release its f...",
+        "url": "https://www.gurufocus.com/news/2996966/accel-entertainment-inc-acel-announces-q2-2025-financial-results-release-date-acel-stock-news",
+        "image_url": "https://static.gurufocus.com/images/global_logo_twitter_card.png",
+        "language": "en",
+        "published_at": "2025-07-23T13:06:21.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "ACEL",
+            "name": "Accel Entertainment, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Consumer Cyclical",
+            "match_score": 126.70404,
+            "sentiment_score": 0.37982,
+            "highlights": [
+              {
+                "highlight": "Summary\n\n<em>Accel</em> <em>Entertainmen[+274 characters]",
+                "sentiment": 0.3182,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Positive Aspects\n\n<em>Accel</em> <em>Ent[+262 characters]",
+                "sentiment": 0.7845,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "FAQ\n\nQ: When will <em>Accel</em> <em>Ent[+291 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Q: What services does <em>Accel</em> <em[+233 characters]",
+                "sentiment": 0.7964,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Accel</em> <em>Entertainment</em> <em>Inc</em> (ACEL) Announces Q2 2025 Financial Results Release Date | ACEL stock news",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "uuid": "670ee401-3515-4293-8353-114b41eed482",
@@ -366,6 +1791,437 @@
                 "highlight": "<em>ACCO</em> <em>Brands</em> <em>Corporation</em> Announces Second Quarter 2025 Earnings Webcast | ACCO Stock News",
                 "sentiment": 0,
                 "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uuid": "46aeecfb-cc51-4c3a-9f43-a305db2a8bf7",
+    "title": "Loop Capital Maintains Buy Rating, Raises PT for MPWR to $800 | MPWR Stock News",
+    "description": "Monolithic Power Systems (MPWR) remains a stock to watch as Loop Capital maintains its \"Buy\" rating. Analyst Gary Mobley has updated the price target for MPWR,",
+    "keywords": "GuruFocus, Article, News, GuruFocus News, MPWR",
+    "snippet": "Monolithic Power Systems (MPWR, Financial) remains a stock to watch as Loop Capital maintains its \"Buy\" rating. Analyst Gary Mobley has updated the price target...",
+    "url": "https://www.gurufocus.com/news/2998367/loop-capital-maintains-buy-rating-raises-pt-for-mpwr-to-800-mpwr-stock-news",
+    "image_url": "https://static.gurufocus.com/logos/0C000008GX.png?20",
+    "language": "en",
+    "published_at": "2025-07-23T17:34:55.000000Z",
+    "source": "gurufocus.com",
+    "relevance_score": null,
+    "entities": [
+      {
+        "symbol": "MPWR",
+        "name": "Monolithic Power Systems, Inc.",
+        "exchange": null,
+        "exchange_long": null,
+        "country": "us",
+        "type": "equity",
+        "industry": "Technology",
+        "match_score": 68.53314,
+        "sentiment_score": 0.314783,
+        "highlights": [
+          {
+            "highlight": "<em>Monolithic</em> <em>Power</em> <em>S[+319 characters]",
+            "sentiment": 0.802,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "The consistent \"Buy\" rating, upheld by L[+139 characters]",
+            "sentiment": 0.5423,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Wall Street Analysts Forecast\n\nBased on [+318 characters]",
+            "sentiment": -0.2732,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "More detailed estimate data can be found[+317 characters]",
+            "sentiment": 0,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Based on GuruFocus estimates, the estima[+274 characters]",
+            "sentiment": 0.8176,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "More detailed data can be found on the <[+84 characters]",
+            "sentiment": 0,
+            "highlighted_in": "main_text"
+          }
+        ]
+      }
+    ],
+    "similar": [
+      {
+        "uuid": "7a57e0ff-a9d5-402e-b402-b6cfa9a238db",
+        "title": "Loop Capital Maintains Buy Rating on Crown Holdings (CCK), Increases Target Price | CCK Stock News",
+        "description": "In the latest stock market update, Loop Capital has maintained its",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, CCK",
+        "snippet": "In the latest stock market update, Loop Capital has maintained its \"Buy\" rating for Crown Holdings (CCK, Financial), underscoring its confidence in the company'...",
+        "url": "https://www.gurufocus.com/news/2998366/loop-capital-maintains-buy-rating-on-crown-holdings-cck-increases-target-price-cck-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C00000AT7.png?20",
+        "language": "en",
+        "published_at": "2025-07-23T17:34:42.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "0I4X.L",
+            "name": "Crown Holdings, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "gb",
+            "type": "equity",
+            "industry": "N/A",
+            "match_score": 66.13135,
+            "sentiment_score": 0.356338,
+            "highlights": [
+              {
+                "highlight": "In the latest stock market update, Loop [+247 characters]",
+                "sentiment": 0.6705,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Significantly, Loop Capital has also rai[+239 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Crown</em> <em>Holdings</em> (CCK, F[+298 characters]",
+                "sentiment": 0.8779,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+298 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+277 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+255 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+64 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Loop Capital Maintains Buy Rating on <em>Crown</em> <em>Holdings</em> (CCK), Increases Target Price | CCK Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "CCK",
+            "name": "Crown Holdings, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Consumer Cyclical",
+            "match_score": 66.14151,
+            "sentiment_score": 0.356338,
+            "highlights": [
+              {
+                "highlight": "In the latest stock market update, Loop [+247 characters]",
+                "sentiment": 0.6705,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Significantly, Loop Capital has also rai[+239 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Crown</em> <em>Holdings</em> (CCK, F[+298 characters]",
+                "sentiment": 0.8779,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+298 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+277 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+255 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+64 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Loop Capital Maintains Buy Rating on <em>Crown</em> <em>Holdings</em> (CCK), Increases Target Price | CCK Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "1a27f6d7-f754-4632-a068-b32d8a809c8e",
+        "title": "Humacyte (HUMA) Maintains \"Buy\" Rating with $25 Price Target | HUMA Stock News",
+        "description": "In an update on July 23, 2025, D. Boral Capital analyst Jason Kolbert reaffirmed his \"Buy\" rating on Humacyte (HUMA), maintaining a consistent price target of $",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, HUMA",
+        "snippet": "In an update on July 23, 2025, D. Boral Capital analyst Jason Kolbert reaffirmed his \"Buy\" rating on Humacyte (HUMA, Financial), maintaining a consistent price ...",
+        "url": "https://www.gurufocus.com/news/2998209/humacyte-huma-maintains-buy-rating-with-25-price-target-huma-stock-news",
+        "image_url": "https://static.gurufocus.com/images/global_logo_twitter_card.png",
+        "language": "en",
+        "published_at": "2025-07-23T16:30:53.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "HUMA",
+            "name": "Humacyte, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "N/A",
+            "match_score": 109.56974,
+            "sentiment_score": 0.295,
+            "highlights": [
+              {
+                "highlight": "Boral Capital analyst Jason Kolbert reaf[+266 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Humacyte</em> (<em>HUMA</em>, Financ[+253 characters]",
+                "sentiment": 0.8957,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Investors are encouraged to consider the[+274 characters]",
+                "sentiment": 0.6369,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+286 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+353 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Humacyte</em> (<em>HUMA</em>) Maintains \"Buy\" Rating with $25 Price Target | <em>HUMA</em> Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "688a95a7-6c40-41c5-86e0-be7085437824",
+        "title": "Benchmark Raises Price Target for META, Maintains Buy Rating | META Stock News",
+        "description": "On July 23, 2025, Benchmark analyst Mark Zgutowicz released a new report on Meta Platforms (META), highlighting a significant adjustment in the price target whi",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, META",
+        "snippet": "On July 23, 2025, Benchmark analyst Mark Zgutowicz released a new report on Meta Platforms (META, Financial), highlighting a significant adjustment in the price...",
+        "url": "https://www.gurufocus.com/news/2997522/benchmark-raises-price-target-for-meta-maintains-buy-rating-meta-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C000098V0.png?20",
+        "language": "en",
+        "published_at": "2025-07-23T14:02:08.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "META",
+            "name": "Meta Platforms Inc",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Communication Services",
+            "match_score": 23.004116,
+            "sentiment_score": 0.121175,
+            "highlights": [
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+298 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+261 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+257 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+65 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "ea7a62a7-d383-4be6-99d1-b308d040ffe3",
+        "title": "Monolithic Power (MPWR) Receives Increased Price Target from Loop Capital | MPWR Stock News",
+        "description": "Loop Capital has boosted its price target for Monolithic Power Systems (MPWR) to $800, up from the previous $760, while maintaining a Buy rating on the stock. T",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, MPWR",
+        "snippet": "Loop Capital has boosted its price target for Monolithic Power Systems (MPWR, Financial) to $800, up from the previous $760, while maintaining a Buy rating on t...",
+        "url": "https://www.gurufocus.com/news/2997003/monolithic-power-mpwr-receives-increased-price-target-from-loop-capital-mpwr-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C000008GX.png?20",
+        "language": "en",
+        "published_at": "2025-07-23T13:20:40.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "MPWR.MX",
+            "name": "Monolithic Power Systems, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "mx",
+            "type": "equity",
+            "industry": "Technology",
+            "match_score": 66.8851,
+            "sentiment_score": 0.267,
+            "highlights": [
+              {
+                "highlight": "Loop Capital has boosted its price targe[+330 characters]",
+                "sentiment": 0.7906,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+318 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+317 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+274 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+84 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              }
+            ]
+          },
+          {
+            "symbol": "MPWR",
+            "name": "Monolithic Power Systems, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Technology",
+            "match_score": 66.88414,
+            "sentiment_score": 0.267,
+            "highlights": [
+              {
+                "highlight": "Loop Capital has boosted its price targe[+330 characters]",
+                "sentiment": 0.7906,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+318 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+317 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+274 characters]",
+                "sentiment": 0.8176,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+84 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "46e81745-7e71-4e4e-8fa7-b4ec2b49996d",
+        "title": "HOTH Stock: D. Boral Capital Maintains Buy Rating and $5 Price Target | HOTH Stock News",
+        "description": "On July 23, 2025, D. Boral Capital, led by analyst Jason Kolbert, reaffirmed its \"Buy\" rating for Hoth Therapeutics (HOTH). The investment firm maintained its p",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, HOTH",
+        "snippet": "On July 23, 2025, D. Boral Capital, led by analyst Jason Kolbert, reaffirmed its \"Buy\" rating for Hoth Therapeutics (HOTH, Financial). The investment firm maint...",
+        "url": "https://www.gurufocus.com/news/2996707/hoth-stock-d-boral-capital-maintains-buy-rating-and-5-price-target-hoth-stock-news",
+        "image_url": "https://static.gurufocus.com/images/global_logo_twitter_card.png",
+        "language": "en",
+        "published_at": "2025-07-23T12:32:25.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "HOTH",
+            "name": "Hoth Therapeutics, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Healthcare",
+            "match_score": 68.15976,
+            "sentiment_score": 0.26754,
+            "highlights": [
+              {
+                "highlight": "Boral Capital, led by analyst Jason Kolb[+283 characters]",
+                "sentiment": 0.296,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "The decision to maintain both the rating[+322 characters]",
+                "sentiment": 0.5719,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Boral Capital's insight will find reassu[+305 characters]",
+                "sentiment": 0.743,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+294 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+284 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
               }
             ]
           }
@@ -987,183 +2843,560 @@
     ]
   },
   {
-    "uuid": "adfba646-340b-435b-bbcd-a1ec76a02df0",
-    "title": "BNED: Options Activity and Market Expectations Ahead of Earnings | BNED Stock News",
-    "description": "In the lead-up to earnings, Barnes & Noble Education (BNED) is experiencing a typical volume of options trading, with a noticeable skew towards puts over calls",
-    "keywords": "GuruFocus, Article, News, GuruFocus News, BNED",
-    "snippet": "In the lead-up to earnings, Barnes & Noble Education (BNED, Financial) is experiencing a typical volume of options trading, with a noticeable skew towards puts ...",
-    "url": "https://www.gurufocus.com/news/2988349/bned-options-activity-and-market-expectations-ahead-of-earnings-bned-stock-news",
-    "image_url": "https://static.gurufocus.com/images/global_logo_twitter_card.png",
+    "uuid": "2931a555-06c6-447d-900f-656767024543",
+    "title": "Thunderbird Entertainment and tokidoki Unveil Limited Edition Mermicorno Collectible at San Diego Comic-Con | THBRF Stock News",
+    "description": "Thunderbird Entertainment Group Inc. (TSXV:TBRD, OTC:THBRF) announces the launch of exclusive Mermicorno collectibles at San Diego Comic-Con 2025.    The J",
+    "keywords": "GuruFocus, Article, News, GuruFocus News, THBRF",
+    "snippet": "Thunderbird Entertainment Group Inc. (TSXV:TBRD, OTC:THBRF) announces the launch of exclusive Mermicorno collectibles at San Diego Comic-Con 2025.\n\nThe Jazwares...",
+    "url": "https://www.gurufocus.com/news/2997694/thunderbird-entertainment-and-tokidoki-unveil-limited-edition-mermicorno-collectible-at-san-diego-comiccon-thbrf-stock-news",
+    "image_url": "https://static.gurufocus.com/logos/0C00000JXF.png?20",
     "language": "en",
-    "published_at": "2025-07-18T19:15:21.000000Z",
+    "published_at": "2025-07-23T14:25:40.000000Z",
     "source": "gurufocus.com",
-    "relevance_score": null,
     "entities": [
       {
-        "symbol": "BNED",
-        "name": "Barnes & Noble Education, Inc.",
-        "exchange": null,
-        "exchange_long": null,
+        "symbol": "THBRF",
+        "name": "Thunderbird Entertainment Group Inc.",
+        "exchange": "OTC",
+        "exchange_long": "Over-the-counter Markets",
         "country": "us",
         "type": "equity",
-        "industry": "Consumer Cyclical",
-        "match_score": 76.54088,
-        "sentiment_score": 0.01818,
+        "industry": "Communication Services",
+        "match_score": 145.22571,
+        "sentiment_score": 0.050567,
         "highlights": [
           {
-            "highlight": "In the lead-up to earnings, <em>Barnes</[+259 characters]",
-            "sentiment": -0.25,
+            "highlight": "<em>Thunderbird</em> <em>Entertainment</em> <em>Group</em> <em>Inc</em>. (TSXV:TBRD, <em>OTC:THBRF</em>) announces the launch of exclusive Mermicorno collectibles at San Diego Comic-Con 2025.\n\nThe Jazwares exclusive Astra plush and additional merchandise will be available for purchase and signing by tokidoki artist Simone Legno.",
+            "sentiment": 0.25,
             "highlighted_in": "main_text"
           },
           {
-            "highlight": "Wall Street Analysts Forecast\n\nBased on [+312 characters]",
-            "sentiment": -0.4767,
+            "highlight": "Thunderbird Distribution and Thunderbird Brands, divisions of <em>Thunderbird</em> <em>Entertainment</em> <em>Group</em> <em>Inc</em>. (TSXV:TBRD, <em>OTC:THBRF</em>), have teamed up with global brand tokidoki to offer exclusive Mermicorno: Starfall merchandise at San Diego Comic-Con 2025.",
+            "sentiment": 0.128,
             "highlighted_in": "main_text"
           },
           {
-            "highlight": "More detailed estimate data can be found[+310 characters]",
-            "sentiment": 0,
+            "highlight": "<em>Thunderbird</em> <em>Entertainment</em> and tokidoki Unveil Limited Edition Mermicorno Collectible at San Diego Comic-Con | <em>THBRF</em> Stock News",
+            "sentiment": -0.2263,
+            "highlighted_in": "title"
+          }
+        ]
+      },
+      {
+        "symbol": "TBRD.V",
+        "name": "Thunderbird Entertainment Group Inc.",
+        "exchange": "TSXV",
+        "exchange_long": "TSX Venture Exchange",
+        "country": "ca",
+        "type": "equity",
+        "industry": "Communication Services",
+        "match_score": 103.267586,
+        "sentiment_score": 0.050567,
+        "highlights": [
+          {
+            "highlight": "<em>Thunderbird</em> <em>Entertainment</em> <em>Group</em> <em>Inc</em>. (<em>TSXV:TBRD</em>, OTC:THBRF) announces the launch of exclusive Mermicorno collectibles at San Diego Comic-Con 2025.\n\nThe Jazwares exclusive Astra plush and additional merchandise will be available for purchase and signing by tokidoki artist Simone Legno.",
+            "sentiment": 0.25,
             "highlighted_in": "main_text"
           },
           {
-            "highlight": "Based on GuruFocus estimates, the estima[+274 characters]",
-            "sentiment": 0.8176,
+            "highlight": "Thunderbird Distribution and Thunderbird Brands, divisions of <em>Thunderbird</em> <em>Entertainment</em> <em>Group</em> <em>Inc</em>. (<em>TSXV:TBRD</em>, OTC:THBRF), have teamed up with global brand tokidoki to offer exclusive Mermicorno: Starfall merchandise at San Diego Comic-Con 2025.",
+            "sentiment": 0.128,
             "highlighted_in": "main_text"
           },
           {
-            "highlight": "More detailed data can be found on the <[+84 characters]",
-            "sentiment": 0,
+            "highlight": "<em>Thunderbird</em> <em>Entertainment</em> and tokidoki Unveil Limited Edition Mermicorno Collectible at San Diego Comic-Con | THBRF Stock News",
+            "sentiment": -0.2263,
+            "highlighted_in": "title"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uuid": "d7d87aa0-fd4e-4756-bf41-72e3774781ec",
+    "title": "Chino Commercial Bancorp Reports 25% Increase in Net Earnings | CCBC Stock News",
+    "description": "Chino Commercial Bancorp (OTC: CCBC) reported a 25.04% increase in net earnings for Q2 2025, totaling $1.54 million.    The newly opened Corona branch attr",
+    "keywords": "GuruFocus, Article, News, GuruFocus News, CCBC",
+    "snippet": "Chino Commercial Bancorp (OTC: CCBC) reported a 25.04% increase in net earnings for Q2 2025, totaling $1.54 million.\n\nThe newly opened Corona branch attracted $...",
+    "url": "https://www.gurufocus.com/news/2988350/chino-commercial-bancorp-reports-25-increase-in-net-earnings-ccbc-stock-news",
+    "image_url": "https://static.gurufocus.com/images/global_logo_twitter_card.png",
+    "language": "en",
+    "published_at": "2025-07-18T19:15:23.000000Z",
+    "source": "gurufocus.com",
+    "entities": [
+      {
+        "symbol": "CCBC",
+        "name": "Chino Commercial Bancorp",
+        "exchange": "OTC",
+        "exchange_long": "Over-the-counter Markets",
+        "country": "us",
+        "type": "equity",
+        "industry": "Financial Services",
+        "match_score": 192.9519,
+        "sentiment_score": 0.669275,
+        "highlights": [
+          {
+            "highlight": "<em>Chino</em> <em>Commercial</em> <em>Bancorp</em> (<em>OTC</em>: <em>CCBC</em>) reported a 25.04% increase in net earnings for Q2 2025, totaling $1.54 million.\n\nThe newly opened Corona branch attracted $20 million in new deposits within the quarter.\n\nNet interest margin improved significantly from 2.95% to 3.69% year-over-year.",
+            "sentiment": 0.8807,
             "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>Chino</em> <em>Commercial</em> <em>Bancorp</em> (<em>OTC</em>: <em>CCBC</em>) announced robust financial results for the second quarter of 2025, with net earnings reaching $1.54 million, marking a 25.04% increase compared to the same period in 2024. The company's earnings per share rose to $0.48 from $0.38, reflecting a notable year-over-year improvement.",
+            "sentiment": 0.8658,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Total assets of <em>Chino</em> <em>Commercial</em> <em>Bancorp</em> grew to $481.9 million, up by 3.3% from December 2024, while deposits surged by 6.5% to $371.6 million. The company's core deposits represented 97.01% of total deposits, indicating strong stability and customer retention.",
+            "sentiment": 0.6124,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>Chino</em> <em>Commercial</em> <em>Bancorp</em> Reports 25% Increase in Net Earnings | CCBC Stock News",
+            "sentiment": 0.3182,
+            "highlighted_in": "title"
           }
         ]
       }
     ],
     "similar": [
       {
-        "uuid": "3fa420e1-cd12-40b0-a28b-79e1f4804729",
-        "title": "XPeng (XPEV) Sees Unusual Put Activity as Earnings Loom | XPEV Stock News",
-        "description": "Significant bearish activity has been observed in XPeng (XPEV) with a notable increase in put option trading. A total of 5,404 put options were traded, which is",
-        "keywords": "GuruFocus, Article, News, GuruFocus News, XPEV",
-        "snippet": "Significant bearish activity has been observed in XPeng (XPEV, Financial) with a notable increase in put option trading. A total of 5,404 put options were trade...",
-        "url": "https://www.gurufocus.com/news/2987868/xpeng-xpev-sees-unusual-put-activity-as-earnings-loom-xpev-stock-news",
-        "image_url": "https://static.gurufocus.com/logos/0C0000BXZD.png?20",
+        "uuid": "922b2508-1422-45b2-878f-e6970b557250",
+        "title": "Chino Commercial Bancorp Reports 8.7% Increase in Net Earnings | CCBC Stock News",
+        "description": "Chino Commercial Bancorp (OTC: CCBC) reported net earnings of $1.35 million in Q1 2025, an 8.7% increase from the previous year.    Total assets reached a",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, CCBC",
+        "snippet": "Chino Commercial Bancorp (OTC: CCBC) reported net earnings of $1.35 million in Q1 2025, an 8.7% increase from the previous year.\n\nTotal assets reached a record ...",
+        "url": "https://www.gurufocus.com/news/2789168/chino-commercial-bancorp-reports-87-increase-in-net-earnings-ccbc-stock-news",
+        "image_url": "https://static.gurufocus.com/images/global_logo_twitter_card.png",
         "language": "en",
-        "published_at": "2025-07-18T15:30:57.000000Z",
+        "published_at": "2025-04-18T17:45:15.000000Z",
         "source": "gurufocus.com",
-        "relevance_score": null,
+        "relevance_score": 213.57234,
         "entities": [
           {
-            "symbol": "XPEV",
-            "name": "XPeng Inc.",
+            "symbol": "CCBC",
+            "name": "Chino Commercial Bancorp",
             "exchange": null,
             "exchange_long": null,
             "country": "us",
             "type": "equity",
-            "industry": "Consumer Cyclical",
-            "match_score": 52.3278,
-            "sentiment_score": 0.4331,
+            "industry": "Financial Services",
+            "match_score": 182.39706,
+            "sentiment_score": 0.684925,
             "highlights": [
               {
-                "highlight": "Significant bearish activity has been ob[+165 characters]",
-                "sentiment": 0.4767,
+                "highlight": "<em>Chino</em> <em>Commercial</em> <em>B[+327 characters]",
+                "sentiment": 0.9231,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "Wall Street Analysts Forecast\n\nBased on [+277 characters]",
+                "highlight": "<em>Chino</em> <em>Commercial</em> <em>B[+281 characters]",
+                "sentiment": 0.886,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "This robust performance positions <em>Ch[+174 characters]",
+                "sentiment": 0.6124,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Chino</em> <em>Commercial</em> <em>Bancorp</em> Reports 8.7% Increase in Net Earnings | CCBC Stock News",
+                "sentiment": 0.3182,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ],
+        "similar": []
+      },
+      {
+        "uuid": "9585b161-1b61-49f3-8911-4a89e11878e5",
+        "title": "Chino Commercial Bancorp Reports 25% Increase in Net Earnings",
+        "description": "CHINO, Calif., July 18, 2025 (GLOBE NEWSWIRE) -- The Board of Directors of Chino Commercial Bancorp (OTC: CCBC), the parent company of Chino Commercial Bank, N.A., announced the results of operations for the Bank and the consolidated holding company for the second quarter ended June 30, 2025.",
+        "keywords": "Chino, Commercial, Bancorp, Reports, 25%, Increase, in, Net, Earnings",
+        "snippet": "CHINO, Calif., July 18, 2025 (GLOBE NEWSWIRE) -- The Board of Directors of Chino Commercial Bancorp (OTC: CCBC), the parent company of Chino Commercial Bank, N....",
+        "url": "https://www.manilatimes.net/2025/07/19/tmt-newswire/globenewswire/chino-commercial-bancorp-reports-25-increase-in-net-earnings/2152295",
+        "image_url": "https://www.manilatimes.net/manilatimes/uploads/images/2025/07/19/683801.png",
+        "language": "en",
+        "published_at": "2025-07-18T18:04:25.000000Z",
+        "source": "manilatimes.net",
+        "relevance_score": 198.98825,
+        "entities": [
+          {
+            "symbol": "CCBC",
+            "name": "Chino Commercial Bancorp",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Financial Services",
+            "match_score": 184.39548,
+            "sentiment_score": 0.106067,
+            "highlights": [
+              {
+                "highlight": "., July 18, 2025 (GLOBE NEWSWIRE) -- The[+286 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Milincu, Senior Vice President and CFO, [+141 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Chino</em> <em>Commercial</em> <em>Bancorp</em> Reports 25% Increase in Net Earnings",
+                "sentiment": 0.3182,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ],
+        "similar": [
+          {
+            "uuid": "73773abb-11d9-4bd8-a033-29bffaec6dda",
+            "title": "Gladstone Commercial (GOOD) Reports Robust Portfolio Performance by Mid-2025 | GOOD Stock News",
+            "description": "Gladstone Commercial (GOOD) has released its semiannual update, showcasing its portfolio's performance up to June 30, 2025. The company successfully collected a",
+            "keywords": "GuruFocus, Article, News, GuruFocus News, GOOD",
+            "snippet": "Gladstone Commercial (GOOD, Financial) has released its semiannual update, showcasing its portfolio's performance up to June 30, 2025. The company successfully ...",
+            "url": "https://www.gurufocus.com/news/2987510/gladstone-commercial-good-reports-robust-portfolio-performance-by-mid2025-good-stock-news",
+            "image_url": "https://static.gurufocus.com/logos/0C000007VX.png?20",
+            "language": "en",
+            "published_at": "2025-07-18T13:47:29.000000Z",
+            "source": "gurufocus.com",
+            "relevance_score": 198.98825,
+            "entities": []
+          },
+          {
+            "uuid": "9891d826-c604-4a3c-aacb-2e5c4a9618ce",
+            "title": "Great Southern Bancorp (GSBC) Sees Price Target Increase | GSBC Stock News",
+            "description": "Keefe Bruyette has adjusted the price target for Great Southern Bancorp (GSBC), raising it from $61 to $63 while maintaining a Market Perform rating. Despite ex",
+            "keywords": "GuruFocus, Article, News, GuruFocus News, GSBC",
+            "snippet": "Keefe Bruyette has adjusted the price target for Great Southern Bancorp (GSBC, Financial), raising it from $61 to $63 while maintaining a Market Perform rating....",
+            "url": "https://www.gurufocus.com/news/2986977/great-southern-bancorp-gsbc-sees-price-target-increase-gsbc-stock-news",
+            "image_url": "https://static.gurufocus.com/logos/0C00000B4R.png?20",
+            "language": "en",
+            "published_at": "2025-07-18T11:45:36.000000Z",
+            "source": "gurufocus.com",
+            "relevance_score": 198.98825,
+            "entities": [
+              {
+                "symbol": "GSBC",
+                "name": "Great Southern Bancorp, Inc.",
+                "exchange": null,
+                "exchange_long": null,
+                "country": "us",
+                "type": "equity",
+                "industry": "Financial Services",
+                "match_score": 104.08739,
+                "sentiment_score": 0.458,
+                "highlights": [
+                  {
+                    "highlight": "Keefe Bruyette has adjusted the price ta[+332 characters]",
+                    "sentiment": 0.9349,
+                    "highlighted_in": "main_text"
+                  },
+                  {
+                    "highlight": "Wall Street Analysts Forecast\n\nBased on [+312 characters]",
+                    "sentiment": -0.4767,
+                    "highlighted_in": "main_text"
+                  },
+                  {
+                    "highlight": "More detailed estimate data can be found[+306 characters]",
+                    "sentiment": 0,
+                    "highlighted_in": "main_text"
+                  },
+                  {
+                    "highlight": "Based on GuruFocus estimates, the estima[+272 characters]",
+                    "sentiment": 0.7579,
+                    "highlighted_in": "main_text"
+                  },
+                  {
+                    "highlight": "More detailed data can be found on the <[+327 characters]",
+                    "sentiment": 0.7783,
+                    "highlighted_in": "main_text"
+                  },
+                  {
+                    "highlight": "Positive Points\n\n<em>Great</em> <em>Sout[+274 characters]",
+                    "sentiment": 0.8934,
+                    "highlighted_in": "main_text"
+                  },
+                  {
+                    "highlight": "<em>Great</em> <em>Southern</em> <em>Bancorp</em> (GSBC) Sees Price Target Increase | GSBC Stock News",
+                    "sentiment": 0.3182,
+                    "highlighted_in": "title"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "632d1ed1-8b5b-498b-88c2-423afb3229b7",
+        "title": "Chino Commercial Bancorp Reports 8.7% Increase in Net Earnings",
+        "description": "**media[599091]**",
+        "keywords": "Chino, Commercial, Bancorp, Reports, 8.7%, Increase, in, Net, Earnings",
+        "snippet": "CHINO, Calif., April 18, 2025 (GLOBE NEWSWIRE) -- The Board of Directors of Chino Commercial Bancorp (OTC: CCBC), the parent company of Chino Commercial Bank, N...",
+        "url": "https://www.manilatimes.net/2025/04/19/tmt-newswire/globenewswire/chino-commercial-bancorp-reports-87-increase-in-net-earnings/2095119",
+        "image_url": "https://www.manilatimes.net/manilatimes/uploads/images/2025/04/19/599091.png",
+        "language": "en",
+        "published_at": "2025-04-18T16:50:29.000000Z",
+        "source": "manilatimes.net",
+        "relevance_score": 163.61197,
+        "entities": [
+          {
+            "symbol": "CCBC",
+            "name": "Chino Commercial Bancorp",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Financial Services",
+            "match_score": 183.52882,
+            "sentiment_score": 0.106067,
+            "highlights": [
+              {
+                "highlight": "., April 18, 2025 (GLOBE NEWSWIRE) -- Th[+287 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Milincu, Senior Vice President and CFO, [+141 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Chino</em> <em>Commercial</em> <em>Bancorp</em> Reports 8.7% Increase in Net Earnings",
+                "sentiment": 0.3182,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ],
+        "similar": []
+      }
+    ]
+  },
+  {
+    "uuid": "0236c884-3603-47d5-a143-dbac6c2b393d",
+    "title": "Simmons First National (SFNC): Price Target Raised by DA Davidson | SFNC Stock News",
+    "description": "In a recent update, DA Davidson has adjusted its price target for Simmons First National, with the ticker (SFNC), from $21.00 to $23.00. This represents a 9.52%",
+    "keywords": "GuruFocus, Article, News, GuruFocus News, SFNC",
+    "snippet": "In a recent update, DA Davidson has adjusted its price target for Simmons First National, with the ticker (SFNC, Financial), from $21.00 to $23.00. This represe...",
+    "url": "https://www.gurufocus.com/news/2998365/simmons-first-national-sfnc-price-target-raised-by-da-davidson-sfnc-stock-news",
+    "image_url": "https://static.gurufocus.com/logos/0C0000091U.png?20",
+    "language": "en",
+    "published_at": "2025-07-23T17:34:28.000000Z",
+    "source": "gurufocus.com",
+    "relevance_score": null,
+    "entities": [
+      {
+        "symbol": "SFNC",
+        "name": "Simmons First National Corporation",
+        "exchange": null,
+        "exchange_long": null,
+        "country": "us",
+        "type": "equity",
+        "industry": "Financial Services",
+        "match_score": 69.069916,
+        "sentiment_score": 0.070825,
+        "highlights": [
+          {
+            "highlight": "In a recent update, DA Davidson has adju[+204 characters]",
+            "sentiment": 0.3182,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Despite the raised price target, DA Davi[+234 characters]",
+            "sentiment": -0.296,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "The adjustment reflects DA Davidson's up[+224 characters]",
+            "sentiment": 0,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Wall Street Analysts Forecast\n\nBased on [+303 characters]",
+            "sentiment": -0.2732,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "More detailed estimate data can be found[+299 characters]",
+            "sentiment": 0,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Based on GuruFocus estimates, the estima[+262 characters]",
+            "sentiment": 0.8176,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "More detailed data can be found on the <[+74 characters]",
+            "sentiment": 0,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>Simmons</em> <em>First</em> <em>National</em> (SFNC): Price Target Raised by DA Davidson | SFNC Stock News",
+            "sentiment": 0,
+            "highlighted_in": "title"
+          }
+        ]
+      }
+    ],
+    "similar": [
+      {
+        "uuid": "20c56c30-6025-4d27-82e8-69945ddf064f",
+        "title": "Wintrust Financial (WTFC) Price Target Raised by DA Davidson | WTFC Stock News",
+        "description": "Wintrust Financial Corporation (WTFC), a leading financial holding company, has received a bullish outlook from DA Davidson analyst Jeff Rulis. On July 23, 2025",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, WTFC",
+        "snippet": "Wintrust Financial Corporation (WTFC, Financial), a leading financial holding company, has received a bullish outlook from DA Davidson analyst Jeff Rulis. On Ju...",
+        "url": "https://www.gurufocus.com/news/2998361/wintrust-financial-wtfc-price-target-raised-by-da-davidson-wtfc-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C000009PH.png?20",
+        "language": "en",
+        "published_at": "2025-07-23T17:33:44.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "WTFC",
+            "name": "Wintrust Financial Corporation",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Financial Services",
+            "match_score": 81.63719,
+            "sentiment_score": 0.1874,
+            "highlights": [
+              {
+                "highlight": "<em>Wintrust</em> <em>Financial</em> <em[+271 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Investors and interested parties are enc[+271 characters]",
+                "sentiment": 0.8271,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+295 characters]",
                 "sentiment": -0.2732,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "More detailed estimate data can be found[+330 characters]",
-                "sentiment": 0.5106,
+                "highlight": "More detailed estimate data can be found[+280 characters]",
+                "sentiment": 0,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "Based on GuruFocus estimates, the estima[+236 characters]",
-                "sentiment": 0.8176,
+                "highlight": "Based on GuruFocus estimates, the estima[+253 characters]",
+                "sentiment": 0.7579,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "More detailed data can be found on the <[+216 characters]",
-                "sentiment": 0.5574,
+                "highlight": "More detailed data can be found on the <[+61 characters]",
+                "sentiment": 0,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "Positive Points\n\n<em>XPeng</em> <em>Inc<[+247 characters]",
-                "sentiment": 0.7717,
-                "highlighted_in": "main_text"
-              },
-              {
-                "highlight": "<em>XPeng</em> <em>Inc</em> (XPEV) repor[+261 characters]",
-                "sentiment": 0.9022,
-                "highlighted_in": "main_text"
-              },
-              {
-                "highlight": "<em>XPeng</em> <em>Inc</em> (XPEV) antic[+121 characters]",
-                "sentiment": 0.3612,
-                "highlighted_in": "main_text"
-              },
-              {
-                "highlight": "<em>XPeng</em> (XPEV) Sees Unusual Put Activity as Earnings Loom | XPEV Stock News",
-                "sentiment": -0.2263,
+                "highlight": "<em>Wintrust</em> <em>Financial</em> (WTFC) Price Target Raised by DA Davidson | WTFC Stock News",
+                "sentiment": 0,
                 "highlighted_in": "title"
               }
             ]
           },
           {
-            "symbol": "XPEVN.MX",
-            "name": "XPeng Inc.",
+            "symbol": "WTFCP",
+            "name": "Wintrust Financial Corporation",
             "exchange": null,
             "exchange_long": null,
-            "country": "mx",
+            "country": "us",
             "type": "equity",
-            "industry": "N/A",
-            "match_score": 52.325294,
-            "sentiment_score": 0.4331,
+            "industry": "Financial Services",
+            "match_score": 81.637215,
+            "sentiment_score": 0.1874,
             "highlights": [
               {
-                "highlight": "Significant bearish activity has been ob[+165 characters]",
-                "sentiment": 0.4767,
+                "highlight": "<em>Wintrust</em> <em>Financial</em> <em[+271 characters]",
+                "sentiment": 0,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "Wall Street Analysts Forecast\n\nBased on [+277 characters]",
+                "highlight": "Investors and interested parties are enc[+271 characters]",
+                "sentiment": 0.8271,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+295 characters]",
                 "sentiment": -0.2732,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "More detailed estimate data can be found[+330 characters]",
-                "sentiment": 0.5106,
+                "highlight": "More detailed estimate data can be found[+280 characters]",
+                "sentiment": 0,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "Based on GuruFocus estimates, the estima[+236 characters]",
-                "sentiment": 0.8176,
+                "highlight": "Based on GuruFocus estimates, the estima[+253 characters]",
+                "sentiment": 0.7579,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "More detailed data can be found on the <[+216 characters]",
-                "sentiment": 0.5574,
+                "highlight": "More detailed data can be found on the <[+61 characters]",
+                "sentiment": 0,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "Positive Points\n\n<em>XPeng</em> <em>Inc<[+247 characters]",
-                "sentiment": 0.7717,
+                "highlight": "<em>Wintrust</em> <em>Financial</em> (WTFC) Price Target Raised by DA Davidson | WTFC Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "WTFCM",
+            "name": "Wintrust Financial Corporation",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Financial Services",
+            "match_score": 81.637215,
+            "sentiment_score": 0.1874,
+            "highlights": [
+              {
+                "highlight": "<em>Wintrust</em> <em>Financial</em> <em[+271 characters]",
+                "sentiment": 0,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "<em>XPeng</em> <em>Inc</em> (XPEV) repor[+261 characters]",
-                "sentiment": 0.9022,
+                "highlight": "Investors and interested parties are enc[+271 characters]",
+                "sentiment": 0.8271,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "<em>XPeng</em> <em>Inc</em> (XPEV) antic[+121 characters]",
-                "sentiment": 0.3612,
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+295 characters]",
+                "sentiment": -0.2732,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "<em>XPeng</em> (XPEV) Sees Unusual Put Activity as Earnings Loom | XPEV Stock News",
-                "sentiment": -0.2263,
+                "highlight": "More detailed estimate data can be found[+280 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+253 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+61 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Wintrust</em> <em>Financial</em> (WTFC) Price Target Raised by DA Davidson | WTFC Stock News",
+                "sentiment": 0,
                 "highlighted_in": "title"
               }
             ]
@@ -1171,32 +3404,105 @@
         ]
       },
       {
-        "uuid": "d589dd3a-e7fc-4642-8d78-77c7008620b2",
-        "title": "BAX Sees Unusual Options Activity | BAX Stock News",
-        "description": "Investors have noticed an unusual spike in active option classes for Baxter International (BAX) during the market's opening. This activity suggests heightened i",
-        "keywords": "GuruFocus, Article, News, GuruFocus News, BAX",
-        "snippet": "Investors have noticed an unusual spike in active option classes for Baxter International (BAX, Financial) during the market's opening. This activity suggests h...",
-        "url": "https://www.gurufocus.com/news/2987812/bax-sees-unusual-options-activity-bax-stock-news",
-        "image_url": "https://static.gurufocus.com/logos/0C000006V2.png?20",
+        "uuid": "a421db36-df48-48e1-8304-3027c6e7975a",
+        "title": "East West Bancorp (EWBC) Price Target Raised by DA Davidson | EWBC Stock News",
+        "description": "On July 23, 2025, East West Bancorp (EWBC) received a noteworthy update from financial services company DA Davidson, as analyst Gary Tenner maintained a \"Buy\" r",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, EWBC",
+        "snippet": "On July 23, 2025, East West Bancorp (EWBC, Financial) received a noteworthy update from financial services company DA Davidson, as analyst Gary Tenner maintaine...",
+        "url": "https://www.gurufocus.com/news/2998352/east-west-bancorp-ewbc-price-target-raised-by-da-davidson-ewbc-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C00000B2S.png?20",
         "language": "en",
-        "published_at": "2025-07-18T15:00:30.000000Z",
+        "published_at": "2025-07-23T17:32:18.000000Z",
         "source": "gurufocus.com",
         "relevance_score": null,
         "entities": [
           {
-            "symbol": "BAX",
-            "name": "Baxter International Inc.",
+            "symbol": "EWBC",
+            "name": "East West Bancorp, Inc.",
             "exchange": null,
             "exchange_long": null,
             "country": "us",
             "type": "equity",
-            "industry": "Healthcare",
-            "match_score": 47.34993,
-            "sentiment_score": 0.442729,
+            "industry": "Financial Services",
+            "match_score": 98.89409,
+            "sentiment_score": 0.176471,
             "highlights": [
               {
-                "highlight": "Investors have noticed an unusual spike [+200 characters]",
-                "sentiment": 0.6908,
+                "highlight": "On July 23, 2025, <em>East</em> <em>West[+333 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Investors and stakeholders in <em>East</[+231 characters]",
+                "sentiment": 0.7506,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+309 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+303 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+267 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+77 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>East</em> <em>West</em> <em>Bancorp</em> (EWBC) Price Target Raised by DA Davidson | EWBC Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "736e11bb-41f3-4528-b8b4-e6902e9e7a09",
+        "title": "Valmont Industries (VMI) Price Target Raised to $400 by DA Davidson | VMI Stock News",
+        "description": "In recent stock market developments, DA Davidson has announced an update regarding Valmont Industries (VMI). Analyst Brent Thielman has decided to maintain a 'N",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, VMI",
+        "snippet": "In recent stock market developments, DA Davidson has announced an update regarding Valmont Industries (VMI, Financial). Analyst Brent Thielman has decided to ma...",
+        "url": "https://www.gurufocus.com/news/2998346/valmont-industries-vmi-price-target-raised-to-400-by-da-davidson-vmi-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C000009GP.png?20",
+        "language": "en",
+        "published_at": "2025-07-23T17:31:25.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "VMI",
+            "name": "Valmont Industries, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Industrials",
+            "match_score": 90.60622,
+            "sentiment_score": 0.162488,
+            "highlights": [
+              {
+                "highlight": "In recent stock market developments, DA [+332 characters]",
+                "sentiment": 0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Despite the increased price target, DA D[+201 characters]",
+                "sentiment": -0.0829,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Investors keeping an eye on <em>Valmont<[+202 characters]",
+                "sentiment": 0.6249,
                 "highlighted_in": "main_text"
               },
               {
@@ -1205,103 +3511,829 @@
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "More detailed estimate data can be found[+283 characters]",
+                "highlight": "More detailed estimate data can be found[+284 characters]",
                 "sentiment": 0,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "Based on GuruFocus estimates, the estima[+258 characters]",
-                "sentiment": 0.8176,
+                "highlight": "Based on GuruFocus estimates, the estima[+260 characters]",
+                "sentiment": 0.7579,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "More detailed data can be found on the <[+277 characters]",
+                "highlight": "More detailed data can be found on the <[+68 characters]",
                 "sentiment": 0,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "Positive Points\n\n<em>Baxter</em> <em>Int[+293 characters]",
-                "sentiment": 0.9001,
+                "highlight": "<em>Valmont</em> <em>Industries</em> (VMI) Price Target Raised to $400 by DA Davidson | VMI Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "e7c256f6-fc26-4588-9576-33a149dc8183",
+        "title": "Valmont (VMI) Price Target Increased by DA Davidson to $400 | VMI Stock News",
+        "description": "DA Davidson has adjusted its price target for Valmont (VMI), increasing it from $380 to $400 while maintaining a Neutral rating on the company's shares. The adj",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, VMI",
+        "snippet": "DA Davidson has adjusted its price target for Valmont (VMI, Financial), increasing it from $380 to $400 while maintaining a Neutral rating on the company's shar...",
+        "url": "https://www.gurufocus.com/news/2997243/valmont-vmi-price-target-increased-by-da-davidson-to-400-vmi-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C000009GP.png?20",
+        "language": "en",
+        "published_at": "2025-07-23T13:45:13.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "VMI",
+            "name": "Valmont Industries, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Industrials",
+            "match_score": 64.0938,
+            "sentiment_score": 0.399514,
+            "highlights": [
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+300 characters]",
+                "sentiment": -0.2732,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "<em>Baxter</em> <em>International</em> <[+322 characters]",
-                "sentiment": 0.9638,
+                "highlight": "More detailed estimate data can be found[+284 characters]",
+                "sentiment": 0,
                 "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+260 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+231 characters]",
+                "sentiment": 0.5574,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Positive Points\n\n<em>Valmont</em> <em>In[+269 characters]",
+                "sentiment": 0.9274,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Valmont</em> <em>Industries</em> <em[+236 characters]",
+                "sentiment": 0.8271,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Valmont</em> <em>Industries</em> <em[+142 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uuid": "1bfebc4d-6564-4322-9d7d-721029f772b9",
+    "title": "Tesla (TSLA) Sees Moderate Gains Ahead of Earnings Report | TSLA Stock News",
+    "description": "Tesla (TSLA) recorded a moderate increase in its stock price, rising by $1.55, or 0.47%, reaching approximately $333.67. The options market saw a relatively low",
+    "keywords": "GuruFocus, Article, News, GuruFocus News, TSLA",
+    "snippet": "Tesla (TSLA, Financial) recorded a moderate increase in its stock price, rising by $1.55, or 0.47%, reaching approximately $333.67. The options market saw a rel...",
+    "url": "https://www.gurufocus.com/news/2998383/tesla-tsla-sees-moderate-gains-ahead-of-earnings-report-tsla-stock-news",
+    "image_url": "https://static.gurufocus.com/logos/0C00004EP4.png?20",
+    "language": "en",
+    "published_at": "2025-07-23T17:45:40.000000Z",
+    "source": "gurufocus.com",
+    "relevance_score": null,
+    "entities": [
+      {
+        "symbol": "TSLA",
+        "name": "Tesla, Inc.",
+        "exchange": null,
+        "exchange_long": null,
+        "country": "us",
+        "type": "equity",
+        "industry": "Consumer Cyclical",
+        "match_score": 35.855267,
+        "sentiment_score": 0.245971,
+        "highlights": [
+          {
+            "highlight": "<em>Tesla</em> (TSLA, Financial) recorde[+301 characters]",
+            "sentiment": 0.25,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "As <em>Tesla</em> is set to release its [+267 characters]",
+            "sentiment": 0.34,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Wall Street Analysts Forecast\n\nBased on [+281 characters]",
+            "sentiment": -0.4767,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "More detailed estimate data can be found[+324 characters]",
+            "sentiment": 0.5106,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Based on GuruFocus estimates, the estima[+241 characters]",
+            "sentiment": 0.7579,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "More detailed data can be found on the <[+47 characters]",
+            "sentiment": 0,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>Tesla</em> (TSLA) Sees Moderate Gains Ahead of Earnings Report | TSLA Stock News",
+            "sentiment": 0.34,
+            "highlighted_in": "title"
+          }
+        ]
+      }
+    ],
+    "similar": [
+      {
+        "uuid": "e3336c75-9d17-4c73-99b2-057f7bf2065f",
+        "title": "Tesla (TSLA) Stock: Guggenheim Reiterates Sell Rating with $175 PT | TSLA Stock News",
+        "description": "In the latest analyst action for Tesla (TSLA), Guggenheim, represented by analyst Ronald Jewsikow, has reiterated its existing stance on the electric vehicle gi",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, TSLA",
+        "snippet": "In the latest analyst action for Tesla (TSLA, Financial), Guggenheim, represented by analyst Ronald Jewsikow, has reiterated its existing stance on the electric...",
+        "url": "https://www.gurufocus.com/news/2997754/tesla-tsla-stock-guggenheim-reiterates-sell-rating-with-175-pt-tsla-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C00004EP4.png?20",
+        "language": "en",
+        "published_at": "2025-07-23T14:39:04.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "TSLAD.BA",
+            "name": "TESLA INC",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "ar",
+            "type": "equity",
+            "industry": "N/A",
+            "match_score": 35.22006,
+            "sentiment_score": 0.142014,
+            "highlights": [
+              {
+                "highlight": "In the latest analyst action for <em>Tes[+220 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "The continued \"Sell\" rating signifies Gu[+273 characters]",
+                "sentiment": 0.2023,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+281 characters]",
+                "sentiment": -0.4767,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+324 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+239 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+47 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Tesla</em> (TSLA) Stock: Guggenheim Reiterates Sell Rating with $175 PT | TSLA Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
               }
             ]
           },
           {
-            "symbol": "BAX.MX",
-            "name": "Baxter International Inc.",
+            "symbol": "TSLAC.BA",
+            "name": "TESLA INC",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "ar",
+            "type": "equity",
+            "industry": "N/A",
+            "match_score": 35.22006,
+            "sentiment_score": 0.142014,
+            "highlights": [
+              {
+                "highlight": "In the latest analyst action for <em>Tes[+220 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "The continued \"Sell\" rating signifies Gu[+273 characters]",
+                "sentiment": 0.2023,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+281 characters]",
+                "sentiment": -0.4767,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+324 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+239 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+47 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Tesla</em> (TSLA) Stock: Guggenheim Reiterates Sell Rating with $175 PT | TSLA Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "TSLA",
+            "name": "Tesla, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Consumer Cyclical",
+            "match_score": 35.219406,
+            "sentiment_score": 0.142014,
+            "highlights": [
+              {
+                "highlight": "In the latest analyst action for <em>Tes[+220 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "The continued \"Sell\" rating signifies Gu[+273 characters]",
+                "sentiment": 0.2023,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+281 characters]",
+                "sentiment": -0.4767,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+324 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+239 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+47 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Tesla</em> (TSLA) Stock: Guggenheim Reiterates Sell Rating with $175 PT | TSLA Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "TL0.DE",
+            "name": "Tesla, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "de",
+            "type": "equity",
+            "industry": "Consumer Cyclical",
+            "match_score": 35.219193,
+            "sentiment_score": 0.142014,
+            "highlights": [
+              {
+                "highlight": "In the latest analyst action for <em>Tes[+220 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "The continued \"Sell\" rating signifies Gu[+273 characters]",
+                "sentiment": 0.2023,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+281 characters]",
+                "sentiment": -0.4767,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+324 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+239 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+47 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Tesla</em> (TSLA) Stock: Guggenheim Reiterates Sell Rating with $175 PT | TSLA Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "TSLA.MX",
+            "name": "Tesla, Inc.",
             "exchange": null,
             "exchange_long": null,
             "country": "mx",
             "type": "equity",
-            "industry": "Healthcare",
-            "match_score": 47.349285,
-            "sentiment_score": 0.442729,
+            "industry": "Consumer Cyclical",
+            "match_score": 35.217148,
+            "sentiment_score": 0.142014,
             "highlights": [
               {
-                "highlight": "Investors have noticed an unusual spike [+200 characters]",
-                "sentiment": 0.6908,
-                "highlighted_in": "main_text"
-              },
-              {
-                "highlight": "Wall Street Analysts Forecast\n\nBased on [+300 characters]",
-                "sentiment": -0.2732,
-                "highlighted_in": "main_text"
-              },
-              {
-                "highlight": "More detailed estimate data can be found[+283 characters]",
+                "highlight": "In the latest analyst action for <em>Tes[+220 characters]",
                 "sentiment": 0,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "Based on GuruFocus estimates, the estima[+258 characters]",
-                "sentiment": 0.8176,
+                "highlight": "The continued \"Sell\" rating signifies Gu[+273 characters]",
+                "sentiment": 0.2023,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "More detailed data can be found on the <[+277 characters]",
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+281 characters]",
+                "sentiment": -0.4767,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+324 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+239 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+47 characters]",
                 "sentiment": 0,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "Positive Points\n\n<em>Baxter</em> <em>Int[+293 characters]",
-                "sentiment": 0.9001,
-                "highlighted_in": "main_text"
-              },
-              {
-                "highlight": "<em>Baxter</em> <em>International</em> <[+322 characters]",
-                "sentiment": 0.9638,
-                "highlighted_in": "main_text"
+                "highlight": "<em>Tesla</em> (TSLA) Stock: Guggenheim Reiterates Sell Rating with $175 PT | TSLA Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
               }
             ]
           },
           {
-            "symbol": "0QK8.L",
-            "name": "Baxter International Inc.",
+            "symbol": "TSLA34.SA",
+            "name": "Tesla, Inc.",
             "exchange": null,
             "exchange_long": null,
-            "country": "gb",
+            "country": "br",
             "type": "equity",
-            "industry": "N/A",
-            "match_score": 47.349983,
-            "sentiment_score": 0.442729,
+            "industry": "Consumer Cyclical",
+            "match_score": 35.21788,
+            "sentiment_score": 0.142014,
             "highlights": [
               {
-                "highlight": "Investors have noticed an unusual spike [+200 characters]",
-                "sentiment": 0.6908,
+                "highlight": "In the latest analyst action for <em>Tes[+220 characters]",
+                "sentiment": 0,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "Wall Street Analysts Forecast\n\nBased on [+300 characters]",
+                "highlight": "The continued \"Sell\" rating signifies Gu[+273 characters]",
+                "sentiment": 0.2023,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+281 characters]",
+                "sentiment": -0.4767,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+324 characters]",
+                "sentiment": 0.5106,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Based on GuruFocus estimates, the estima[+239 characters]",
+                "sentiment": 0.7579,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed data can be found on the <[+47 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Tesla</em> (TSLA) Stock: Guggenheim Reiterates Sell Rating with $175 PT | TSLA Stock News",
+                "sentiment": 0,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "a4e4bc45-9b54-40a8-ac14-eef8e8ee06e4",
+        "title": "Tesla (TSLA) Faces Investor Uncertainty Amid Earnings Report",
+        "description": "Summary:\n    Tesla (TSLA) is poised to announce its Q2 earnings with analysts predicting an EPS of $0.40 on $22.13 billion in revenue.    Investor concerns revo",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, TSLA",
+        "snippet": "Summary:\n\nTesla (TSLA, Financial) is poised to announce its Q2 earnings with analysts predicting an EPS of $0.40 on $22.13 billion in revenue.\n\nInvestor concern...",
+        "url": "https://www.gurufocus.com/news/2996259/tesla-tsla-faces-investor-uncertainty-amid-earnings-report",
+        "image_url": "https://static.gurufocus.com/logos/0C00004EP4.png?20",
+        "language": "en",
+        "published_at": "2025-07-23T10:55:38.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "TSLAD.BA",
+            "name": "TESLA INC",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "ar",
+            "type": "equity",
+            "industry": "N/A",
+            "match_score": 39.6391,
+            "sentiment_score": -0.1104,
+            "highlights": [
+              {
+                "highlight": "Summary:\n\n<em>Tesla</em> (TSLA, Financia[+331 characters]",
                 "sentiment": -0.2732,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "More detailed estimate data can be found[+283 characters]",
+                "highlight": "Additional unease stems from CEO Elon Mu[+321 characters]",
+                "sentiment": -0.4019,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Investors seeking more detailed projecti[+227 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Utilizing GuruFocus metrics, the estimat[+187 characters]",
+                "sentiment": 0.1027,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For a comprehensive breakdown, visit the[+49 characters]",
+                "sentiment": 0.25,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Tesla</em> (TSLA) Faces Investor Uncertainty Amid Earnings Report",
+                "sentiment": -0.34,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "TSLAC.BA",
+            "name": "TESLA INC",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "ar",
+            "type": "equity",
+            "industry": "N/A",
+            "match_score": 39.63905,
+            "sentiment_score": -0.1104,
+            "highlights": [
+              {
+                "highlight": "Summary:\n\n<em>Tesla</em> (TSLA, Financia[+331 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Additional unease stems from CEO Elon Mu[+321 characters]",
+                "sentiment": -0.4019,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Investors seeking more detailed projecti[+227 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Utilizing GuruFocus metrics, the estimat[+187 characters]",
+                "sentiment": 0.1027,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For a comprehensive breakdown, visit the[+49 characters]",
+                "sentiment": 0.25,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Tesla</em> (TSLA) Faces Investor Uncertainty Amid Earnings Report",
+                "sentiment": -0.34,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "TSLA",
+            "name": "Tesla, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Consumer Cyclical",
+            "match_score": 39.63868,
+            "sentiment_score": -0.1104,
+            "highlights": [
+              {
+                "highlight": "Summary:\n\n<em>Tesla</em> (TSLA, Financia[+331 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Additional unease stems from CEO Elon Mu[+321 characters]",
+                "sentiment": -0.4019,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Investors seeking more detailed projecti[+227 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Utilizing GuruFocus metrics, the estimat[+187 characters]",
+                "sentiment": 0.1027,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For a comprehensive breakdown, visit the[+49 characters]",
+                "sentiment": 0.25,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Tesla</em> (TSLA) Faces Investor Uncertainty Amid Earnings Report",
+                "sentiment": -0.34,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "TL0.DE",
+            "name": "Tesla, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "de",
+            "type": "equity",
+            "industry": "Consumer Cyclical",
+            "match_score": 39.637825,
+            "sentiment_score": -0.1104,
+            "highlights": [
+              {
+                "highlight": "Summary:\n\n<em>Tesla</em> (TSLA, Financia[+331 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Additional unease stems from CEO Elon Mu[+321 characters]",
+                "sentiment": -0.4019,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Investors seeking more detailed projecti[+227 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Utilizing GuruFocus metrics, the estimat[+187 characters]",
+                "sentiment": 0.1027,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For a comprehensive breakdown, visit the[+49 characters]",
+                "sentiment": 0.25,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Tesla</em> (TSLA) Faces Investor Uncertainty Amid Earnings Report",
+                "sentiment": -0.34,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "TSLA.MX",
+            "name": "Tesla, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "mx",
+            "type": "equity",
+            "industry": "Consumer Cyclical",
+            "match_score": 39.637066,
+            "sentiment_score": -0.1104,
+            "highlights": [
+              {
+                "highlight": "Summary:\n\n<em>Tesla</em> (TSLA, Financia[+331 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Additional unease stems from CEO Elon Mu[+321 characters]",
+                "sentiment": -0.4019,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Investors seeking more detailed projecti[+227 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Utilizing GuruFocus metrics, the estimat[+187 characters]",
+                "sentiment": 0.1027,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For a comprehensive breakdown, visit the[+49 characters]",
+                "sentiment": 0.25,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Tesla</em> (TSLA) Faces Investor Uncertainty Amid Earnings Report",
+                "sentiment": -0.34,
+                "highlighted_in": "title"
+              }
+            ]
+          },
+          {
+            "symbol": "TSLA34.SA",
+            "name": "Tesla, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "br",
+            "type": "equity",
+            "industry": "Consumer Cyclical",
+            "match_score": 39.639122,
+            "sentiment_score": -0.1104,
+            "highlights": [
+              {
+                "highlight": "Summary:\n\n<em>Tesla</em> (TSLA, Financia[+331 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Additional unease stems from CEO Elon Mu[+321 characters]",
+                "sentiment": -0.4019,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Investors seeking more detailed projecti[+227 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Utilizing GuruFocus metrics, the estimat[+187 characters]",
+                "sentiment": 0.1027,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "For a comprehensive breakdown, visit the[+49 characters]",
+                "sentiment": 0.25,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Tesla</em> (TSLA) Faces Investor Uncertainty Amid Earnings Report",
+                "sentiment": -0.34,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uuid": "e8fe86f0-3744-47ca-a07f-04b5f4e4fcd0",
+    "title": "Walgreens Boots Alliance (WBA) Sees Significant Bearish Activity in Options Market | WBA Stock News",
+    "description": "Walgreens Boots Alliance (WBA) has experienced notable bearish sentiment, with a total of 5,564 put options traded, exceeding the expected volume by 1.7 times.",
+    "keywords": "GuruFocus, Article, News, GuruFocus News, WBA",
+    "snippet": "Walgreens Boots Alliance (WBA, Financial) has experienced notable bearish sentiment, with a total of 5,564 put options traded, exceeding the expected volume by ...",
+    "url": "https://www.gurufocus.com/news/2998381/walgreens-boots-alliance-wba-sees-significant-bearish-activity-in-options-market-wba-stock-news",
+    "image_url": "https://static.gurufocus.com/logos/0C000009KY.png?20",
+    "language": "en",
+    "published_at": "2025-07-23T17:45:33.000000Z",
+    "source": "gurufocus.com",
+    "relevance_score": null,
+    "entities": [
+      {
+        "symbol": "WBA",
+        "name": "Walgreens Boots Alliance, Inc.",
+        "exchange": null,
+        "exchange_long": null,
+        "country": "us",
+        "type": "equity",
+        "industry": "Healthcare",
+        "match_score": 121.87927,
+        "sentiment_score": 0.12445,
+        "highlights": [
+          {
+            "highlight": "<em>Walgreens</em> <em>Boots</em> <em>Al[+308 characters]",
+            "sentiment": 0,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Wall Street Analysts Forecast\n\nBased on [+311 characters]",
+            "sentiment": -0.2732,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "More detailed estimate data can be found[+309 characters]",
+            "sentiment": 0,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Based on GuruFocus estimates, the estima[+272 characters]",
+            "sentiment": 0.8176,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "More detailed data can be found on the <[+83 characters]",
+            "sentiment": 0,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>Walgreens</em> <em>Boots</em> <em>Alliance</em> (WBA) Sees Significant Bearish Activity in Options Market | WBA Stock News",
+            "sentiment": 0.2023,
+            "highlighted_in": "title"
+          }
+        ]
+      }
+    ],
+    "similar": [
+      {
+        "uuid": "7e7323b5-a9c3-41c3-8091-9b5dad1b25e0",
+        "title": "Lakeland Industries (LAKE) Ships Significant Order to Italian Firefighters | LAKE Stock News",
+        "description": "Lakeland Industries (LAKE) has successfully dispatched a significant shipment valued at $3.1 million for fire intervention boots via its Jolly Scarpe brand. Thi",
+        "keywords": "GuruFocus, Article, News, GuruFocus News, LAKE",
+        "snippet": "Lakeland Industries (LAKE, Financial) has successfully dispatched a significant shipment valued at $3.1 million for fire intervention boots via its Jolly Scarpe...",
+        "url": "https://www.gurufocus.com/news/2997532/lakeland-industries-lake-ships-significant-order-to-italian-firefighters-lake-stock-news",
+        "image_url": "https://static.gurufocus.com/logos/0C00000810.png?20",
+        "language": "en",
+        "published_at": "2025-07-23T14:03:58.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "LAKE",
+            "name": "Lakeland Industries, Inc.",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Consumer Cyclical",
+            "match_score": 88.57242,
+            "sentiment_score": 0.456671,
+            "highlights": [
+              {
+                "highlight": "<em>Lakeland</em> <em>Industries</em> (L[+298 characters]",
+                "sentiment": 0.9001,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Wall Street Analysts Forecast\n\nBased on [+299 characters]",
+                "sentiment": -0.2732,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "More detailed estimate data can be found[+288 characters]",
                 "sentiment": 0,
                 "highlighted_in": "main_text"
               },
@@ -1311,21 +4343,274 @@
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "More detailed data can be found on the <[+277 characters]",
+                "highlight": "More detailed data can be found on the <[+297 characters]",
+                "sentiment": 0.6908,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "Positive Points\n\n<em>Lakeland</em> <em>I[+309 characters]",
+                "sentiment": 0.8591,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Lakeland</em> <em>Industries</em> (LAKE) Ships Significant Order to Italian Firefighters | LAKE Stock News",
+                "sentiment": 0.2023,
+                "highlighted_in": "title"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uuid": "12196c6c-b778-4a43-beab-9ad791f71f86",
+    "title": "Unisys Announces Dates of Second-Quarter 2025 Financial Results and Conference Call, and Participation in Upcoming Investor Conferences | UIS Stock News",
+    "description": "Unisys (UIS) to release Q2 2025 financial results on July 30, 2025, after market close.            A conference call to discuss the earnings is sch",
+    "keywords": "GuruFocus, Article, News, GuruFocus News, UIS",
+    "snippet": "Unisys (UIS, Financial) to release Q2 2025 financial results on July 30, 2025, after market close.\n\nA conference call to discuss the earnings is scheduled for J...",
+    "url": "https://www.gurufocus.com/news/2998380/unisys-announces-dates-of-secondquarter-2025-financial-results-and-conference-call-and-participation-in-upcoming-investor-conferences-uis-stock-news",
+    "image_url": "https://static.gurufocus.com/logos/0C00000CTT.png?20",
+    "language": "en",
+    "published_at": "2025-07-23T17:45:31.000000Z",
+    "source": "gurufocus.com",
+    "relevance_score": null,
+    "entities": [
+      {
+        "symbol": "UIS",
+        "name": "Unisys Corporation",
+        "exchange": null,
+        "exchange_long": null,
+        "country": "us",
+        "type": "equity",
+        "industry": "Technology",
+        "match_score": 53.49121,
+        "sentiment_score": 0,
+        "highlights": [
+          {
+            "highlight": "<em>Unisys</em> (UIS, Financial) to rele[+237 characters]",
+            "sentiment": 0,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>Unisys</em> <em>Corporation</em> (UI[+227 characters]",
+            "sentiment": 0,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Investors can listen to the conference c[+284 characters]",
+            "sentiment": 0,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "In addition to earnings, <em>Unisys</em>[+313 characters]",
+            "sentiment": 0,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>Unisys</em> Announces Dates of Second-Quarter 2025 Financial Results and Conference Call, and Participation in Upcoming Investor Conferences | UIS Stock News",
+            "sentiment": 0,
+            "highlighted_in": "title"
+          }
+        ]
+      }
+    ],
+    "similar": [
+      {
+        "uuid": "a8a23177-1bf4-4a39-8805-eac7a0e8ef89",
+        "title": "Civeo Announces Second Quarter 2025 Earnings Conference Call",
+        "description": "Civeo Corporation (NYSE:CVEO) announced today that it has scheduled its second quarter 2025 earnings conference call for Tuesday July 29th, at 7:30 a.m. Centra",
+        "keywords": "GuruFocus, Article, News, Business Wire, NYSE:CVEO",
+        "snippet": "Civeo Corporation (NYSE:CVEO, Financial) announced today that it has scheduled its second quarter 2025 earnings conference call for Tuesday July 29th, at 7:30 a...",
+        "url": "https://www.gurufocus.com/news/2997417/civeo-announces-second-quarter-2025-earnings-conference-call",
+        "image_url": "https://static.gurufocus.com/images/global_logo_twitter_card.png",
+        "language": "en",
+        "published_at": "2025-07-23T14:00:06.000000Z",
+        "source": "gurufocus.com",
+        "relevance_score": null,
+        "entities": [
+          {
+            "symbol": "CVEO",
+            "name": "Civeo Corporation",
+            "exchange": null,
+            "exchange_long": null,
+            "country": "us",
+            "type": "equity",
+            "industry": "Industrials",
+            "match_score": 87.09213,
+            "sentiment_score": 0.198525,
+            "highlights": [
+              {
+                "highlight": "<em>Civeo</em> <em>Corporation</em> (<em[+189 characters]",
                 "sentiment": 0,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "Positive Points\n\n<em>Baxter</em> <em>Int[+293 characters]",
-                "sentiment": 0.9001,
+                "highlight": "During the call, <em>Civeo</em> will dis[+139 characters]",
+                "sentiment": 0,
                 "highlighted_in": "main_text"
               },
               {
-                "highlight": "<em>Baxter</em> <em>International</em> <[+322 characters]",
-                "sentiment": 0.9638,
+                "highlight": "By Phone:\n\nDial 877-423-9813 inside the [+315 characters]",
+                "sentiment": 0,
                 "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "About <em>Civeo</em>:\n\n<em>Civeo</em> <e[+167 characters]",
+                "sentiment": 0.5859,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Civeo</em> offers comprehensive solu[+277 characters]",
+                "sentiment": 0.6249,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Civeo</em> currently owns and operat[+251 characters]",
+                "sentiment": 0,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Civeo</em> is publicly traded under [+216 characters]",
+                "sentiment": 0.3774,
+                "highlighted_in": "main_text"
+              },
+              {
+                "highlight": "<em>Civeo</em> Announces Second Quarter 2025 Earnings Conference Call",
+                "sentiment": 0,
+                "highlighted_in": "title"
               }
             ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uuid": "3fa420e1-cd12-40b0-a28b-79e1f4804729",
+    "title": "XPeng (XPEV) Sees Unusual Put Activity as Earnings Loom | XPEV Stock News",
+    "description": "Significant bearish activity has been observed in XPeng (XPEV) with a notable increase in put option trading. A total of 5,404 put options were traded, which is",
+    "keywords": "GuruFocus, Article, News, GuruFocus News, XPEV",
+    "snippet": "Significant bearish activity has been observed in XPeng (XPEV, Financial) with a notable increase in put option trading. A total of 5,404 put options were trade...",
+    "url": "https://www.gurufocus.com/news/2987868/xpeng-xpev-sees-unusual-put-activity-as-earnings-loom-xpev-stock-news",
+    "image_url": "https://static.gurufocus.com/logos/0C0000BXZD.png?20",
+    "language": "en",
+    "published_at": "2025-07-18T15:30:57.000000Z",
+    "source": "gurufocus.com",
+    "entities": [
+      {
+        "symbol": "XPEV",
+        "name": "XPeng Inc.",
+        "exchange": "NYSE",
+        "exchange_long": "New York Stock Exchange",
+        "country": "us",
+        "type": "equity",
+        "industry": "Consumer Cyclical",
+        "match_score": 52.3278,
+        "sentiment_score": 0.4331,
+        "highlights": [
+          {
+            "highlight": "Significant bearish activity has been observed in <em>XPeng</em> (XPEV, Financial) with a notable increase in put option trading. A total of 5,404 put options were traded, which is triple the usual volume.",
+            "sentiment": 0.4767,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Wall Street Analysts Forecast\n\nBased on the one-year price targets offered by 25 analysts, the average target price for <em>XPeng</em> <em>Inc</em> (XPEV, Financial) is $24.59 with a high estimate of $29.93 and a low estimate of $11.97. The average target implies an upside of 32.89% from the current price of $18.51.",
+            "sentiment": -0.2732,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "More detailed estimate data can be found on the <em>XPeng</em> <em>Inc</em> (XPEV) Forecast page.\n\nBased on the consensus recommendation from 26 brokerage firms, <em>XPeng</em> Inc's (XPEV, Financial) average brokerage recommendation is currently 2.1, indicating \"Outperform\" status. The rating scale ranges from 1 to 5, where 1 signifies Strong Buy, and 5 denotes Sell.",
+            "sentiment": 0.5106,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Based on GuruFocus estimates, the estimated GF Value for <em>XPeng</em> <em>Inc</em> (XPEV, Financial) in one year is $31.77, suggesting a upside of 71.68% from the current price of $18.505. GF Value is GuruFocus' estimate of the fair value that the stock should be traded at.",
+            "sentiment": 0.8176,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "More detailed data can be found on the <em>XPeng</em> <em>Inc</em> (XPEV) Summary page.\n\nXPEV Key Business Developments\n\nRelease Date: May 21, 2025\n\nQ1 Deliveries: 94,008 units, a 331% year-over-year increase.\n\n94,008 units, a 331% year-over-year increase.",
+            "sentiment": 0.5574,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Positive Points\n\n<em>XPeng</em> <em>Inc</em> (XPEV, Financial) achieved a record high of 94,008 vehicle deliveries in Q1 2025, marking a 331% year-over-year increase.\n\nThe company's vehicle gross margin improved for seven consecutive quarters, reaching a record high of 15.6% in Q1 2025.",
+            "sentiment": 0.7717,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>XPeng</em> <em>Inc</em> (XPEV) reported significant progress in AI-driven tech innovation, enhancing capabilities in AI-assisted driving, smart cabins, and Turing chips.\n\nThe company successfully expanded its global presence, with overseas deliveries increasing by more than 31,700 year-over-year.",
+            "sentiment": 0.9022,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>XPeng</em> <em>Inc</em> (XPEV) anticipates achieving profitability in Q4 2025 and generating substantial free cash flow for the entire year.\n\nNegative Points",
+            "sentiment": 0.3612,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>XPeng</em> (XPEV) Sees Unusual Put Activity as Earnings Loom | XPEV Stock News",
+            "sentiment": -0.2263,
+            "highlighted_in": "title"
+          }
+        ]
+      },
+      {
+        "symbol": "XPEVN.MX",
+        "name": "XPeng Inc.",
+        "exchange": "BMV",
+        "exchange_long": "Mexican Stock Exchange",
+        "country": "mx",
+        "type": "equity",
+        "industry": "N/A",
+        "match_score": 52.325294,
+        "sentiment_score": 0.4331,
+        "highlights": [
+          {
+            "highlight": "Significant bearish activity has been observed in <em>XPeng</em> (XPEV, Financial) with a notable increase in put option trading. A total of 5,404 put options were traded, which is triple the usual volume.",
+            "sentiment": 0.4767,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Wall Street Analysts Forecast\n\nBased on the one-year price targets offered by 25 analysts, the average target price for <em>XPeng</em> <em>Inc</em> (XPEV, Financial) is $24.59 with a high estimate of $29.93 and a low estimate of $11.97. The average target implies an upside of 32.89% from the current price of $18.51.",
+            "sentiment": -0.2732,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "More detailed estimate data can be found on the <em>XPeng</em> <em>Inc</em> (XPEV) Forecast page.\n\nBased on the consensus recommendation from 26 brokerage firms, <em>XPeng</em> Inc's (XPEV, Financial) average brokerage recommendation is currently 2.1, indicating \"Outperform\" status. The rating scale ranges from 1 to 5, where 1 signifies Strong Buy, and 5 denotes Sell.",
+            "sentiment": 0.5106,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Based on GuruFocus estimates, the estimated GF Value for <em>XPeng</em> <em>Inc</em> (XPEV, Financial) in one year is $31.77, suggesting a upside of 71.68% from the current price of $18.505. GF Value is GuruFocus' estimate of the fair value that the stock should be traded at.",
+            "sentiment": 0.8176,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "More detailed data can be found on the <em>XPeng</em> <em>Inc</em> (XPEV) Summary page.\n\nXPEV Key Business Developments\n\nRelease Date: May 21, 2025\n\nQ1 Deliveries: 94,008 units, a 331% year-over-year increase.\n\n94,008 units, a 331% year-over-year increase.",
+            "sentiment": 0.5574,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "Positive Points\n\n<em>XPeng</em> <em>Inc</em> (XPEV, Financial) achieved a record high of 94,008 vehicle deliveries in Q1 2025, marking a 331% year-over-year increase.\n\nThe company's vehicle gross margin improved for seven consecutive quarters, reaching a record high of 15.6% in Q1 2025.",
+            "sentiment": 0.7717,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>XPeng</em> <em>Inc</em> (XPEV) reported significant progress in AI-driven tech innovation, enhancing capabilities in AI-assisted driving, smart cabins, and Turing chips.\n\nThe company successfully expanded its global presence, with overseas deliveries increasing by more than 31,700 year-over-year.",
+            "sentiment": 0.9022,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>XPeng</em> <em>Inc</em> (XPEV) anticipates achieving profitability in Q4 2025 and generating substantial free cash flow for the entire year.\n\nNegative Points",
+            "sentiment": 0.3612,
+            "highlighted_in": "main_text"
+          },
+          {
+            "highlight": "<em>XPeng</em> (XPEV) Sees Unusual Put Activity as Earnings Loom | XPEV Stock News",
+            "sentiment": -0.2263,
+            "highlighted_in": "title"
           }
         ]
       }
