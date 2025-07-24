@@ -1,5 +1,7 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/lib/ui/card";
 import RetirementTooltip from "./RetirementTooltip";
+import TaxTooltip from "./TaxTooltip";
+import WarningTooltip from "./WarningTooltip";
 import BudgetItem from "./BudgetItem";
 
 const BudgetCard = ({
@@ -27,7 +29,16 @@ const BudgetCard = ({
       <CardContent className="p-6">
         <ul className="space-y-2">
           <BudgetItem
-            label={title}
+            label={
+              title === "Needs" && bucketData.warning ? (
+                <div className="flex items-center gap-1">
+                  <span>{title}</span>
+                  <WarningTooltip warning={bucketData.warning} />
+                </div>
+              ) : (
+                title
+              )
+            }
             amount={bucketData.total}
             total={income}
             color={color}
@@ -48,6 +59,50 @@ const BudgetCard = ({
                 total={income}
                 isSubItem={true}
               />
+              {bucketData.taxes && (
+                <>
+                  <BudgetItem
+                    label={
+                      <div className="flex items-center gap-1">
+                        <span>Taxes</span>
+                        <TaxTooltip taxes={bucketData.taxes} />
+                      </div>
+                    }
+                    amount={bucketData.taxes.total}
+                    total={income}
+                    isSubItem={true}
+                  />
+                  <div className="pl-4">
+                    <BudgetItem
+                      label="Federal Tax"
+                      amount={bucketData.taxes.breakdown.federal}
+                      total={income}
+                      isSubItem={true}
+                    />
+                    <BudgetItem
+                      label="State Tax"
+                      amount={bucketData.taxes.breakdown.state}
+                      total={income}
+                      isSubItem={true}
+                    />
+                    {bucketData.taxes.breakdown.fica ? (
+                      <BudgetItem
+                        label="FICA (Medicare & Social Security)"
+                        amount={bucketData.taxes.breakdown.fica}
+                        total={income}
+                        isSubItem={true}
+                      />
+                    ) : (
+                      <BudgetItem
+                        label="Self-Employment Tax"
+                        amount={bucketData.taxes.breakdown.selfEmployment}
+                        total={income}
+                        isSubItem={true}
+                      />
+                    )}
+                  </div>
+                </>
+              )}
               <BudgetItem
                 label="Extra Allocated"
                 amount={bucketData.allocated}
