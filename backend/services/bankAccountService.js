@@ -60,38 +60,24 @@ const getTotalDebt = async (userId) => {
     where: {
       userId,
       OR: [
-        { type: "credit" },
         { type: "loan" },
         {
           subtype: {
-            in: [
-              "credit card",
-              "paypal",
-              "mortgage",
-              "student",
-              "auto",
-              "business",
-              "commercial",
-              "construction",
-            ],
+            in: ["mortgage", "student", "auto"],
           },
         },
       ],
     },
   });
 
-  const breakdown = debtAccounts.map((acc) => {
-    const interestRate = DEFAULT_INTEREST_RATES[acc.subtype] || null;
-
-    return {
-      id: acc.id,
-      name: acc.name,
-      type: acc.type,
-      subtype: acc.subtype,
-      balance: acc.balance,
-      interestRate,
-    };
-  });
+  const breakdown = debtAccounts.map((acc) => ({
+    id: acc.id,
+    name: acc.name,
+    type: acc.type,
+    subtype: acc.subtype,
+    balance: acc.balance,
+    interestRate: DEFAULT_INTEREST_RATES[acc.subtype] || null,
+  }));
 
   const total = breakdown.reduce((sum, acc) => sum + (acc.balance || 0), 0);
 
