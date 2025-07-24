@@ -1,6 +1,9 @@
 const { PrismaClient } = require("@prisma/client");
 const { getUserPreferences } = require("./userService");
-const { getRetirementAccountBalance } = require("./bankAccountService");
+const {
+  getRetirementAccountBalance,
+  getTotalDebt,
+} = require("./bankAccountService");
 const { getRecurringMonthlyTransactions } = require("./transactionService");
 const prisma = new PrismaClient();
 
@@ -138,6 +141,104 @@ const adjustBudgetForDebtPriority = (wantsPct, savingsPct, debtPriority) => {
   };
 };
 
+function calculateMinimumPayments(accounts) {
+  let totalMinPayments = 0;
+  const repaymentPlan = accounts.map((account) => {
+    const balance = account.balance || 0;
+    const interestRate = account.interestRate || 0;
+    const monthlyRate = interestRate / 12;
+    const minPayment = Math.max(5, balance * monthlyRate);
+    totalMinPayments += minPayment;
+
+    return {
+      ...account,
+      balance,
+      interestRate,
+      minPayment,
+      suggestedPayment: minPayment,
+    };
+  });
+
+  return { repaymentPlan, totalMinPayments };
+}
+
+function giveLeftoverByInterest(plan, leftover) {
+  const totalWeight = plan.reduce(
+    (sum, acc) => sum + (acc.interestRate || 0),
+    0
+  );
+
+  for (const acc of plan) {
+    const rate = acc.interestRate || 0;
+    const extra =
+      totalWeight > 0
+        ? (rate / totalWeight) * leftover
+        : leftover / plan.length;
+
+    acc.suggestedPayment += extra;
+    acc.suggestedPayment = Math.round(acc.suggestedPayment * 100) / 100;
+
+    const monthlyRate = rate / 12;
+    const min = acc.minPayment;
+    const payment = acc.suggestedPayment;
+    const balance = acc.balance;
+
+    const monthsToPayOff =
+      payment > min
+        ? Math.ceil(
+            Math.log(payment / (payment - balance * monthlyRate)) /
+              Math.log(1 + monthlyRate)
+          )
+        : null;
+
+    const totalInterest =
+      monthsToPayOff && rate
+        ? Math.round((monthsToPayOff * payment - balance) * 100) / 100
+        : null;
+
+    acc.monthsToPayOff = monthsToPayOff || null;
+    acc.yearsToPayOff = monthsToPayOff
+      ? Math.round((monthsToPayOff / 12) * 10) / 10
+      : null;
+    acc.totalInterestPaid = totalInterest;
+  }
+}
+
+function formatLoanPayment(acc) {
+  return {
+    id: acc.id,
+    name: acc.name,
+    type: acc.type,
+    subtype: acc.subtype,
+    balance: Math.round(acc.balance * 100) / 100,
+    interestRate: acc.interestRate,
+    suggestedPayment: acc.suggestedPayment,
+    monthsToPayOff: acc.monthsToPayOff,
+    yearsToPayOff: acc.yearsToPayOff,
+    totalInterestPaid: acc.totalInterestPaid,
+  };
+}
+
+const getDebtRepaymentPlan = async (userId, budgetAmount) => {
+  const { breakdown: accounts } = await getTotalDebt(userId);
+  const sortedAccounts = [...accounts].sort(
+    (a, b) => (b.interestRate || 0) - (a.interestRate || 0)
+  );
+
+  const { repaymentPlan, totalMinPayments } =
+    calculateMinimumPayments(sortedAccounts);
+  const leftover = budgetAmount - totalMinPayments;
+
+  if (leftover > 0) {
+    giveLeftoverByInterest(repaymentPlan, leftover);
+  }
+
+  return {
+    total: budgetAmount,
+    accounts: repaymentPlan.map(formatLoanPayment),
+  };
+};
+
 const adjustBudgetForSavingsPriority = (
   futureSavingsPct,
   savingsPriority,
@@ -267,6 +368,9 @@ const buildBudgetBreakdown = async (preferences, recurringTxns, userId) => {
     debtSavingsPct,
   } = adjustBudgetForDebtPriority(wantsPct, savingsPct, debtPriority);
 
+  const debtBudgetAmount = monthlyIncome * debtSavingsPct;
+  const debtPlan = await getDebtRepaymentPlan(userId, debtBudgetAmount);
+
   const adjustedFutureSavings = adjustBudgetForSavingsPriority(
     preAdjustedFutureSavings,
     savingsPriority,
@@ -301,7 +405,7 @@ const buildBudgetBreakdown = async (preferences, recurringTxns, userId) => {
       wants,
       savings: {
         total: monthlyIncome * (adjustedFutureSavings + debtSavingsPct) || 0,
-        forDebt: monthlyIncome * debtSavingsPct || 0,
+        forDebt: debtPlan,
         longTerm: {
           total: longTermTotal || 0,
           retirement,
@@ -362,6 +466,7 @@ const getBudget = async (userId) => {
     const budget = await prisma.budget.findUnique({
       where: { userId },
     });
+    console.log("Full Budget:", JSON.stringify(budget, null, 2));
     return budget;
   } catch (error) {
     console.error("Error retrieving budget:", error);

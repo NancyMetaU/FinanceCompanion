@@ -2,6 +2,12 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 const { plaidClient } = require("../config/plaidClient");
 
+const DEFAULT_INTEREST_RATES = {
+  student: 0.055,
+  mortgage: 0.04,
+  auto: 0.06,
+};
+
 const syncBankAccounts = async (userId) => {
   const plaidConnection = await prisma.plaidConnection.findFirst({
     where: { userId },
@@ -54,37 +60,31 @@ const getTotalDebt = async (userId) => {
     where: {
       userId,
       OR: [
-        { type: "credit" },
         { type: "loan" },
         {
           subtype: {
-            in: [
-              "credit card",
-              "paypal",
-              "mortgage",
-              "student",
-              "auto",
-              "business",
-              "commercial",
-              "construction",
-            ],
+            in: ["mortgage", "student", "auto"],
           },
         },
       ],
     },
   });
 
-  const totalDebt = debtAccounts.reduce((sum, acc) => sum + acc.balance, 0);
+  const breakdown = debtAccounts.map((acc) => ({
+    id: acc.id,
+    name: acc.name,
+    type: acc.type,
+    subtype: acc.subtype,
+    balance: acc.balance,
+    interestRate: DEFAULT_INTEREST_RATES[acc.subtype] || null,
+  }));
+
+  const total = breakdown.reduce((sum, acc) => sum + (acc.balance || 0), 0);
 
   return {
-    totalDebt: totalDebt,
-    accountCount: debtAccounts.length,
-    breakdown: debtAccounts.map((acc) => ({
-      name: acc.name,
-      type: acc.type,
-      subtype: acc.subtype,
-      balance: acc.balance,
-    })),
+    total,
+    accountCount: breakdown.length,
+    breakdown,
   };
 };
 
