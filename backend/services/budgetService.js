@@ -45,21 +45,79 @@ const getDynamicBudgetSplit = (income) => {
   };
 };
 
-const calculateNeedsBreakdown = (income, needsPct, recurringTxns) => {
+const estimateW2MonthlyTaxes = (income) => {
+  const federalRate = income > 8000 ? 0.18 : 0.12;
+  const stateRate = 0.05;
+  const ficaRate = 0.0765;
+
+  const federal = income * federalRate;
+  const state = income * stateRate;
+  const fica = income * ficaRate;
+
+  return {
+    total: Math.round((federal + state + fica) * 100) / 100,
+    breakdown: {
+      federal: Math.round(federal * 100) / 100,
+      state: Math.round(state * 100) / 100,
+      fica: Math.round(fica * 100) / 100,
+    },
+  };
+};
+
+const estimateFreelancerTaxSavings = (income) => {
+  const selfEmploymentTax = income * 0.153;
+  const federal = income * 0.12;
+  const state = income * 0.05;
+
+  return {
+    total: Math.round((selfEmploymentTax + federal + state) * 100) / 100,
+    breakdown: {
+      selfEmployment: Math.round(selfEmploymentTax * 100) / 100,
+      federal: Math.round(federal * 100) / 100,
+      state: Math.round(state * 100) / 100,
+    },
+  };
+};
+
+const calculateNeedsBreakdown = (
+  income,
+  needsPct,
+  recurringTxns,
+  employmentType
+) => {
   const recurringTotal = recurringTxns.reduce(
     (sum, txn) => sum + txn.amount,
     0
   );
   const totalNeeds = income * needsPct;
 
+  const isFreelancer = employmentType === "freelancer";
+  const taxes = isFreelancer
+    ? estimateFreelancerTaxSavings(income)
+    : estimateW2MonthlyTaxes(income);
+  const estimatedPayrollTax = taxes?.total || 0;
+
+  let warning = null;
+  if (recurringTotal + estimatedPayrollTax > totalNeeds) {
+    if (recurringTotal > totalNeeds && estimatedPayrollTax > totalNeeds) {
+      warning =
+        "Both your recurring expenses and taxes individually exceed your needs budget.";
+    } else if (recurringTotal > totalNeeds) {
+      warning = "Your recurring expenses exceed your needs budget.";
+    } else if (estimatedPayrollTax > totalNeeds) {
+      warning = "Your estimated taxes exceed your needs budget.";
+    } else {
+      warning =
+        "Your recurring expenses and taxes together exceed your needs budget.";
+    }
+  }
+
   return {
     total: totalNeeds,
+    taxes,
     recurring: recurringTotal,
-    allocated: Math.max(0, totalNeeds - recurringTotal),
-    warning:
-      recurringTotal > totalNeeds
-        ? "Your recurring expenses exceed your needs budget."
-        : null,
+    allocated: Math.max(0, totalNeeds - recurringTotal - estimatedPayrollTax),
+    warning: warning,
   };
 };
 
@@ -168,9 +226,9 @@ const getRetirementContributionPlan = async (
   const monthsTillMax =
     suggestedMonthly > 0
       ? Math.min(600, Math.ceil(remainingLimit / suggestedMonthly))
-      : null;
+      : 0;
 
-  const willMaxOut = monthsTillMax !== null && monthsTillMax <= monthsRemaining;
+  const willMaxOut = monthsTillMax !== 0 && monthsTillMax <= monthsRemaining;
 
   const projectedBalanceByTaxDeadline =
     rothBalance + roundedSuggestedMonthly * monthsRemaining;
@@ -178,21 +236,27 @@ const getRetirementContributionPlan = async (
   return {
     accountBalance: rothBalance,
     remainingContributionLimit: remainingLimit,
-    monthlyContribution: roundedSuggestedMonthly,
+    monthlyContribution: roundedSuggestedMonthly || 0,
     monthsRemaining,
-    projectedBalanceByTaxDeadline: Math.min(
-      annualLimit,
-      Math.round(projectedBalanceByTaxDeadline * 100) / 100
-    ),
+    projectedBalanceByTaxDeadline:
+      Math.min(
+        annualLimit,
+        Math.round(projectedBalanceByTaxDeadline * 100) / 100
+      ) || 0,
     willMaxOut,
-    monthsTillMax,
+    monthsTillMax: monthsTillMax || 0,
     alreadyMaxedOut: remainingLimit <= 0,
   };
 };
 
 const buildBudgetBreakdown = async (preferences, recurringTxns, userId) => {
-  const { monthlyIncome, debtPriority, savingsPriority, spendingFocus } =
-    preferences;
+  const {
+    monthlyIncome,
+    debtPriority,
+    savingsPriority,
+    spendingFocus,
+    employmentType,
+  } = preferences;
 
   const { needsPct, wantsPct, savingsPct } =
     getDynamicBudgetSplit(monthlyIncome);
@@ -215,13 +279,19 @@ const buildBudgetBreakdown = async (preferences, recurringTxns, userId) => {
     savingsPriority
   );
 
-  const needs = calculateNeedsBreakdown(monthlyIncome, needsPct, recurringTxns);
+  const needs = calculateNeedsBreakdown(
+    monthlyIncome,
+    needsPct,
+    recurringTxns,
+    employmentType
+  );
   const totalWantsAmount = monthlyIncome * adjustedWantsPct;
   const wants = calculateWantsBreakdown(totalWantsAmount, spendingFocus);
   const longTermTotal = monthlyIncome * adjustedFutureSavings;
+
   const nonRetirementSavings = Math.max(
     0,
-    longTermTotal - retirement.monthlyContribution
+    Math.round(longTermTotal - (retirement.monthlyContribution || 0))
   );
 
   return {
@@ -230,10 +300,10 @@ const buildBudgetBreakdown = async (preferences, recurringTxns, userId) => {
       needs,
       wants,
       savings: {
-        total: monthlyIncome * (adjustedFutureSavings + debtSavingsPct),
-        forDebt: monthlyIncome * debtSavingsPct,
+        total: monthlyIncome * (adjustedFutureSavings + debtSavingsPct) || 0,
+        forDebt: monthlyIncome * debtSavingsPct || 0,
         longTerm: {
-          total: longTermTotal,
+          total: longTermTotal || 0,
           retirement,
           other: nonRetirementSavings,
         },
