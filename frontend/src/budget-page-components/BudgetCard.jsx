@@ -1,5 +1,6 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/lib/ui/card";
 import RetirementTooltip from "./RetirementTooltip";
+import TaxTooltip from "./TaxTooltip";
 import WarningTooltip from "./WarningTooltip";
 import BudgetItem from "./BudgetItem";
 
@@ -61,7 +62,12 @@ const BudgetCard = ({
               {bucketData.taxes && (
                 <>
                   <BudgetItem
-                    label="Taxes"
+                    label={
+                      <div className="flex items-center gap-1">
+                        <span>Taxes</span>
+                        <TaxTooltip taxes={bucketData.taxes} />
+                      </div>
+                    }
                     amount={bucketData.taxes.total}
                     total={income}
                     isSubItem={true}
