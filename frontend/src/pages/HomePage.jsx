@@ -1,19 +1,20 @@
 import React from "react";
-import Footer from "../shared-components/Footer";
 import Header from "../shared-components/Header";
-import FeatureCards from "../home-page-components/FeatureCards";
-import PictureSlider from "../home-page-components/PictureSlider";
+import Footer from "../shared-components/Footer";
+import TopSection from "../home-page-components/TopSection";
+import QuoteSection from "../home-page-components/QuoteSection";
+import FeatureSection from "../home-page-components/FeatureSection";
+import CallToAction from "../home-page-components/CallToAction";
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
       <Header />
       <main className="flex-grow">
-        <PictureSlider />
-        <section className="mt-12 px-6">
-          <h2 className="text-4xl mb-4 text-center text-slate-800">Explore</h2>
-          <FeatureCards />
-        </section>
+        <TopSection />
+        <QuoteSection />
+        <FeatureSection />
+        <CallToAction />
       </main>
       <Footer />
     </div>
