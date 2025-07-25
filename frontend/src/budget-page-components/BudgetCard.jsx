@@ -2,6 +2,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/lib/ui/card";
 import RetirementTooltip from "./RetirementTooltip";
 import TaxTooltip from "./TaxTooltip";
 import WarningTooltip from "./WarningTooltip";
+import LoanTooltip from "./LoanTooltip";
 import BudgetItem from "./BudgetItem";
 
 const BudgetCard = ({
@@ -46,8 +47,8 @@ const BudgetCard = ({
               title === "Needs"
                 ? "bg-blue-800"
                 : title === "Wants"
-                ? "bg-blue-500"
-                : "bg-blue-300"
+                  ? "bg-blue-500"
+                  : "bg-blue-300"
             }
           />
 
@@ -165,10 +166,29 @@ const BudgetCard = ({
               </div>
               <BudgetItem
                 label="Debt Payment"
-                amount={bucketData.forDebt}
+                amount={bucketData.forDebt.total}
                 total={income}
                 isSubItem={true}
               />
+              {bucketData.forDebt.accounts &&
+                bucketData.forDebt.accounts.length > 0 && (
+                  <div className="pl-4">
+                    {bucketData.forDebt.accounts.map((account) => (
+                      <BudgetItem
+                        key={account.id}
+                        label={
+                          <div className="flex items-center gap-1">
+                            <span>{account.name}</span>
+                            <LoanTooltip loan={account} />
+                          </div>
+                        }
+                        amount={account.suggestedPayment}
+                        total={income}
+                        isSubItem={true}
+                      />
+                    ))}
+                  </div>
+                )}
             </>
           )}
         </ul>
