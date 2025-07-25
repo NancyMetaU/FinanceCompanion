@@ -141,101 +141,38 @@ const adjustBudgetForDebtPriority = (wantsPct, savingsPct, debtPriority) => {
   };
 };
 
-function calculateMinimumPayments(accounts) {
-  let totalMinPayments = 0;
-  const repaymentPlan = accounts.map((account) => {
-    const balance = account.balance || 0;
-    const interestRate = account.interestRate || 0;
-    const monthlyRate = interestRate / 12;
-    const minPayment = Math.max(5, balance * monthlyRate);
-    totalMinPayments += minPayment;
-
-    return {
-      ...account,
-      balance,
-      interestRate,
-      minPayment,
-      suggestedPayment: minPayment,
-    };
-  });
-
-  return { repaymentPlan, totalMinPayments };
-}
-
-function giveLeftoverByInterest(plan, leftover) {
-  const totalWeight = plan.reduce(
+const getDebtRepaymentPlan = async (userId, totalDebtBudget) => {
+  const { breakdown: accounts } = await getTotalDebt(userId);
+  const sorted = [...accounts].sort(
+    (a, b) => (b.interestRate || 0) - (a.interestRate || 0)
+  );
+  const totalWeight = sorted.reduce(
     (sum, acc) => sum + (acc.interestRate || 0),
     0
   );
 
-  for (const acc of plan) {
-    const rate = acc.interestRate || 0;
-    const extra =
-      totalWeight > 0
-        ? (rate / totalWeight) * leftover
-        : leftover / plan.length;
+  const plan = sorted.map((account) => {
+    const balance = account.balance || 0;
+    const interestRate = account.interestRate || 0;
 
-    acc.suggestedPayment += extra;
-    acc.suggestedPayment = Math.round(acc.suggestedPayment * 100) / 100;
+    const weight =
+      totalWeight > 0 ? interestRate / totalWeight : 1 / sorted.length;
+    const suggestedPayment = Math.max(5, totalDebtBudget * weight);
 
-    const monthlyRate = rate / 12;
-    const min = acc.minPayment;
-    const payment = acc.suggestedPayment;
-    const balance = acc.balance;
-
-    const monthsToPayOff =
-      payment > min
-        ? Math.ceil(
-            Math.log(payment / (payment - balance * monthlyRate)) /
-              Math.log(1 + monthlyRate)
-          )
-        : null;
-
-    const totalInterest =
-      monthsToPayOff && rate
-        ? Math.round((monthsToPayOff * payment - balance) * 100) / 100
-        : null;
-
-    acc.monthsToPayOff = monthsToPayOff || null;
-    acc.yearsToPayOff = monthsToPayOff
-      ? Math.round((monthsToPayOff / 12) * 10) / 10
-      : null;
-    acc.totalInterestPaid = totalInterest;
-  }
-}
-
-function formatLoanPayment(acc) {
-  return {
-    id: acc.id,
-    name: acc.name,
-    type: acc.type,
-    subtype: acc.subtype,
-    balance: Math.round(acc.balance * 100) / 100,
-    interestRate: acc.interestRate,
-    suggestedPayment: acc.suggestedPayment,
-    monthsToPayOff: acc.monthsToPayOff,
-    yearsToPayOff: acc.yearsToPayOff,
-    totalInterestPaid: acc.totalInterestPaid,
-  };
-}
-
-const getDebtRepaymentPlan = async (userId, budgetAmount) => {
-  const { breakdown: accounts } = await getTotalDebt(userId);
-  const sortedAccounts = [...accounts].sort(
-    (a, b) => (b.interestRate || 0) - (a.interestRate || 0)
-  );
-
-  const { repaymentPlan, totalMinPayments } =
-    calculateMinimumPayments(sortedAccounts);
-  const leftover = budgetAmount - totalMinPayments;
-
-  if (leftover > 0) {
-    giveLeftoverByInterest(repaymentPlan, leftover);
-  }
+    return {
+      id: account.id,
+      name: account.name,
+      type: account.type,
+      subtype: account.subtype,
+      balance: Math.round(balance * 100) / 100,
+      interestRate,
+      suggestedPayment: Math.round(suggestedPayment * 100) / 100,
+    };
+  });
 
   return {
-    total: budgetAmount,
-    accounts: repaymentPlan.map(formatLoanPayment),
+    total: totalDebtBudget,
+    accounts: plan,
   };
 };
 
@@ -466,7 +403,6 @@ const getBudget = async (userId) => {
     const budget = await prisma.budget.findUnique({
       where: { userId },
     });
-    console.log("Full Budget:", JSON.stringify(budget, null, 2));
     return budget;
   } catch (error) {
     console.error("Error retrieving budget:", error);
