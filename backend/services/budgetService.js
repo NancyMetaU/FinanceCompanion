@@ -403,10 +403,6 @@ const getBudget = async (userId) => {
     const budget = await prisma.budget.findUnique({
       where: { userId },
     });
-    console.log(
-      "Buckets:",
-      JSON.stringify(budget?.budgetData?.buckets, null, 2)
-    );
     return budget;
   } catch (error) {
     console.error("Error retrieving budget:", error);
