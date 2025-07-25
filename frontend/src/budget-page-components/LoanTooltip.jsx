@@ -27,25 +27,6 @@ const LoanTooltip = ({ loan }) => {
             Interest Rate:{" "}
             <strong>{(loan.interestRate * 100).toFixed(2)}%</strong>
           </p>
-          {loan.monthsToPayOff && (
-            <p>
-              Estimated payoff:{" "}
-              <strong>
-                {loan.monthsToPayOff} months (~{loan.yearsToPayOff} years)
-              </strong>
-            </p>
-          )}
-          {loan.totalInterestPaid && (
-            <p>
-              Estimated interest:{" "}
-              <strong>
-                $
-                {loan.totalInterestPaid.toLocaleString(undefined, {
-                  minimumFractionDigits: 2,
-                })}
-              </strong>
-            </p>
-          )}
           <hr className="my-2 border-white/20" />
           <p className="text-[10px] text-white/80">
             Note: This interest rate is a default estimate and may not reflect
