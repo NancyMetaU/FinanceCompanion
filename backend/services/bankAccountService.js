@@ -71,11 +71,7 @@ const getTotalDebt = async (userId) => {
   });
 
   const breakdown = debtAccounts.map((acc) => ({
-    id: acc.id,
-    name: acc.name,
-    type: acc.type,
-    subtype: acc.subtype,
-    balance: acc.balance,
+    ...acc,
     interestRate: DEFAULT_INTEREST_RATES[acc.subtype] || null,
   }));
 
