@@ -3,6 +3,7 @@ import { getAuth } from "firebase/auth";
 import PreferenceRadioGroup from "./PreferenceRadioGroup";
 import EmploymentTypeRadioGroup from "./EmploymentTypeRadioGroup";
 import ErrorMessage from "../shared-components/ErrorMessage";
+import Loading from "../shared-components/Loading";
 import RankedMultiSelect from "./RankedMultiSelect";
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
@@ -97,6 +98,7 @@ const BudgetForm = ({ closeModal, onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit} aria-label="User Budget Preferences">
+      {isSubmitting && <Loading message="Generating your budget plan..." />}
       {error && <ErrorMessage message={error} />}
       <div className="mb-6">
         <label
@@ -159,7 +161,7 @@ const BudgetForm = ({ closeModal, onSubmit }) => {
           disabled={isSubmitting}
           className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50"
         >
-          Save Preferences
+          {isSubmitting ? "Processing..." : "Save Preferences"}
         </button>
       </div>
     </form>
