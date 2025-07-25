@@ -165,7 +165,7 @@ const BudgetCard = ({
                 />
               </div>
               <BudgetItem
-                label="Debt Payment"
+                label="Loan Payment"
                 amount={bucketData.forDebt.total}
                 total={income}
                 isSubItem={true}
