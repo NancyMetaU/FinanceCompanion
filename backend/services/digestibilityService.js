@@ -1,7 +1,11 @@
-const glossary = require("../utils/glossary");
+const glossary = require("../constants/glossary.js");
 const { getUserArticleContext } = require("./articleContextService");
-const { DIGESTIBILITY_LABELS } = require("../constants/digestibility.js");
-
+const {
+  DIGESTIBILITY_LABELS,
+  SCORING_CONSTANTS,
+  MAX_FLAG_VALUES,
+  FLAG_LABEL_MAP,
+} = require("../constants/digestibility.js");
 const glossarySet = new Set(glossary.map((word) => word.toLowerCase()));
 
 /**
@@ -82,17 +86,7 @@ function calculateSentenceVariance(sentences, avgSentenceLength) {
  * @returns {number} Normalized readability score (10-100) with higher values indicating a more easy read
  */
 function calculateReadability(text) {
-  SCORING_WEIGHTS = {
-    SENTENCE_LENGTH: 1.0,
-    WORD_LENGTH: 3.0,
-    JARGON_PENALTY: 60,
-    VARIANCE_PENALTY: 0.2,
-  };
-
-  const MIN_TEXT_LENGTH = 10;
-  const MAX_SCORE = 100;
-  const BASE_SCORE = 100;
-
+  const { MIN_TEXT_LENGTH, MAX_SCORE, BASE_SCORE, WEIGHTS } = SCORING_CONSTANTS;
   if (!text || text.length < MIN_TEXT_LENGTH) return 0;
 
   const { sentences, words } = parseText(text);
@@ -105,10 +99,10 @@ function calculateReadability(text) {
 
   const clarityScore =
     BASE_SCORE -
-    avgSentenceLength * SCORING_WEIGHTS.SENTENCE_LENGTH -
-    avgWordLength * SCORING_WEIGHTS.WORD_LENGTH -
-    jargonRatio * SCORING_WEIGHTS.JARGON_PENALTY -
-    variance * SCORING_WEIGHTS.VARIANCE_PENALTY;
+    avgSentenceLength * WEIGHTS.SENTENCE_LENGTH -
+    avgWordLength * WEIGHTS.WORD_LENGTH -
+    jargonRatio * WEIGHTS.JARGON_PENALTY -
+    variance * WEIGHTS.VARIANCE_PENALTY;
 
   return Math.max(10, Math.min(MAX_SCORE, Math.round(clarityScore)));
 }
@@ -371,52 +365,21 @@ const getAllScores = (userContext, article) => {
  * @param {Array<Object>} inputs - Digestibility factors with normalized values
  * @returns {Array<Object>} Prioritized digestibility indicators with impact classification
  */
-const calculateFlags = (inputs) => {
-  const labelMap = {
-    "Readability Score": "Complex",
-    "Familiarity Boost": "Familiar",
-    "Feedback Boost": {
-      positive: "Well-rated",
-      negative: "Poorly-rated",
-    },
-    "Similarity Familiarity Boost": "Read similar",
-    "Similarity Feedback Boost": {
-      positive: "Liked similar",
-      negative: "Disliked similar",
-    },
-    "Unique Industry Article Boost": "Fresh topic",
-    "Time Spent Penalty": "Time-intensive",
-    "Similarity Time Spent Penalty": "Similar time-intensive",
-  };
-
-  const maxValues = {
-    "Readability Score": 100,
-    "Familiarity Boost": 6,
-    "Feedback Boost": 6,
-    "Similarity Familiarity Boost": 12,
-    "Similarity Feedback Boost": 10,
-    "Unique Industry Article Boost": 3,
-    "Time Spent Penalty": 10,
-    "Similarity Time Spent Penalty": 8,
-  };
-
+function calculateFlags(inputs) {
   return inputs
     .map((c) => {
-      const max = maxValues[c.key] || 10;
+      const max = MAX_FLAG_VALUES[c.key] || 10;
       let value = c.value;
-
-      if (c.key === "Readability Score") {
-        value = value - 100;
-      }
+      if (c.key === "Readability Score") value = value - 100;
 
       const normalizedImpact = Math.abs(value / max);
       return {
         label:
-          typeof labelMap[c.key] === "object"
+          typeof FLAG_LABEL_MAP[c.key] === "object"
             ? value > 0
-              ? labelMap[c.key].positive
-              : labelMap[c.key].negative
-            : labelMap[c.key] || c.key,
+              ? FLAG_LABEL_MAP[c.key].positive
+              : FLAG_LABEL_MAP[c.key].negative
+            : FLAG_LABEL_MAP[c.key] || c.key,
         impact: value,
         type: value > 0 ? "boost" : "penalty",
         normalized: Number(normalizedImpact.toFixed(2)),
@@ -425,7 +388,7 @@ const calculateFlags = (inputs) => {
     .filter((f) => f.impact !== 0)
     .sort((a, b) => b.normalized - a.normalized)
     .slice(0, 2);
-};
+}
 
 /**
  * Main function that combines all digestibility factors into a final score.
