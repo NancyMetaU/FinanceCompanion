@@ -11,24 +11,25 @@ const BudgetCard = ({
   bucketData,
   income,
   color,
-  borderColor,
   gradientFrom,
   gradientTo,
 }) => {
   return (
     <Card
-      className={`border-l-4 ${borderColor} shadow-lg hover:shadow-xl transition-shadow duration-300`}
+      className={
+        "shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col overflow-hidden p-0"
+      }
     >
       <CardHeader
-        className={`bg-gradient-to-r ${gradientFrom} ${gradientTo} rounded-t-lg`}
+        className={`bg-gradient-to-r ${gradientFrom} ${gradientTo} m-0 p-4`}
       >
         <CardTitle className="text-xl flex items-center gap-2 text-white">
           <span className="text-2xl">{icon}</span>
           {title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="p-6">
-        <ul className="space-y-2">
+      <CardContent className="p-5 flex-grow flex flex-col">
+        <ul className="space-y-2 flex-grow">
           <BudgetItem
             label={
               title === "Needs" && bucketData.warning ? (
@@ -47,8 +48,8 @@ const BudgetCard = ({
               title === "Needs"
                 ? "bg-blue-800"
                 : title === "Wants"
-                  ? "bg-blue-500"
-                  : "bg-blue-300"
+                ? "bg-blue-500"
+                : "bg-blue-300"
             }
           />
 
