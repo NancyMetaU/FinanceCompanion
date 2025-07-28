@@ -8,6 +8,7 @@ import BankAccountList from "../budget-page-components/BankAccountList";
 import TransactionList from "../budget-page-components/TransactionList";
 import CreateBudgetButton from "../budget-page-components/CreateBudgetButton";
 import BudgetBreakdown from "../budget-page-components/BudgetBreakdown";
+import FinancialSummary from "../budget-page-components/FinancialSummary";
 import Loading from "../shared-components/Loading";
 import ErrorMessage from "../shared-components/ErrorMessage";
 
@@ -90,7 +91,7 @@ const BudgetPage = () => {
       <div className="flex flex-1">
         <Sidebar />
 
-        <main className="flex-1 p-6">
+        <main className="flex-1 p-8">
           <section className="flex justify-between items-center mt-5 mb-10">
             <h1 className="text-3xl font-bold">My Budget Dashboard</h1>
             {!hasBankLinked && (
@@ -103,6 +104,18 @@ const BudgetPage = () => {
 
           {!loading && !error && (
             <>
+              <FinancialSummary
+                totalBalance={accounts
+                  .reduce((sum, account) => sum + account.balance, 0)
+                  .toFixed(2)}
+                accountsCount={accounts.length}
+                recentTransactionsTotal={transactions
+                  .slice(0, 10)
+                  .reduce((sum, tx) => sum + tx.amount, 0)
+                  .toFixed(2)}
+                budgetStatus={!!budget}
+              />
+
               <section className="grid gap-8 lg:grid-cols-2 mb-10">
                 <BankAccountList accounts={accounts} />
                 <TransactionList transactions={transactions} />
