@@ -33,6 +33,7 @@ const FilteredArticles = ({
 
   return (
     <ArticleGrid
+      key={`${activeFilter}-${userContext.readArticles?.length || 0}`}
       articles={filteredArticles}
       onDigestibilityChange={onDigestibilityChange}
       userContext={userContext}

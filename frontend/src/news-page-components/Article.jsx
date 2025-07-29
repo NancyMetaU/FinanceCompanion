@@ -78,9 +78,9 @@ const Article = ({
       if (onArticleReadStatusChange) {
         onArticleReadStatusChange(
           article.uuid,
-          true,
+          false,
           article.entities?.[0]?.industry,
-          timeSpentSeconds
+          0
         );
       }
     } catch (error) {
