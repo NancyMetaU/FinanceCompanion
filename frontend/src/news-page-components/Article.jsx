@@ -6,7 +6,13 @@ import FeedbackModal from "./FeedbackModal";
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
-const Article = ({ article, onDigestibilityChange, userContext }) => {
+const Article = ({
+  article,
+  onDigestibilityChange,
+  userContext,
+  onArticleReadStatusChange,
+  onArticleFeedbackChange,
+}) => {
   const [isRead, setIsRead] = useState(false);
   const [isFeedbackModalOpen, setIsFeedbackModalOpen] = useState(false);
   const [hasFeedback, setHasFeedback] = useState(false);
@@ -39,6 +45,14 @@ const Article = ({ article, onDigestibilityChange, userContext }) => {
         throw new Error(`Server responded with status: ${response.status}`);
       setIsRead(true);
       if (onDigestibilityChange) onDigestibilityChange();
+      if (onArticleReadStatusChange) {
+        onArticleReadStatusChange(
+          article.uuid,
+          true,
+          article.entities?.[0]?.industry,
+          timeSpentSeconds
+        );
+      }
     } catch (error) {
       console.error("Error marking article as read:", error);
     }
@@ -58,9 +72,17 @@ const Article = ({ article, onDigestibilityChange, userContext }) => {
       );
 
       if (!response.ok)
-        throw new Error(`Server responded with status: ${response.status}`);
+        throw new Error(`Server responded with status:  ${response.status}`);
       setIsRead(false);
       if (onDigestibilityChange) onDigestibilityChange();
+      if (onArticleReadStatusChange) {
+        onArticleReadStatusChange(
+          article.uuid,
+          true,
+          article.entities?.[0]?.industry,
+          timeSpentSeconds
+        );
+      }
     } catch (error) {
       console.error("Error unmarking article as read:", error);
     }
@@ -85,6 +107,13 @@ const Article = ({ article, onDigestibilityChange, userContext }) => {
 
           markAsRead(timeSpentSeconds);
           if (onDigestibilityChange) onDigestibilityChange();
+          if (onArticleReadStatusChange) {
+            onArticleReadStatusChange(
+              article.uuid,
+              true,
+              article.entities?.[0]?.industry || "N/A"
+            );
+          }
         }
       }, 500);
     } else {
@@ -147,8 +176,9 @@ const Article = ({ article, onDigestibilityChange, userContext }) => {
 
           <button
             onClick={() => setIsFeedbackModalOpen(true)}
-            className={`w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm cursor-pointer ${hasFeedback ? "text-royal" : "text-gray-600 hover:text-royal"
-              }`}
+            className={`w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm cursor-pointer ${
+              hasFeedback ? "text-royal" : "text-gray-600 hover:text-royal"
+            }`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -219,6 +249,7 @@ const Article = ({ article, onDigestibilityChange, userContext }) => {
         onDigestibilityChange={onDigestibilityChange}
         setHasFeedback={setHasFeedback}
         userContext={userContext}
+        onArticleFeedbackChange={onArticleFeedbackChange}
       />
     </article>
   );

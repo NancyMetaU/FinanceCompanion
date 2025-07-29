@@ -4,7 +4,8 @@ import Footer from "../shared-components/Footer";
 import Sidebar from "../shared-components/Sidebar";
 import ErrorMessage from "../shared-components/ErrorMessage";
 import Loading from "../shared-components/Loading";
-import ArticleGrid from "../news-page-components/ArticleGrid";
+import NewsFilter from "../news-page-components/NewsFilter";
+import FilteredArticles from "../news-page-components/FilteredArticles";
 import fallbackNewsData from "../mock/newsData.json";
 import { getAuth } from "firebase/auth";
 
@@ -19,6 +20,61 @@ const NewsPage = () => {
     readArticles: [],
     feedback: {},
   });
+
+  const handleArticleReadStatusChange = useCallback(
+    (articleId, isRead, industry, timeSpent = 0) => {
+      setUserContext((prevContext) => {
+        if (isRead) {
+          const articleExists = prevContext.readArticles?.some(
+            (item) => item.articleId === articleId
+          );
+          if (!articleExists) {
+            return {
+              ...prevContext,
+              readArticles: [
+                ...(prevContext.readArticles || []),
+                {
+                  articleId,
+                  readAt: new Date().toISOString(),
+                  industry,
+                  timeSpent, 
+                },
+              ],
+            };
+          }
+        } else {
+          return {
+            ...prevContext,
+            readArticles: (prevContext.readArticles || []).filter(
+              (item) => item.articleId !== articleId
+            ),
+          };
+        }
+        return prevContext;
+      });
+    },
+    []
+  );
+
+  const handleArticleFeedbackChange = useCallback(
+    (articleId, rating, industry) => {
+      setUserContext((prevContext) => {
+        return {
+          ...prevContext,
+          feedback: {
+            ...(prevContext.feedback || {}),
+            [articleId]: {
+              rating,
+              submittedAt: new Date().toISOString(),
+              industry,
+            },
+          },
+        };
+      });
+    },
+    []
+  );
+  const [activeFilter, setActiveFilter] = useState("all");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -143,20 +199,30 @@ const NewsPage = () => {
         <main className="flex-1 px-10 py-10">
           {error && <ErrorMessage message={error} />}
 
-          {isLoading ? (
-            <Loading message="Loading news articles..." />
-          ) : (
-            <ArticleGrid
-              articles={articles.map((article) => ({
-                ...article,
-                digestibility: digestibilityScores[article.uuid] || null,
-              }))}
-              onDigestibilityChange={() =>
-                setDigestibilityRefreshTrigger((prev) => prev + 1)
-              }
-              userContext={userContext}
-            />
-          )}
+          <section aria-labelledby="news-heading">
+            {isLoading ? (
+              <Loading message="Loading news articles..." />
+            ) : (
+              <>
+                <NewsFilter
+                  activeFilter={activeFilter}
+                  setActiveFilter={setActiveFilter}
+                />
+
+                <FilteredArticles
+                  articles={articles}
+                  activeFilter={activeFilter}
+                  userContext={userContext}
+                  digestibilityScores={digestibilityScores}
+                  onDigestibilityChange={() =>
+                    setDigestibilityRefreshTrigger((prev) => prev + 1)
+                  }
+                  onArticleReadStatusChange={handleArticleReadStatusChange}
+                  onArticleFeedbackChange={handleArticleFeedbackChange}
+                />
+              </>
+            )}
+          </section>
         </main>
       </div>
       <Footer />
