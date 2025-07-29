@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SignOutButton from "./SignOutButton";
+import SignInButton from "./SignInButton";
+import { useAuth } from "../context/AuthContext";
 import logo from "/src/assets/finance-companion-logo.png";
 
 const Header = () => {
+  const { user } = useAuth();
+
   return (
     <header className="flex items-center justify-between px-6 py-4 bg-slate-100 shadow-md">
       <div className="flex items-center space-x-4 ml-6 gap-6">
@@ -17,7 +21,10 @@ const Header = () => {
           </h1>
         </Link>
       </div>
-      <SignOutButton />
+
+      <div className="flex items-center">
+        {user ? <SignOutButton /> : <SignInButton />}
+      </div>
     </header>
   );
 };

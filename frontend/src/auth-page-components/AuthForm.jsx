@@ -6,13 +6,11 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import ErrorMessage from "../shared-components/ErrorMessage";
-import { useNavigate } from "react-router-dom";
 
 const auth = getAuth();
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
-const AuthForm = () => {
-  const navigate = useNavigate();
+const AuthForm = ({ onSuccess }) => {
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,7 +25,11 @@ const AuthForm = () => {
       if (isLogin) {
         await signInWithEmailAndPassword(auth, email, password);
       } else {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const userCredential = await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
         const idToken = await userCredential.user.getIdToken();
 
         await fetch(`${BACKEND_URL}/api/user/init`, {
@@ -38,7 +40,9 @@ const AuthForm = () => {
         });
       }
 
-      navigate("/");
+      if (onSuccess) {
+        onSuccess();
+      }
     } catch (err) {
       setError(err.message);
     } finally {

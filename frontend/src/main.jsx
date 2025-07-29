@@ -1,7 +1,7 @@
 import "./index.css";
+import "./firebase";
 import App from "./App.jsx";
 import { StrictMode } from "react";
-import AuthPage from "./pages/AuthPage.jsx";
 import NewsPage from "./pages/NewsPage.jsx";
 import { createRoot } from "react-dom/client";
 import BudgetPage from "./pages/BudgetPage.jsx";
@@ -11,20 +11,11 @@ import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./context/ProtectedRoute";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-
 const routes = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <ProtectedRoute>
-        <App />
-      </ProtectedRoute>
-    ),
+    element: <App />,
     errorElement: <NotFoundPage />,
-  },
-  {
-    path: "/login",
-    element: <AuthPage />,
   },
   {
     path: "/budget",
