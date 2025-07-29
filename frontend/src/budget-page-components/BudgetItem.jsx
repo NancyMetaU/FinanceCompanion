@@ -1,7 +1,10 @@
 import ProgressBar from "./ProgressBar";
 
 const formatCurrency = (amount) =>
-  `$${amount.toLocaleString(undefined, { minimumFractionDigits: 2 })}`;
+  `$${amount.toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })}`;
 
 const formatPercentage = (amount, total) =>
   `${((amount / total) * 100).toFixed(1)}%`;
@@ -20,15 +23,13 @@ const BudgetItem = ({
 
   return (
     <li
-      className={`${
-        isSubItem ? "ml-4 py-1" : "py-2"
-      } border-b border-gray-100 last:border-b-0 list-none`}
+      className={`${isSubItem ? "ml-4 py-1" : "py-2"
+        } border-b border-gray-100 last:border-b-0 list-none`}
     >
       <div className="flex justify-between items-center">
         <span
-          className={`${
-            isSubItem ? "text-sm text-gray-600" : "font-medium"
-          } ${color}`}
+          className={`${isSubItem ? "text-sm text-gray-600" : "font-medium"
+            } ${color}`}
         >
           {label}
         </span>
