@@ -21,6 +21,7 @@ const FeedbackModal = ({
   onDigestibilityChange,
   setHasFeedback,
   userContext,
+  onArticleFeedbackChange,
 }) => {
   const [rating, setRating] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -66,6 +67,13 @@ const FeedbackModal = ({
       setSuccess(true);
       if (setHasFeedback) setHasFeedback(true);
       if (onDigestibilityChange) onDigestibilityChange();
+      if (onArticleFeedbackChange) {
+        onArticleFeedbackChange(
+          article.uuid,
+          rating,
+          article.entities?.[0]?.industry
+        );
+      }
     } catch (error) {
       console.error("Error submitting feedback:", error);
       setError(error.message);
