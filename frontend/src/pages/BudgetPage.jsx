@@ -33,7 +33,7 @@ const BudgetPage = () => {
 
       const idToken = await user.getIdToken();
 
-      const [accRes, txRes, budgetRes] = await Promise.all([
+      const [accRes, txRes, budgetRes, prefsRes] = await Promise.all([
         fetch(`${BACKEND_URL}/api/accounts/`, {
           headers: {
             "Content-Type": "application/json",
@@ -47,6 +47,12 @@ const BudgetPage = () => {
           },
         }),
         fetch(`${BACKEND_URL}/api/budget/`, {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${idToken}`,
+          },
+        }),
+        fetch(`${BACKEND_URL}/api/user/preferences`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${idToken}`,
@@ -66,7 +72,20 @@ const BudgetPage = () => {
 
       if (budgetRes.ok) {
         const budgetData = await budgetRes.json();
-        setBudget(budgetData.budgetData);
+
+        if (prefsRes.ok) {
+          const prefsData = await prefsRes.json();
+          const budgetWithPriorities = {
+            ...budgetData.budgetData,
+            priorities: {
+              savings: prefsData.savingsPriority,
+              debt: prefsData.debtPriority,
+            },
+          };
+          setBudget(budgetWithPriorities);
+        } else {
+          setBudget(budgetData.budgetData);
+        }
       }
     } catch (err) {
       console.error(err);
@@ -125,12 +144,14 @@ const BudgetPage = () => {
                   <BudgetBreakdown budget={budget} />
                 </section>
               )}
-              <section className="flex justify-center mt-10">
-                <CreateBudgetButton
-                  onBudgetGenerated={setBudget}
-                  hasBudget={!!budget}
-                />
-              </section>
+              {hasBankLinked && (
+                <section className="flex justify-center mt-10">
+                  <CreateBudgetButton
+                    onBudgetGenerated={setBudget}
+                    hasBudget={!!budget}
+                  />
+                </section>
+              )}
             </>
           )}
         </main>
