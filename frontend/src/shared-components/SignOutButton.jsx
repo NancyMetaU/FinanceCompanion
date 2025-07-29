@@ -8,7 +8,7 @@ const SignOutButton = () => {
   const handleSignOut = async () => {
     try {
       await signOut(getAuth());
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       console.error("Error signing out:", error);
     }
