@@ -37,7 +37,7 @@ const NewsPage = () => {
                   articleId,
                   readAt: new Date().toISOString(),
                   industry,
-                  timeSpent, 
+                  timeSpent,
                 },
               ],
             };
@@ -199,7 +199,7 @@ const NewsPage = () => {
         <main className="flex-1 px-10 py-10">
           {error && <ErrorMessage message={error} />}
 
-          <section aria-labelledby="news-heading">
+          <section>
             {isLoading ? (
               <Loading message="Loading news articles..." />
             ) : (

@@ -111,7 +111,7 @@ const Article = ({
             onArticleReadStatusChange(
               article.uuid,
               true,
-              article.entities?.[0]?.industry || "N/A"
+              article.entities?.[0]?.industry
             );
           }
         }
