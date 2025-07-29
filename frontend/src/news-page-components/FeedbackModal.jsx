@@ -113,7 +113,7 @@ const FeedbackModal = ({
             <button
               type="button"
               onClick={() => setSuccess(false)}
-              className="px-4 py-2 rounded-md text-sm bg-royal text-white hover:bg-royal/90"
+              className="px-4 py-2 rounded-md text-sm bg-royal text-white hover:bg-royal/90 cursor-pointer"
             >
               Resubmit Feedback
             </button>

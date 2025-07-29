@@ -23,13 +23,15 @@ const BudgetItem = ({
 
   return (
     <li
-      className={`${isSubItem ? "ml-4 py-1" : "py-2"
-        } border-b border-gray-100 last:border-b-0 list-none`}
+      className={`${
+        isSubItem ? "ml-4 py-1" : "py-2"
+      } border-b border-gray-100 last:border-b-0 list-none`}
     >
       <div className="flex justify-between items-center">
         <span
-          className={`${isSubItem ? "text-sm text-gray-600" : "font-medium"
-            } ${color}`}
+          className={`${
+            isSubItem ? "text-sm text-gray-600" : "font-medium"
+          } ${color}`}
         >
           {label}
         </span>
