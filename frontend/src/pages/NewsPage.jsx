@@ -192,11 +192,11 @@ const NewsPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
       <Header />
-      <div className="flex flex-1">
+      <div className="flex flex-col md:flex-row flex-1">
         <Sidebar />
-        <main className="flex-1 px-10 py-10">
+        <main className="flex-1 px-4 py-6 md:px-10 md:py-10">
           {error && <ErrorMessage message={error} />}
 
           <section>

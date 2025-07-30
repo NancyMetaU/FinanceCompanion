@@ -3,18 +3,17 @@ import React from "react";
 const NewsFilter = ({ activeFilter, setActiveFilter }) => {
   return (
     <div className="mb-6">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-3">
         <h1 className="text-2xl font-bold text-gray-800">Financial News</h1>
-        <nav>
-          <ul className="flex space-x-2">
+        <nav className="w-full sm:w-auto">
+          <ul className="flex flex-wrap gap-2">
             <li>
               <button
                 onClick={() => setActiveFilter("all")}
-                className={`px-4 py-2 rounded-md transition cursor-pointer ${
-                  activeFilter === "all"
+                className={`px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base rounded-md transition cursor-pointer ${activeFilter === "all"
                     ? "bg-royal text-white"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                }`}
+                  }`}
               >
                 All Articles
               </button>
@@ -22,11 +21,10 @@ const NewsFilter = ({ activeFilter, setActiveFilter }) => {
             <li>
               <button
                 onClick={() => setActiveFilter("read")}
-                className={`px-4 py-2 rounded-md transition cursor-pointer ${
-                  activeFilter === "read"
+                className={`px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base rounded-md transition cursor-pointer ${activeFilter === "read"
                     ? "bg-royal text-white"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                }`}
+                  }`}
               >
                 Read Articles
               </button>
@@ -34,11 +32,10 @@ const NewsFilter = ({ activeFilter, setActiveFilter }) => {
             <li>
               <button
                 onClick={() => setActiveFilter("feedback")}
-                className={`px-4 py-2 rounded-md transition cursor-pointer ${
-                  activeFilter === "feedback"
+                className={`px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base rounded-md transition cursor-pointer ${activeFilter === "feedback"
                     ? "bg-royal text-white"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                }`}
+                  }`}
               >
                 Articles with Feedback
               </button>
