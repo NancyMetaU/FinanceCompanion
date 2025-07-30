@@ -104,13 +104,13 @@ const BudgetPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
       <Header />
 
-      <div className="flex flex-1">
+      <div className="flex flex-col md:flex-row flex-1">
         <Sidebar />
 
-        <main className="flex-1 p-8">
+        <main className="flex-1 p-4 md:p-8">
           <section className="flex justify-between items-center mt-5 mb-10">
             <h1 className="text-3xl font-bold">My Budget Dashboard</h1>
             {!hasBankLinked && (
