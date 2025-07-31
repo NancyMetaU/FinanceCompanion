@@ -6,6 +6,11 @@ const RecurringTransactionsTooltip = ({ transactions }) => {
     return null;
   }
 
+  const capitalizeFirstLetter = (string) => {
+    if (!string) return "";
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
   const totalAmount = transactions.reduce((sum, txn) => sum + txn.amount, 0);
 
   return (
@@ -19,7 +24,7 @@ const RecurringTransactionsTooltip = ({ transactions }) => {
           <div className="max-h-60 overflow-y-auto">
             {transactions.map((transaction, index) => (
               <p key={transaction.id || index} className="flex justify-between">
-                <span>{transaction.name}:</span>
+                <span>{capitalizeFirstLetter(transaction.name)}:</span>
                 <span className="font-semibold">
                   $
                   {transaction.amount.toLocaleString(undefined, {
