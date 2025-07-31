@@ -3,6 +3,7 @@ import RetirementTooltip from "./RetirementTooltip";
 import TaxTooltip from "./TaxTooltip";
 import WarningTooltip from "./WarningTooltip";
 import LoanTooltip from "./LoanTooltip";
+import RecurringTransactionsTooltip from "./RecurringTransactionsTooltip";
 import BudgetItem from "./BudgetItem";
 
 const BudgetCard = ({
@@ -56,8 +57,17 @@ const BudgetCard = ({
           {title === "Needs" && (
             <>
               <BudgetItem
-                label="Recurring Bills"
-                amount={bucketData.recurring}
+                label={
+                  <div className="flex items-center gap-1">
+                    <span>Recurring Bills</span>
+                    {bucketData.recurring?.transactions && (
+                      <RecurringTransactionsTooltip
+                        transactions={bucketData.recurring.transactions}
+                      />
+                    )}
+                  </div>
+                }
+                amount={bucketData.recurring?.total || 0}
                 total={income}
                 isSubItem={true}
               />
