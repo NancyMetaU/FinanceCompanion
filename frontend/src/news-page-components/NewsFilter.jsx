@@ -10,10 +10,11 @@ const NewsFilter = ({ activeFilter, setActiveFilter }) => {
             <li>
               <button
                 onClick={() => setActiveFilter("all")}
-                className={`px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base rounded-md transition cursor-pointer ${activeFilter === "all"
+                className={`px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base rounded-md transition cursor-pointer ${
+                  activeFilter === "all"
                     ? "bg-royal text-white"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                  }`}
+                }`}
               >
                 All Articles
               </button>
@@ -21,10 +22,11 @@ const NewsFilter = ({ activeFilter, setActiveFilter }) => {
             <li>
               <button
                 onClick={() => setActiveFilter("read")}
-                className={`px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base rounded-md transition cursor-pointer ${activeFilter === "read"
+                className={`px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base rounded-md transition cursor-pointer ${
+                  activeFilter === "read"
                     ? "bg-royal text-white"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                  }`}
+                }`}
               >
                 Read Articles
               </button>
@@ -32,10 +34,11 @@ const NewsFilter = ({ activeFilter, setActiveFilter }) => {
             <li>
               <button
                 onClick={() => setActiveFilter("feedback")}
-                className={`px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base rounded-md transition cursor-pointer ${activeFilter === "feedback"
+                className={`px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base rounded-md transition cursor-pointer ${
+                  activeFilter === "feedback"
                     ? "bg-royal text-white"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                  }`}
+                }`}
               >
                 Articles with Feedback
               </button>

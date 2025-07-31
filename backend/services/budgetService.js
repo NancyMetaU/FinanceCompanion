@@ -219,7 +219,10 @@ const calculateNeedsBreakdown = (
   return {
     total: totalNeeds,
     taxes,
-    recurring: recurringTotal,
+    recurring: {
+      total: recurringTotal,
+      transactions: recurringTxns,
+    },
     allocated: Math.max(0, totalNeeds - recurringTotal - estimatedPayrollTax),
     warning: warning,
   };

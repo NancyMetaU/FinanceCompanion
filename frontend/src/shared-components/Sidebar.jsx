@@ -17,8 +17,9 @@ const Sidebar = () => {
         </Link>
         <Link
           to="/budget"
-          className={`flex items-center space-x-1 sm:space-x-2 md:space-x-3 p-1 sm:p-2 rounded-lg ${location.pathname === "/budget" ? "text-royal" : "hover:text-royal"
-            }`}
+          className={`flex items-center space-x-1 sm:space-x-2 md:space-x-3 p-1 sm:p-2 rounded-lg ${
+            location.pathname === "/budget" ? "text-royal" : "hover:text-royal"
+          }`}
         >
           <Wallet className="h-6 w-6" />
           <span className="font-medium text-xs sm:text-sm md:text-base">
@@ -27,8 +28,9 @@ const Sidebar = () => {
         </Link>
         <Link
           to="/news"
-          className={`flex items-center space-x-1 sm:space-x-2 md:space-x-3 p-1 sm:p-2 rounded-lg ${location.pathname === "/news" ? "text-royal" : "hover:text-royal"
-            }`}
+          className={`flex items-center space-x-1 sm:space-x-2 md:space-x-3 p-1 sm:p-2 rounded-lg ${
+            location.pathname === "/news" ? "text-royal" : "hover:text-royal"
+          }`}
         >
           <Newspaper className="h-6 w-6" />
           <span className="font-medium text-xs sm:text-sm md:text-base">
@@ -37,10 +39,11 @@ const Sidebar = () => {
         </Link>
         <Link
           to="/learning"
-          className={`flex items-center space-x-1 sm:space-x-2 md:space-x-3 p-1 sm:p-2 rounded-lg ${location.pathname === "/learning"
+          className={`flex items-center space-x-1 sm:space-x-2 md:space-x-3 p-1 sm:p-2 rounded-lg ${
+            location.pathname === "/learning"
               ? "text-royal"
               : "hover:text-royal"
-            }`}
+          }`}
         >
           <BookOpen className="h-6 w-6" />
           <span className="font-medium text-xs sm:text-sm md:text-base">
