@@ -3,7 +3,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/lib/ui/card";
 
 const TransactionList = ({ transactions }) => {
   const totalAmount = transactions
-    .slice(0, 12)
+    .slice(0, 8)
     .reduce((sum, tx) => sum + parseFloat(tx.amount || 0), 0)
     .toFixed(2);
 
@@ -51,7 +51,7 @@ const TransactionList = ({ transactions }) => {
           </div>
         ) : (
           <ul className="space-y-3 list-none p-0">
-            {transactions.slice(0, 12).map((tx) => (
+            {transactions.slice(0, 10).map((tx) => (
               <li
                 key={tx.id}
                 className="flex justify-between items-center p-3 rounded-md border border-slate-100 hover:bg-slate-50 transition-colors"
@@ -75,10 +75,10 @@ const TransactionList = ({ transactions }) => {
               </li>
             ))}
 
-            {transactions.length > 12 && (
+            {transactions.length > 8 && (
               <li className="text-center pt-2">
                 <span className="text-xs text-muted-foreground">
-                  + {transactions.length - 12} more transactions
+                  + {transactions.length - 8} more transactions
                 </span>
               </li>
             )}
