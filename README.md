@@ -14,4 +14,4 @@ Many young adults, especially from first-generation, low-income, and/or immigran
 <img width="500" alt="wireframe2" src="https://github.com/user-attachments/assets/9a3a593f-00a6-435b-88d4-36391c97f06e" />
 
 ## Demo Video
-[Soon](<insert link in Week 9!>)
+[Finance Companion - Nancy Farias](https://drive.google.com/file/d/1o2DZBX9Tkx-6DNTLV7-8SF5pR6y5Mt-s/view)
